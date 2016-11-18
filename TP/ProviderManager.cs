@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP
 {
-    public partial class Form1 : Form
+    public partial class ProviderManager : Form
     {
-        public Form1()
+        public ProviderManager()
         {
             InitializeComponent();
         }

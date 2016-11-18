@@ -1,0 +1,10 @@
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe.config
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.pdb
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ClientManager.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Properties.Resources.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.pdb
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewOrder.resources
