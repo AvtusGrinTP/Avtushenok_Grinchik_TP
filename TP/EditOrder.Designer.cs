@@ -1,6 +1,6 @@
 ﻿namespace TP
 {
-    partial class ProviderManager
+    partial class EditOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // ProviderManager
+            // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(704, 491);
-            this.Name = "ProviderManager";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProviderManager";
+            this.ClientSize = new System.Drawing.Size(563, 295);
+            this.Name = "EditOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "EditOrder";
             this.ResumeLayout(false);
 
         }

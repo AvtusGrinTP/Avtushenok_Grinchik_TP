@@ -52,11 +52,35 @@
     <Compile Include="AddNewOrder.Designer.cs">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bookmaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookmaker.Designer.cs">
+      <DependentUpon>Bookmaker.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientManager.Designer.cs">
       <DependentUpon>ClientManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Courier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Courier.Designer.cs">
+      <DependentUpon>Courier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWithOne Buttom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWithOne Buttom.Designer.cs">
+      <DependentUpon>DialogWithOne Buttom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditOrder.Designer.cs">
+      <DependentUpon>EditOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,11 +90,29 @@
     <Compile Include="ProviderManager.Designer.cs">
       <DependentUpon>ProviderManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoreKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreKeeper.Designer.cs">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddNewOrder.resx">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bookmaker.resx">
+      <DependentUpon>Bookmaker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientManager.resx">
       <DependentUpon>ClientManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Courier.resx">
+      <DependentUpon>Courier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogWithOne Buttom.resx">
+      <DependentUpon>DialogWithOne Buttom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +123,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ProviderManager.resx">
+      <DependentUpon>ProviderManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreKeeper.resx">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

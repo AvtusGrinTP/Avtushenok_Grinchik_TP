@@ -16,28 +16,22 @@ namespace TP
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
+                
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+    
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Add("Porn");
-            comboBox1.Items.Add("Промышленные товары");
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

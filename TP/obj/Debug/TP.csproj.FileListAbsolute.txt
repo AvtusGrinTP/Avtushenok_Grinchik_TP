@@ -8,3 +8,9 @@ D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.pdb
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithOne_Buttom.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderManager.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Bookmaker.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Courier.resources

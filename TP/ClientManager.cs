@@ -12,12 +12,13 @@ namespace TP
 {
     public partial class ClientManager : Form
     {
+        string service = "Client Manager Service";
         public ClientManager()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addbutton_Click(object sender, EventArgs e)
         {
             AddNewOrder addNew = new AddNewOrder();
             addNew.ShowDialog();
@@ -31,6 +32,20 @@ namespace TP
         private void listOrderBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void editbutton_Click(object sender, EventArgs e)
+        {
+            EditOrder editOrder = new EditOrder();
+            editOrder.ShowDialog();
+        }
+
+        private void statusbutton_Click(object sender, EventArgs e)
+        {
+            string status = "status";
+
+            DialogWithOne_Buttom dialog = new DialogWithOne_Buttom(status, service);
+            dialog.ShowDialog();
         }
     }
 }
