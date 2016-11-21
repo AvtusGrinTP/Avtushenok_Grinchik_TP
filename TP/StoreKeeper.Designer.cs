@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.orderList = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.errorList = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.timerOrder = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.orderList.SuspendLayout();
             this.courierList.SuspendLayout();
@@ -85,6 +87,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "azaz",
+            "h"});
             this.listBox1.Location = new System.Drawing.Point(13, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
@@ -181,6 +186,11 @@
             this.listBox4.Size = new System.Drawing.Size(680, 446);
             this.listBox4.TabIndex = 0;
             // 
+            // timerOrder
+            // 
+            this.timerOrder.Interval = 10000;
+            this.timerOrder.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // StoreKeeper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,5 +225,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Timer timerOrder;
     }
 }

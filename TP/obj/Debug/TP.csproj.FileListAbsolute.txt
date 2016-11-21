@@ -14,3 +14,6 @@ D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderManager.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Bookmaker.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Courier.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.MakeProviderOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProviderOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderList.resources

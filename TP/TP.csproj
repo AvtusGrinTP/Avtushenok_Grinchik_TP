@@ -52,6 +52,12 @@
     <Compile Include="AddNewOrder.Designer.cs">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewProviderOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewProviderOrder.Designer.cs">
+      <DependentUpon>AddNewProviderOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bookmaker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,8 +88,20 @@
     <Compile Include="EditOrder.Designer.cs">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeProviderOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeProviderOrder.Designer.cs">
+      <DependentUpon>MakeProviderOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProviderList.Designer.cs">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProviderManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="AddNewOrder.resx">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewProviderOrder.resx">
+      <DependentUpon>AddNewProviderOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bookmaker.resx">
       <DependentUpon>Bookmaker.cs</DependentUpon>
@@ -114,6 +135,9 @@
     <EmbeddedResource Include="EditOrder.resx">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MakeProviderOrder.resx">
+      <DependentUpon>MakeProviderOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ProviderList.resx">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProviderManager.resx">
       <DependentUpon>ProviderManager.cs</DependentUpon>
     </EmbeddedResource>

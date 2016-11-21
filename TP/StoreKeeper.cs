@@ -13,16 +13,35 @@ namespace TP
     public partial class StoreKeeper : Form
     {
         string service = "StoreKeeper Service";
+        object currentProduct; //!!!!!
         public StoreKeeper()
         {
             InitializeComponent();
+            timerOrder.Enabled = true;
+            timerOrder.Start();
+
+          //  currentProduct = listBox1.Items;
         }
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            string message = "add";
-            DialogWithOne_Buttom add = new DialogWithOne_Buttom(message, service);
-            add.ShowDialog();
+
+            if (currentProduct == null)
+            {
+                Form mesError = new DialogWithOne_Buttom("Выбирете товар", service);
+                mesError.ShowDialog();
+            }
+            else
+            {
+
+                listBox2.Items.Add(currentProduct);
+                listBox1.Items.Remove(currentProduct);
+                currentProduct = null;
+                string message = "Товар добавлен в ********* список";
+  
+                Form add = new DialogWithOne_Buttom(message, service);
+                add.ShowDialog();
+            }
         }
 
         private void courierbutton2_Click(object sender, EventArgs e)
@@ -48,5 +67,14 @@ namespace TP
             DialogWithOne_Buttom couirier = new DialogWithOne_Buttom(message, service);
             couirier.ShowDialog();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //каждые 10 сек будет добавляться в спісок заказов
+           // listBox1.Items.Add("100");
+           // listBox4.Items.Add("Err");
+        }
+
+        
     }
 }
