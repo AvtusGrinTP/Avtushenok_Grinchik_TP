@@ -35,7 +35,7 @@
             // messageText
             // 
             this.messageText.AutoSize = true;
-            this.messageText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.messageText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.messageText.Location = new System.Drawing.Point(18, 61);
             this.messageText.MinimumSize = new System.Drawing.Size(300, 30);
             this.messageText.Name = "messageText";
