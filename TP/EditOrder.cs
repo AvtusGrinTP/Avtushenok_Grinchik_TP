@@ -12,9 +12,27 @@ namespace TP
 {
     public partial class EditOrder : Form
     {
-        public EditOrder()
+        public EditOrder(string service)
         {
             InitializeComponent();
+            Text = service;
         }
+        private void editbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletebutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+       
     }
 }

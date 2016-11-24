@@ -108,6 +108,12 @@
     <Compile Include="ProviderManager.Designer.cs">
       <DependentUpon>ProviderManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUpForm.Designer.cs">
+      <DependentUpon>StartUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoreKeeper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProviderManager.resx">
       <DependentUpon>ProviderManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUpForm.resx">
+      <DependentUpon>StartUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StoreKeeper.resx">
       <DependentUpon>StoreKeeper.cs</DependentUpon>

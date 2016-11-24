@@ -19,7 +19,7 @@ namespace TP
 
         private void cancelbutton_Click(object sender, EventArgs e)
         {
-            Close();
+           Close();
         }
     }
 }

@@ -32,14 +32,14 @@ namespace TP
 
         private void editbutton_Click(object sender, EventArgs e)
         {
-          // if (currentProduct == null)
+           if (currentProduct == null)
             {
                 Form err = new DialogWithOne_Buttom("Выберите товар", service);
-                err.ShowDialog();
+               err.ShowDialog();
             }
-          // else
+           else
             {
-                Form editOrder = new EditOrder();
+                Form editOrder = new EditOrder(service);
                 editOrder.ShowDialog();
             }
         }
