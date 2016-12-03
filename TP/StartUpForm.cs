@@ -17,28 +17,34 @@ namespace TP
             InitializeComponent();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                Form CM = new ClientManager();
+                CM.Show();
+            }
+            if (checkBox2.Checked)
+            {
+                Form CM = new ProviderManager();
+                CM.Show();
+            }
+            if (checkBox3.Checked)
+            {
+                Form CM = new Bookmaker();
+                CM.Show();
+            }
+            if (checkBox4.Checked)
+            {
+                Form CM = new StoreKeeper();
+                CM.Show();
+            }
+            if (checkBox5.Checked)
+            {
+                Form CM = new Courier();
+                CM.Show();
+            }
 
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
     }
