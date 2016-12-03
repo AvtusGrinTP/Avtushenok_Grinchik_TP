@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP.by.rfe.store
+namespace ClassLibrary.by.rfe.store.Entity
 {
    public class ProviderOrder : Order
     {

@@ -45,8 +45,8 @@
     <Compile Include="by.rfe.store\Entity\Product.cs" />
     <Compile Include="by.rfe.store\Entity\Provider.cs" />
     <Compile Include="by.rfe.store\Entity\ProviderOrder.cs" />
-    <Compile Include="by.rfe.store\Queue\ClientOrder.cs" />
-    <Compile Include="by.rfe.store\Queue\ProviderOrder.cs" />
+    <Compile Include="by.rfe.store\Queue\ClientOrderList.cs" />
+    <Compile Include="by.rfe.store\Queue\ProviderOrderList.cs" />
     <Compile Include="by.rfe.store\Queue\Store.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

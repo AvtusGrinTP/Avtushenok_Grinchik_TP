@@ -38,3 +38,6 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\T
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.dll
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.pdb
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditProvider.resources

@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.by.rfe.store.Entity;
 
 
-namespace TP.by.rfe.store.Queue
+namespace ClassLibrary.by.rfe.store.Queue
 {
-    class Store //это склад, здесь таблицы(словари)(Dictionary) продуктов
+   public class Store //это склад, здесь таблицы(словари)(Dictionary) продуктов
     {
         private Dictionary<Product, int> products;
         private static  Store instance = new Store(); // создаем экземпляр этого же класса 
                                                 // что бы в последствии получить доступ к полю products
         private Store()
         {
-             //делаем приватный конструктор, что бы нигде кроме этого класса нельзя было создать объект Store
+            //делаем приватный конструктор, что бы нигде кроме этого класса нельзя было создать объект Store
+            products.Add(new Product("klass", "kategoria", "tip", "name", 123), 20);
         }                           
         public Dictionary<Product, int> Products
         {

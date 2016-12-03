@@ -7,39 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.by.rfe.store.Entity;
+using ClassLibrary.by.rfe.store.Queue;
+
 
 namespace TP
 {
     public partial class ClientManager : Form
     {
-        string service = "Client Manager Service";
-        object currentProduct;
+        
+        private ClientOrder currentOrder;
         public ClientManager()
         {
             InitializeComponent();
+          
+        }
+
+        public void refresh()
+        {
+            listBox1.Items.Clear();
+            foreach (ClientOrderList product in ClientOrderList.getInstance().Orders)
+            {
+       //         listBox1.Items.Add(ClientOrder);
+            }
         }
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            Form addNew = new AddNewOrder(service);
+            Form addNew = new AddNewOrder(Text);
             addNew.ShowDialog();
         }
 
-        private void listOrderBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void editbutton_Click(object sender, EventArgs e)
         {
-           if (currentProduct == null)
+           if (listBox1.SelectedIndex == -1)
             {
-                Form err = new DialogWithOne_Buttom("Выберите товар", service);
+                Form err = new DialogWithOne_Buttom("Выберите Заказ", Text);
                err.ShowDialog();
             }
            else
             {
-                Form editOrder = new EditOrder(service);
+                Form editOrder = new EditOrder(Text);
                 editOrder.ShowDialog();
             }
         }
@@ -48,8 +58,19 @@ namespace TP
         {
             string status = "status";
 
-            Form dialog = new DialogWithOne_Buttom(status, service);
+            Form dialog = new DialogWithOne_Buttom(status, Text);
             dialog.ShowDialog();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            Form editOrder = new EditOrder(Text);
+            editOrder.ShowDialog();
         }
     }
 }

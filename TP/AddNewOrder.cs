@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.by.rfe.store.Queue;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace TP
 {
@@ -16,6 +18,21 @@ namespace TP
         {
             InitializeComponent();
             Text = service;
+
+            comboBox1.Items.AddRange(new string[] {
+            "Продовольственные товары",
+            "Промышленные товары"});
+
+            //comboBox2.Items.AddRange(new string[] {
+            //"Категория 1",
+            //"Категория 2"});
+            comboBox2.Enabled = false;
+
+            //comboBox3.Items.AddRange(new string[] {
+            //"Тип 1",
+            //"Тип 2"});
+            comboBox3.Enabled = false;
+
         }
 
         private void createOrderbutton_Click(object sender, EventArgs e)
@@ -39,6 +56,8 @@ namespace TP
                     }
                     else
                     {
+
+                    //    ClientOrderList.addClientOrder();
                         Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
                         createOrder.ShowDialog();
 
@@ -61,42 +80,37 @@ namespace TP
 
         private void comboBox2_Click(object sender, EventArgs e)
         {
-
-            try
+            if (comboBox1.Text.Equals("Продовольственные товары"))
             {
-                if (comboBox1.Text.Equals(comboBox1.Items[0]))
-                {
-                    comboBox2.Items.Add("a");
-                }
-                else if (comboBox1.Text.Equals(comboBox1.Items[1]))
-                {
-                    comboBox2.Items.Add("b");
-                }
+                //            comboBox3.Items[0].;
+               // comboBox2.Items[1].Remove 
             }
-            catch (Exception)
+            else 
             {
-                Form err = new DialogWithOne_Buttom("Выбирете Класс товара", Text);
-                err.ShowDialog();
+                comboBox2.Items.Add("bb");
             }
         }
 
         private void comboBox3_Click(object sender, EventArgs e)
         {
-            try
+            
+                
+           
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (!comboBox1.Text.Equals(""))
             {
-                if (comboBox2.Text.Equals(comboBox2.Items[0]))
-                {
-                    comboBox3.Items.Add("aa");
-                }
-                else if (comboBox2.Text.Equals(comboBox2.Items[1]))
-                {
-                    comboBox3.Items.Add("bb");
-                }
+                comboBox2.Enabled = true;
             }
-            catch (Exception)
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox2.Text.Equals(""))
             {
-                Form err = new DialogWithOne_Buttom("Выбирете Категорию", Text);
-                err.ShowDialog();
+                comboBox3.Enabled = true;
             }
         }
     }

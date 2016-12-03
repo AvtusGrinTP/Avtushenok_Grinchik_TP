@@ -88,6 +88,12 @@
     <Compile Include="EditOrder.Designer.cs">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProvider.Designer.cs">
+      <DependentUpon>EditProvider.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeProviderOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <EmbeddedResource Include="EditOrder.resx">
       <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProvider.resx">
+      <DependentUpon>EditProvider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MakeProviderOrder.resx">
       <DependentUpon>MakeProviderOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2.csproj">
+      <Project>{2abafda7-8244-4fc6-8f27-94c7a08e82b8}</Project>
+      <Name>ClassLibrary2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

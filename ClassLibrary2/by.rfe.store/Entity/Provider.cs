@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP.by.rfe.store
+namespace ClassLibrary.by.rfe.store.Entity
 {
  public class Provider
     {
@@ -12,11 +12,24 @@ namespace TP.by.rfe.store
         private string phoneNumber;
         private string address;
 
-        public Provider(string name, string phoneNumber, string address)
+        public Provider(string name, string address, string phoneNumber)
         {
             this.name = name;
-            this.phoneNumber = phoneNumber;
             this.address = address;
+            this.phoneNumber = phoneNumber;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
         }
 
         public string Address
@@ -45,17 +58,6 @@ namespace TP.by.rfe.store
             }
         }
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
+       
     }
 }

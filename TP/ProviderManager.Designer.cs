@@ -84,7 +84,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "ProviderManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Provider Manager Service";
+            this.Text = "Сервис менеджера по работе с Поставщиками";
             this.ResumeLayout(false);
 
         }
