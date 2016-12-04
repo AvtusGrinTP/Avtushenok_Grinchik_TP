@@ -16,26 +16,34 @@ namespace TP
         public Bookmaker()
         {
             InitializeComponent();
+            listBox1.Items.AddRange(new object[] {
+            "123",
+            "234",
+            "345"});
         }
 
-        private void label1_Click(object sender, EventArgs e)
+      
+        //private void confirmClientbutton_Click(object sender, EventArgs e)
+        //{
+        //    string confirm = "Заказ оплачен Клиентом";
+
+        //    DialogWithOne_Buttom confirmPayClient = new DialogWithOne_Buttom(confirm, service);
+        //    confirmPayClient.ShowDialog();
+        //}
+
+        //private void confirmProviderbutton_Click(object sender, EventArgs e)
+        //{
+        //    string confirm = "Заказ оплачен";
+        //    DialogWithOne_Buttom confirmPayProvider = new DialogWithOne_Buttom(confirm, service);
+        //    confirmPayProvider.ShowDialog();
+        //}
+
+        
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void confirmClientbutton_Click(object sender, EventArgs e)
-        {
-            string confirm = "Заказ оплачен Клиентом";
-
-            DialogWithOne_Buttom confirmPayClient = new DialogWithOne_Buttom(confirm, service);
-            confirmPayClient.ShowDialog();
-        }
-
-        private void confirmProviderbutton_Click(object sender, EventArgs e)
-        {
-            string confirm = "Заказ оплачен";
-            DialogWithOne_Buttom confirmPayProvider = new DialogWithOne_Buttom(confirm, service);
-            confirmPayProvider.ShowDialog();
+            DialogWithOne_Buttom confirmPay = new DialogWithOne_Buttom("confirm", service);
+            confirmPay.ShowDialog();
         }
     }
 }

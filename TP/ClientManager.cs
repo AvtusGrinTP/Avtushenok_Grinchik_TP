@@ -38,8 +38,7 @@ namespace TP
             addNew.ShowDialog();
         }
 
-        
-
+        /*
         private void editbutton_Click(object sender, EventArgs e)
         {
            if (listBox1.SelectedIndex == -1)
@@ -53,7 +52,8 @@ namespace TP
                 editOrder.ShowDialog();
             }
         }
-
+        */
+        /*
         private void statusbutton_Click(object sender, EventArgs e)
         {
             string status = "status";
@@ -61,7 +61,7 @@ namespace TP
             Form dialog = new DialogWithOne_Buttom(status, Text);
             dialog.ShowDialog();
         }
-
+        */
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
