@@ -55,7 +55,9 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
+
             return getId().ToString() +"                | " + getCLient().ToString() + "| " + getQuantity().ToString() + "| " + getCountToEnd().ToString(); 
+
         }
     }
 }
