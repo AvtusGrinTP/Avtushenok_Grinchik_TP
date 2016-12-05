@@ -192,6 +192,10 @@
       <Project>{2abafda7-8244-4fc6-8f27-94c7a08e82b8}</Project>
       <Name>ClassLibrary2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{c3695b44-9bd6-49a8-a7b0-fabf21344e5d}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

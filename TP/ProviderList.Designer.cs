@@ -36,10 +36,13 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Фирма1; г. Минск ул. А; 1 +375291111111",
-            "Фирма2; г. Минск ул. В; 1 +375292222222",
-            "Фирма3; г. Минск ул. С; 1 +375293333333"});
+
+           // this.listBox1.Items.AddRange(new object[] {
+                // "Фирма1; г. Минск ул. А; 1 +375291111111",
+                // "Фирма2; г. Минск ул. В; 1 +375292222222",
+                //   "Фирма3; г. Минск ул. С; 1 +375293333333"
+           // });
+
             this.listBox1.Location = new System.Drawing.Point(13, 13);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(459, 225);
