@@ -16,19 +16,19 @@ namespace TP
     public partial class ClientManager : Form
     {
         
-        private ClientOrder currentOrder;
+      //  private ClientOrder currentOrder;
         public ClientManager()
         {
             InitializeComponent();
-          
+            refresh();
         }
 
         public void refresh()
         {
             listBox1.Items.Clear();
-            foreach (ClientOrderList product in ClientOrderList.getInstance().Orders)
+            foreach (ClientOrder product in ClientOrderList.getInstance().Orders)
             {
-       //         listBox1.Items.Add(ClientOrder);
+                listBox1.Items.Add(product.ToString());
             }
         }
 

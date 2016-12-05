@@ -53,5 +53,9 @@ namespace ClassLibrary.by.rfe.store.Entity
             this.countToEnd = countToEnd;
         }
 
+        public override string ToString()
+        {
+            return getId().ToString(); 
+        }
     }
 }
