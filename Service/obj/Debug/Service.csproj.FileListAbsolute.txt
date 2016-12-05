@@ -1,0 +1,7 @@
+C:\Users\Алексей\Google Диск\TP\Service\bin\Debug\Service.dll
+C:\Users\Алексей\Google Диск\TP\Service\bin\Debug\Service.pdb
+C:\Users\Алексей\Google Диск\TP\Service\bin\Debug\ClassLibrary2.dll
+C:\Users\Алексей\Google Диск\TP\Service\bin\Debug\ClassLibrary2.pdb
+C:\Users\Алексей\Google Диск\TP\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Google Диск\TP\Service\obj\Debug\Service.dll
+C:\Users\Алексей\Google Диск\TP\Service\obj\Debug\Service.pdb

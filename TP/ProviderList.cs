@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -17,8 +18,16 @@ namespace TP
         public ProviderList()
         {
             InitializeComponent();
+            refresh();
         }
-
+        public void refresh()
+        {
+            listBox1.Items.Clear();
+            foreach (Provider provider in ProviderManagerService.getInstance().ProviderList)
+            {
+                listBox1.Items.Add(provider.ToString());
+            }
+        }
         private void cancelbutton_Click(object sender, EventArgs e)
         {
            Close();

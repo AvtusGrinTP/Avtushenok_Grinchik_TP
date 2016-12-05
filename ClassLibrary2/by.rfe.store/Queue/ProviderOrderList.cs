@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace ClassLibrary.by.rfe.store.Queue
 {
-    class ProviderOrderList //хранилище заказов поставшиков
+   public class ProviderOrderList //хранилище заказов поставшиков
     {
-        private static ProviderOrderList instance;
-        private List<ProviderOrderList> orders;
+        private static ProviderOrderList instance = new ProviderOrderList();
+        private List<ProviderOrder> orders = new List<ProviderOrder>();
 
         private ProviderOrderList()
         {
-            instance = new ProviderOrderList();
+            
         }
-
-        public List<ProviderOrderList> Orders
+        
+        public List<ProviderOrder> Orders
         {
             get
             {
@@ -25,7 +26,7 @@ namespace ClassLibrary.by.rfe.store.Queue
 
         }
 
-        public void addProviderOrder(ProviderOrderList order)
+        public void addProviderOrder(ProviderOrder order)
         {
             orders.Add(order);
         }

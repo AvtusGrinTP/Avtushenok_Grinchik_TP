@@ -58,6 +58,9 @@ namespace ClassLibrary.by.rfe.store.Entity
             }
         }
 
-       
+        public override string ToString()
+        {
+            return name + " " + phoneNumber + " " + address;
+        }
     }
 }
