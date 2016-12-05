@@ -45,5 +45,10 @@ namespace TP
             DialogWithOne_Buttom confirmPay = new DialogWithOne_Buttom("confirm", service);
             confirmPay.ShowDialog();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
