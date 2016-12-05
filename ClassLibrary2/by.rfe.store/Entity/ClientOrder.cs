@@ -13,7 +13,7 @@ namespace ClassLibrary.by.rfe.store.Entity
         private bool isFull;
         private int countToEnd;
 
-        public ClientOrder(int id, int quantity, bool isPayed,string client, string address, bool isFull, int countToEnd) : base(id, quantity, isPayed)
+        public ClientOrder(int id, Product product, int quantity, bool isPayed,string client, string address, bool isFull, int countToEnd) : base(id, product, quantity, isPayed)
         {
             this.address = address;
             this.client = client;
@@ -55,7 +55,7 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
-            return getId().ToString(); 
+            return getId().ToString() +"; " + getCLient().ToString() + "; " + getQuantity().ToString() + "; " + getCountToEnd().ToString(); 
         }
     }
 }

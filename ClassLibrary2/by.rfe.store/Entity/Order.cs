@@ -11,10 +11,13 @@ namespace ClassLibrary.by.rfe.store.Entity
         private int id;
         private int quantity;
         private bool isPayed;
+        private Product product;
 
-        public Order(int id, int quantity, bool isPayed)
+  
+        public Order(int id, Product product, int quantity, bool isPayed)
         {
             this.id = id;
+            this.product = product;
             this.quantity = quantity;
             this.isPayed = isPayed;
         }
@@ -42,6 +45,17 @@ namespace ClassLibrary.by.rfe.store.Entity
         {
             this.isPayed = payed;
         }
+        public Product Product
+        {
+            get
+            {
+                return product;
+            }
 
+            set
+            {
+                product = value;
+            }
+        } 
     }
 }
