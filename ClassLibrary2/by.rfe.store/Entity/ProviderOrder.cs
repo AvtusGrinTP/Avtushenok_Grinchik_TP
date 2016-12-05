@@ -10,7 +10,7 @@ namespace ClassLibrary.by.rfe.store.Entity
     {
         private Provider provider;
 
-        public ProviderOrder(int id, Product product, int quantity, bool isPayed) : base(id, product, quantity, isPayed)
+        public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
         {
             
                    
@@ -27,6 +27,12 @@ namespace ClassLibrary.by.rfe.store.Entity
             {
                 provider = value;
             }
+
+           
+        }
+        public override string ToString()
+        {
+            return getId() + " " + Product.Name + " " + getQuantity();
         }
     }
 }

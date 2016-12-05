@@ -13,7 +13,7 @@ namespace ClassLibrary.by.rfe.store.Entity
         private bool isFull;
         private int countToEnd;
 
-        public ClientOrder(int id, Product product, int quantity, bool isPayed,string client, string address, bool isFull, int countToEnd) : base(id, product, quantity, isPayed)
+        public ClientOrder(int id, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
             this.address = address;
             this.client = client;

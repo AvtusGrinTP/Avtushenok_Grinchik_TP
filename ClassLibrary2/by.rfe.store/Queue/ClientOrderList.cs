@@ -16,8 +16,8 @@ namespace ClassLibrary.by.rfe.store.Queue
         {
 
             orders.Add(new ClientOrder(1,
-                new Product("class1", "cat1", "type1", "name1", 123),
-                5, false, "Client1", "Minsk azaza", true,0));
+                new Product("class1", "cat1", "type1", "name1"),
+                5, "Client1", "Minsk azaza", true,0, 18));
 
         }
 

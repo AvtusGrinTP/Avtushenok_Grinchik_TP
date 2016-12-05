@@ -32,5 +32,10 @@ namespace Service.by.rfe.service
             return instance;
         }
 
+        public List<ProviderOrder> getProviderOrders()
+        {
+            ProviderOrderList list = ProviderOrderList.getInstance();
+            return list.Orders;
+        }
    }
 }
