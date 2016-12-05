@@ -14,7 +14,11 @@ namespace ClassLibrary.by.rfe.store.Queue
 
         private ProviderOrderList()
         {
-            
+            orders.Add(new ProviderOrder(2,
+                new Product("class2", "cat2", "type2", "name25"), 5, 124));
+            orders.Add(new ProviderOrder(5,
+               new Product("class5", "cat4", "type4", "name25f"), 7,127));
+
         }
         
         public List<ProviderOrder> Orders

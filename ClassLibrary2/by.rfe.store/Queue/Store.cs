@@ -16,7 +16,7 @@ namespace ClassLibrary.by.rfe.store.Queue
         private Store()
         {
             //делаем приватный конструктор, что бы нигде кроме этого класса нельзя было создать объект Store
-            products.Add(new Product("klass", "kategoria", "tip", "name", 123), 20);
+            products.Add(new Product("klass", "kategoria", "tip", "name"), 20);
         }                           
         public Dictionary<Product, int> Products
         {

@@ -12,15 +12,15 @@ namespace ClassLibrary.by.rfe.store.Entity
         private string category;
         private string type;
         private string name;
-        private double price;
+        
 
-        public Product(string classofpr, string category, string type, string name, double price)
+        public Product(string classofpr, string category, string type, string name)
         {
             this.classofProduct = classofpr;
             this.category = category;
             this.type = type;
             this.name = name;
-            this.price = price;
+           
         }
 
         public string ClassofProduct
@@ -75,17 +75,7 @@ namespace ClassLibrary.by.rfe.store.Entity
             }
         }
 
-        public double Price
-        {
-            get
-            {
-                return price;
-            }
-
-            set
-            {
-                price = value;
-            }
-        }
+        
+        
     }
 }

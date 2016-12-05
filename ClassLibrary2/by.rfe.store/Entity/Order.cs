@@ -12,14 +12,15 @@ namespace ClassLibrary.by.rfe.store.Entity
         private int quantity;
         private bool isPayed;
         private Product product;
-
+        private double price;
   
-        public Order(int id, Product product, int quantity, bool isPayed)
+        public Order(int id, Product product, int quantity, double price)
         {
             this.id = id;
             this.product = product;
             this.quantity = quantity;
-            this.setPayed(false);
+            this.isPayed = false;
+            this.price = price;
         }
         public int getId()
         {
@@ -56,6 +57,19 @@ namespace ClassLibrary.by.rfe.store.Entity
             {
                 product = value;
             }
-        } 
+        }
+
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+
+            set
+            {
+                price = value;
+            }
+        }
     }
 }

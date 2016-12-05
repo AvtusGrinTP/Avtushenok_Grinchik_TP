@@ -39,7 +39,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 487);
+            this.listBox1.Location = new System.Drawing.Point(18, 102);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(760, 524);
