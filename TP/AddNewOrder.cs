@@ -23,14 +23,14 @@ namespace TP
             "Продовольственные товары",
             "Промышленные товары"});
 
-            //comboBox2.Items.AddRange(new string[] {
-            //"Категория 1",
-            //"Категория 2"});
+            comboBox2.Items.AddRange(new string[] {
+            "Категория 1",
+            "Категория 2"});
             comboBox2.Enabled = false;
 
-            //comboBox3.Items.AddRange(new string[] {
-            //"Тип 1",
-            //"Тип 2"});
+            comboBox3.Items.AddRange(new string[] {
+            "Тип 1",
+            "Тип 2"});
             comboBox3.Enabled = false;
 
         }
@@ -38,7 +38,8 @@ namespace TP
         private void createOrderbutton_Click(object sender, EventArgs e)
         {
 
-            if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || textBox1.Text.Equals("") || textBox3.Text.Equals(""))
+            if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || textBox1.Text.Equals("") || textBox2.Text.Equals("")
+                || textBox3.Text.Equals("") || textBox4.Text.Equals("") || textBox5.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
@@ -113,5 +114,7 @@ namespace TP
                 comboBox3.Enabled = true;
             }
         }
+
+        
     }
 }

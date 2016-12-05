@@ -62,9 +62,11 @@
             this.ClientSize = new System.Drawing.Size(334, 215);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.messageText);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DialogWithOne_Buttom";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DialogWithOne_Buttom";
             this.ResumeLayout(false);
             this.PerformLayout();
 

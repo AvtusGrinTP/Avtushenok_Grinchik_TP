@@ -15,8 +15,8 @@ namespace TP
 {
     public partial class ClientManager : Form
     {
-        
-      //  private ClientOrder currentOrder;
+
+        private ClientOrder currentOrder;
         public ClientManager()
         {
             InitializeComponent();
@@ -64,13 +64,42 @@ namespace TP
         */
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
+            //  listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
+            //  currentOrder = new ClientOrder();
+            string orderString = listBox1.GetItemText(listBox1.SelectedItem);
+
+            if (!orderString.Equals(""))
+            {
+                foreach(ClientOrder order in ClientOrderList.getInstance().Orders)
+                {
+                    if (orderString.Split('|')[1].Trim().Equals(order.getCLient()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
+                }
+            }
+
+
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            Form editOrder = new EditOrder(Text);
+            //string classofProduct = currentOrder.Product.ClassofProduct,
+            //    category = currentOrder.Product.Category,
+            //    type = currentOrder.Product.Type,
+            //    name = currentOrder.Product.Name,
+            //    client = currentOrder.getCLient(),
+            //    addres = currentOrder.getAddress();
+            //int id = currentOrder.getId(),
+            //    quantity = currentOrder.getQuantity();
+            Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

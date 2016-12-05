@@ -19,7 +19,7 @@ namespace ClassLibrary.by.rfe.store.Entity
             this.id = id;
             this.product = product;
             this.quantity = quantity;
-            this.isPayed = isPayed;
+            this.setPayed(false);
         }
         public int getId()
         {
