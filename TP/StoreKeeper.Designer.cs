@@ -198,7 +198,9 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(704, 561);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "StoreKeeper";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Store Keeper Service";
             this.tabControl1.ResumeLayout(false);

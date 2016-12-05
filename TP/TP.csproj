@@ -52,6 +52,12 @@
     <Compile Include="AddNewOrder.Designer.cs">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewProvider.Designer.cs">
+      <DependentUpon>AddNewProvider.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewProviderOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="AddNewOrder.resx">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewProvider.resx">
+      <DependentUpon>AddNewProvider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewProviderOrder.resx">
       <DependentUpon>AddNewProviderOrder.cs</DependentUpon>

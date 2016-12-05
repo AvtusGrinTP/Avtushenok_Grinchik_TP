@@ -41,3 +41,4 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\T
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.dll
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.pdb
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditProvider.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProvider.resources

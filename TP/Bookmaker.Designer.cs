@@ -60,7 +60,9 @@
             this.ClientSize = new System.Drawing.Size(784, 584);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.MaximizeBox = false;
             this.Name = "Bookmaker";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bookmaker Service";
             this.ResumeLayout(false);

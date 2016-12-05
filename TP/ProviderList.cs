@@ -38,5 +38,11 @@ namespace TP
         {
 
         }
+
+        private void addbutton_Click(object sender, EventArgs e)
+        {
+            Form addProvider = new AddNewProvider();
+            addProvider.ShowDialog();
+        }
     }
 }

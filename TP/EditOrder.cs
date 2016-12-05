@@ -14,9 +14,11 @@ namespace TP
 {
     public partial class EditOrder : Form
     {
+       // private ClientOrder currentOrder;
         public EditOrder(ClientOrder currentOrder, string service/* ,int id, string classofProduct, string category, string type, string name, int quantity, string client, string addres*/)
         {
             InitializeComponent();
+        //    this.currentOrder = currentOrder; 
             textBox3.Text = currentOrder.getId().ToString();
             comboBox1.Text = currentOrder.Product.ClassofProduct;
             comboBox2.Text = currentOrder.Product.Category;
@@ -38,6 +40,8 @@ namespace TP
         private void deletebutton_Click(object sender, EventArgs e)
         {
             //        ClientOrderList.getInstance()
+            //currentOrder = null;
+
             Form deleteOrder = new DialogWithOne_Buttom("Заказ удален", Text);
             deleteOrder.ShowDialog();
 
