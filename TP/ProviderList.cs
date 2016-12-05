@@ -35,11 +35,11 @@ namespace TP
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            string name = currentProvider.Name,
-                adress = currentProvider.Address,
-                phone = currentProvider.PhoneNumber;
+            //string name = currentProvider.Name,
+            //    adress = currentProvider.Address,
+            //    phone = currentProvider.PhoneNumber;
             
-            Form editProvider = new EditProvider(name, adress,phone);
+            Form editProvider = new EditProvider("name", "adress","phone");
             editProvider.ShowDialog();
         }
 
