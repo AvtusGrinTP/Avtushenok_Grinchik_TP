@@ -32,7 +32,7 @@ namespace TP
               //  array[i].Show();
             }
 
-           Application.Run(new ClientManager());
+          // Application.Run(new ClientManager());
 
             // var a = new Bookmaker();
             // a.Show();
