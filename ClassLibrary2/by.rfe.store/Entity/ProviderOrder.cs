@@ -32,7 +32,7 @@ namespace ClassLibrary.by.rfe.store.Entity
         }
         public override string ToString()
         {
-            return getId() + " " + Product.Name + " " + getQuantity();
+            return getId() + " | " + Product.Name + " | " + getQuantity();
         }
     }
 }

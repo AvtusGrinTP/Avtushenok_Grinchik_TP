@@ -37,5 +37,18 @@ namespace Service.by.rfe.service
             ProviderOrderList list = ProviderOrderList.getInstance();
             return list.Orders;
         }
+
+        public void makeOrder(int id, Provider provider)
+        {
+            ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
+            List<ProviderOrder> orders = providerOrderList.Orders;
+            foreach(ProviderOrder or in orders)
+            {
+                if (or.getId().Equals(id))
+                {
+                    or.Provider = provider;
+                }
+            }
+        }
    }
 }

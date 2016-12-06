@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
 using Service.by.rfe.service;
+using ClassLibrary.by.rfe.store.Queue;
 
 namespace TP
 {
     public partial class ProviderManager : Form
     {
+        private ProviderOrder currentProviderOrder;
         public ProviderManager()
         {
             InitializeComponent();
+
             refresh();
         }
         public void refresh()
@@ -26,13 +29,17 @@ namespace TP
             listBox1.Items.Clear();
             foreach (ProviderOrder order in orders)
             {
-                listBox1.Items.Add(order);
+                if(order.Provider == null)
+                {
+                    listBox1.Items.Add(order);
+                }
             }
         }
         private void addbutton_Click(object sender, EventArgs e)
         {
-            Form add = new MakeProviderOrder();
-            add.ShowDialog();
+            //Form add = new MakeProviderOrder();
+            //add.ShowDialog();
+            //refresh();
         }
 
         private void addNewbutton_Click(object sender, EventArgs e)
@@ -46,5 +53,31 @@ namespace TP
             Form list = new ProviderList();
             list.ShowDialog();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orderString = listBox1.GetItemText(listBox1.SelectedItem);
+
+            if (!orderString.Equals(""))
+            {
+                foreach (ProviderOrder order in ProviderOrderList.getInstance().Orders)
+                {
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentProviderOrder = order;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            Form add = new MakeProviderOrder(currentProviderOrder, Text);
+            add.ShowDialog();
+            refresh();
+        }
+
+       
     }
 }

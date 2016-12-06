@@ -7,22 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Service.by.rfe.service;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace TP
 {
     public partial class MakeProviderOrder : Form
     {
-        string service = "Provider Manager Service";
-        public MakeProviderOrder()
+       // string service = "Provider Manager Service";
+        public MakeProviderOrder(ProviderOrder currentProviderOrder, string servise)
         {
             InitializeComponent();
+            textBox1.Text = currentProviderOrder.getId().ToString();
+          
+            Text = servise;
+            refresh();
+
+        }
+
+        public void refresh()
+        {
+            comboBox1.Items.Clear();
+
+            foreach(Provider provider in ProviderManagerService.getInstance().ProviderList)
+            {
+                comboBox1.Items.Add(provider.Name);
+            }
         }
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Equals("") || comboBox1.Text.Equals(""))
             {
-                Form err = new DialogWithOne_Buttom("Заполните все поля", service);
+                Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
             }
             else
@@ -33,15 +50,25 @@ namespace TP
                     int number = int.Parse(textBox1.Text);
                     if (number < 1)
                     {
-                        Form err = new DialogWithOne_Buttom("Номер заказа не может быть\n отрицательным либо равным нулю", service);
+                        Form err = new DialogWithOne_Buttom("Номер заказа не может быть\n отрицательным либо равным нулю", Text);
                         err.ShowDialog();
                     }
                     else
                     {
-                        Form confirm = new DialogWithOne_Buttom("confirm", service);
+                        ProviderManagerService providerService = ProviderManagerService.getInstance();
+                        Provider provider = null;
+                        foreach(Provider prov in providerService.ProviderList)
+                        {
+                            if (prov.Name.Equals(comboBox1.Text.Trim()))
+                                provider = prov;
+                        }
+                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()), provider);
+
+                        Form confirm = new DialogWithOne_Buttom("confirm", Text);
                         confirm.ShowDialog();
 
                         Close();
+                        Refresh();
                     }
                 }
                 catch (Exception)
