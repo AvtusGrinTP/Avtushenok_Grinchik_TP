@@ -35,12 +35,6 @@ namespace TP
                 }
             }
         }
-        private void addbutton_Click(object sender, EventArgs e)
-        {
-            //Form add = new MakeProviderOrder();
-            //add.ShowDialog();
-            //refresh();
-        }
 
         private void addNewbutton_Click(object sender, EventArgs e)
         {
@@ -50,7 +44,7 @@ namespace TP
 
         private void listProviderbutton_Click(object sender, EventArgs e)
         {
-            Form list = new ProviderList();
+            Form list = new ProviderList(Text);
             list.ShowDialog();
         }
 

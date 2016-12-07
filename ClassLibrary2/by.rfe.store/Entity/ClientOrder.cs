@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.by.rfe.store.Entity
 {
-   public class ClientOrder : Order
+    public class ClientOrder : Order
     {
         private string client;
         private string address;
@@ -55,9 +55,34 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
+            int N1 = 9, N2 = 14, N3 = 9, N4 = 10;
+            string Out;
 
-            return getId().ToString() +"                | " + getCLient().ToString() + "| " + getQuantity().ToString() + "| " + getCountToEnd().ToString(); 
+            N1 -= getId().ToString().Length;
+            Out = getId().ToString();
+            Out = Space(Out, N1);
 
+            N2 -= getCLient().ToString().Length;
+            Out += getCLient();
+            Out = Space(Out, N2);
+
+            N3 -= getQuantity().ToString().Length;
+            Out += getQuantity().ToString();
+            Out = Space(Out, N3);
+
+            N4 -= getCountToEnd().ToString().Length;
+            Out += getCountToEnd().ToString();
+            Out = Space(Out, N4);
+
+            return Out;
+        }
+
+        public string Space(string Out, int N)
+        {
+            for (int i = 0; i < N; i++)
+                Out += " ";
+
+            return Out + "| ";
         }
     }
 }

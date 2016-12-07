@@ -8,7 +8,7 @@ using ClassLibrary.by.rfe.store.Entity;
 
 namespace Service.by.rfe.service
 {
-   public class ProviderManagerService
+    public class ProviderManagerService
     {
         private static ProviderManagerService instance = new ProviderManagerService();
         private List<Provider> providerList = new List<Provider>();
@@ -42,7 +42,7 @@ namespace Service.by.rfe.service
         {
             ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
             List<ProviderOrder> orders = providerOrderList.Orders;
-            foreach(ProviderOrder or in orders)
+            foreach (ProviderOrder or in orders)
             {
                 if (or.getId().Equals(id))
                 {
@@ -50,5 +50,16 @@ namespace Service.by.rfe.service
                 }
             }
         }
-   }
+
+        public void deleteProvider(Provider provider)
+        {
+            getInstance().ProviderList.Remove(provider);
+        }
+
+        public void addProvider(string name, string adress, string phoneNumber)
+        {
+            Provider provider = new Provider(name, adress,phoneNumber);
+            providerList.Add(provider);
+        }
+    }
 }

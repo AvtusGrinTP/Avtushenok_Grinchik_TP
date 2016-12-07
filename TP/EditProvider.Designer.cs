@@ -50,6 +50,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(148, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(272, 20);
@@ -86,7 +87,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(123, 20);
             this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "375";
+            this.textBox3.Text = "+375";
             // 
             // button1
             // 
@@ -106,6 +107,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.deletebutton_Click);
             // 
             // button3
             // 
@@ -115,6 +117,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.cancelbutton_Click);
             // 
             // EditProvider
             // 
