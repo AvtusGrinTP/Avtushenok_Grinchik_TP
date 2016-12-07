@@ -79,10 +79,12 @@
             // 
             // listBox2
             // 
+            this.listBox2.Enabled = false;
             this.listBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBox2.Items.Add("Поставщик      | Адрес             | Телефон");
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 19;
+            this.listBox2.Items.AddRange(new object[] {
+            "Поставщик      | Адрес             | Телефон"});
             this.listBox2.Location = new System.Drawing.Point(12, 36);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(460, 23);

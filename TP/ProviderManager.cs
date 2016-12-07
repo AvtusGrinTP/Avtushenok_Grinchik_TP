@@ -19,6 +19,8 @@ namespace TP
         public ProviderManager()
         {
             InitializeComponent();
+            timer.Enabled = true;
+            timer.Start();
 
             refresh();
         }
@@ -72,6 +74,9 @@ namespace TP
             refresh();
         }
 
-       
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            refresh();
+        }
     }
 }
