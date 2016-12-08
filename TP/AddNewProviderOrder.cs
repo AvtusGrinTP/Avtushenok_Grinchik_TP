@@ -79,10 +79,9 @@ namespace TP
             {
                 try
                 {
-
                     int number = int.Parse(textBox2.Text);
                     double price = double.Parse(textBox3.Text);
-                    if ((number < 1)|| (price < 1))
+                    if ((number < 1) || (price < 1))
                     {
                         if (number < 1)
                         {
@@ -106,9 +105,10 @@ namespace TP
                 }
                 catch (Exception)
                 {
-                        Form err = new DialogWithOne_Buttom("Количество состоит только из цифр", Text);
-                        err.ShowDialog();
-                    
+
+                    Form err = new DialogWithOne_Buttom("Количество или Цена состоит только из цифр", Text);
+                    err.ShowDialog();
+
                 }
             }
         }
@@ -142,6 +142,6 @@ namespace TP
             }
         }
 
-        
+
     }
 }
