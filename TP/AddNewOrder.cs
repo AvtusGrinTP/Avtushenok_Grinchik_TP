@@ -90,12 +90,12 @@ namespace TP
                                 comboBox2.Text, comboBox3.Text,comboBox4.Text, 
                                 int.Parse(textBox3.Text), textBox2.Text, textBox4.Text, double.Parse(textBox6.Text));
                             ///  Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
-                        //createOrder.ShowDialog();
+                            //createOrder.ShowDialog();
+                            Close();
+
                         }
 
 
-
-                        Close();
                     }
                 }
                 catch (Exception)
