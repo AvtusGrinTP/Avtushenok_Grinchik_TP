@@ -26,9 +26,9 @@ namespace TP
         public void refresh()
         {
             listBox1.Items.Clear();
-            foreach (ClientOrder product in ClientOrderList.getInstance().Orders)
+            foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
-                listBox1.Items.Add(product.ToString());
+                listBox1.Items.Add(order.ToString());
             }
         }
 
@@ -36,6 +36,7 @@ namespace TP
         {
             Form addNew = new AddNewOrder(Text);
             addNew.ShowDialog();
+            refresh();
         }
 
         /*

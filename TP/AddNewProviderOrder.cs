@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -15,8 +16,45 @@ namespace TP
         public AddNewProviderOrder()
         {
             InitializeComponent();
+            refreshClass();
+            comboBox2.Enabled = false;
+            comboBox3.Enabled = false;
+            comboBox5.Enabled = false;
+            //надо фиксить еще
+        }
+        void refreshClass()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> classs = clientManagerService.getClass();
+            string[] cl = classs.ToArray<string>();
+            comboBox1.Items.AddRange(cl);
+
+        }
+        void refreshCategory()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> categories = clientManagerService.getCategories(comboBox1.Text);
+            string[] cat = categories.ToArray<string>();
+            comboBox2.Items.Clear();
+            comboBox2.Items.AddRange(cat);
         }
 
+        void refreshType()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> types = clientManagerService.getTypes(comboBox2.Text);
+            string[] ty = types.ToArray<string>();
+            comboBox3.Items.Clear();
+            comboBox3.Items.AddRange(ty);
+        }
+        void refreshName()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> names = clientManagerService.getNames(comboBox3.Text);
+            string[] ty = names.ToArray<string>();
+            comboBox5.Items.Clear();
+            comboBox5.Items.AddRange(ty);
+        }
         private void cancelbutton_Click(object sender, EventArgs e)
         {
             Close();
@@ -24,7 +62,7 @@ namespace TP
 
         private void createProviderOrderbutton_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text.Equals("") /*|| comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || textBox1.Text.Equals("") || textBox3.Text.Equals("")*/)
+            if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || comboBox5.Text.Equals("") || textBox3.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
@@ -65,6 +103,40 @@ namespace TP
                     
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox1.Text.Equals(""))
+            {
+                refreshCategory();
+                comboBox2.Enabled = true;
+            }
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox2.Text.Equals(""))
+            {
+                refreshCategory();
+                comboBox3.Enabled = true;
+            }
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox3.Text.Equals(""))
+            {
+                refreshName();
+                comboBox5.Enabled = true;
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

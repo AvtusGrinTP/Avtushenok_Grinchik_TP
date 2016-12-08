@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,13 +58,6 @@
             this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Наименование товара: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(186, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // label2
             // 
@@ -125,7 +120,6 @@
             this.comboBox2.Size = new System.Drawing.Size(241, 21);
             this.comboBox2.TabIndex = 10;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            this.comboBox2.Click += new System.EventHandler(this.comboBox2_Click);
             // 
             // comboBox3
             // 
@@ -135,7 +129,15 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(241, 21);
             this.comboBox3.TabIndex = 11;
-            this.comboBox3.Click += new System.EventHandler(this.comboBox3_Click);
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.Location = new System.Drawing.Point(186, 148);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(241, 21);
+            this.comboBox4.TabIndex = 20;
             // 
             // button1
             // 
@@ -172,6 +174,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 20);
             this.textBox2.TabIndex = 15;
+            
             // 
             // label7
             // 
@@ -197,6 +200,13 @@
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Номер заказа: ";
+            ///label 9
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(55, 258);
+            this.label9.Name = "label8";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Цена: ";
             // 
             // textBox5
             // 
@@ -204,6 +214,13 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 19;
+            
+            //next box 6
+            this.textBox6.Location = new System.Drawing.Point(186, 258);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 21;
+            
             // 
             // AddNewOrder
             // 
@@ -211,6 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox4);
@@ -226,9 +244,11 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label9);
+
             this.MaximizeBox = false;
             this.Name = "AddNewOrder";
             this.ShowIcon = false;
@@ -240,9 +260,9 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+       // private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
@@ -258,6 +278,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

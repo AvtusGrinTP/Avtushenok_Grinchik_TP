@@ -80,7 +80,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 19;
             this.listBox2.Items.AddRange(new object[] {
-            "№ заказа | Поставщик                         | Заказано | Телефон      "});
+            "№ заказа | Товар                             | Заказано | Телефон      "});
             this.listBox2.Location = new System.Drawing.Point(32, 31);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(640, 23);

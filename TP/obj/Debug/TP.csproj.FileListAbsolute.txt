@@ -24,3 +24,29 @@ D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.pdb
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe.config
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.pdb
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.pdb
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.dll
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.dll
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.pdb
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.pdb
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewOrder.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProvider.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProviderOrder.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Bookmaker.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ClientManager.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Courier.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithOne_Buttom.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditOrder.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditProvider.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.MakeProviderOrder.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Properties.Resources.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderList.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderManager.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StartUpForm.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache

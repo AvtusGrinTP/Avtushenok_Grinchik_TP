@@ -75,7 +75,31 @@ namespace ClassLibrary.by.rfe.store.Entity
             }
         }
 
-        
-        
+        public override int GetHashCode()
+        {
+            return classofProduct.GetHashCode() * category.GetHashCode() * type.GetHashCode() * name.GetHashCode() * 19;
+                
+        }
+        public override bool Equals(object obj)
+        {
+            if (this == obj) return true;
+            if (obj == null) return false;
+            if (this.GetType() != obj.GetType()) return false;
+            Product product = (Product)obj;
+            if (classofProduct == null)
+                return (null == product.ClassofProduct);
+            if (!classofProduct.Equals(product.ClassofProduct)) return false;
+            if (category == null)
+                return (product.Category == null);
+            if (!category.Equals(product.Category)) return false;
+            if (type == null)
+                return (null == product.Type);
+            if (!Type.Equals(product.Type)) return false;
+            if (name == null)
+                return (null == product.Name);
+            return name.Equals(product.Name);
+            
+        }
+
     }
 }

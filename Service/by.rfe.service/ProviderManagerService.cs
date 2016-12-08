@@ -50,10 +50,11 @@ namespace Service.by.rfe.service
                 }
             }
         }
+       // public void addNewOrder();
 
         public void deleteProvider(Provider provider)
         {
-            getInstance().ProviderList.Remove(provider);
+           ProviderList.Remove(provider);
         }
 
         public void addProvider(string name, string adress, string phoneNumber)

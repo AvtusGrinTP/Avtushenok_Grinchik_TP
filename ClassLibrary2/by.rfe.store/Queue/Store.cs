@@ -10,13 +10,21 @@ namespace ClassLibrary.by.rfe.store.Queue
 {
    public class Store //это склад, здесь таблицы(словари)(Dictionary) продуктов
     {
-        private Dictionary<Product, int> products;
+        private Dictionary<Product, int> products = new Dictionary<Product, int>();
         private static  Store instance = new Store(); // создаем экземпляр этого же класса 
                                                 // что бы в последствии получить доступ к полю products
         private Store()
         {
             //делаем приватный конструктор, что бы нигде кроме этого класса нельзя было создать объект Store
-            products.Add(new Product("klass", "kategoria", "tip", "name"), 20);
+            products.Add(new Product("Промышленные", "бытовая техника", "холодильники", "samsung"), 18);
+            products.Add(new Product("Промышленные", "бытовая техника", "холодильники", "lg"), 2);
+            products.Add(new Product("Промышленные", "бытовая техника", "телевизоры", "sony"), 10);
+            products.Add(new Product("Промышленные", "бытовая техника", "телевизоры", "horizont"), 15);
+            products.Add(new Product("Промышленные", "спорт товары", "лыжи", "телеханы"), 23);
+            products.Add(new Product("Продуктовые", "молочные", "йогурты", "ёмми"), 7);
+            products.Add(new Product("Продуктовые", "кондитерские", "шоколад", "аленка"), 90);
+            products.Add(new Product("Продуктовые", "кондитерские", "конфеты", "столичные"), 8);
+            
         }                           
         public Dictionary<Product, int> Products
         {

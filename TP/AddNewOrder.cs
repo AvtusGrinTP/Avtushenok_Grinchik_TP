@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibrary.by.rfe.store.Queue;
-using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -17,29 +16,53 @@ namespace TP
         public AddNewOrder(string service)
         {
             InitializeComponent();
+            refreshClass();
             Text = service;
-
-            comboBox1.Items.AddRange(new string[] {
-            "Продовольственные товары",
-            "Промышленные товары"});
-
-            comboBox2.Items.AddRange(new string[] {
-            "Категория 1",
-            "Категория 2"});
             comboBox2.Enabled = false;
-
-            comboBox3.Items.AddRange(new string[] {
-            "Тип 1",
-            "Тип 2"});
             comboBox3.Enabled = false;
+            comboBox4.Enabled = false;
 
         }
+        void refreshClass()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> classs = clientManagerService.getClass();
+            string[] cl = classs.ToArray<string>();
+            comboBox1.Items.AddRange(cl);
+           
+     }
+        void refreshCategory()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> categories = clientManagerService.getCategories(comboBox1.Text);
+            string[] cat = categories.ToArray<string>();
+            comboBox2.Items.Clear();
+            comboBox2.Items.AddRange(cat);
+        }
+
+        void refreshType()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> types = clientManagerService.getTypes(comboBox2.Text);
+            string[] ty = types.ToArray<string>();
+            comboBox3.Items.Clear();
+            comboBox3.Items.AddRange(ty);
+        }
+        void refreshName()
+        {
+            ClientManagerService clientManagerService = ClientManagerService.getInstance();
+            HashSet<string> names = clientManagerService.getNames(comboBox3.Text);
+            string[] ty = names.ToArray<string>();
+            comboBox4.Items.Clear();
+            comboBox4.Items.AddRange(ty);
+        }
+
 
         private void createOrderbutton_Click(object sender, EventArgs e)
         {
 
-            if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || textBox1.Text.Equals("") || textBox2.Text.Equals("")
-                || textBox3.Text.Equals("") || textBox4.Text.Equals("") || textBox5.Text.Equals(""))
+            if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || comboBox4.Text.Equals("") || textBox2.Text.Equals("")
+                || textBox3.Text.Equals("") || textBox4.Text.Equals("") || textBox5.Text.Equals("")|| textBox6.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
@@ -58,9 +81,19 @@ namespace TP
                     else
                     {
 
-                    //    ClientOrderList.addClientOrder();
-                        Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
-                        createOrder.ShowDialog();
+                        ClientManagerService clientManagerService = ClientManagerService.getInstance();
+                        if (clientManagerService.isExistId(int.Parse(textBox5.Text)))
+                            new DialogWithOne_Buttom("Такой номер заказа уже существет", Text).ShowDialog();
+                        else
+                        {                          
+                            clientManagerService.addClientOrder(int.Parse(textBox5.Text), comboBox1.Text,
+                                comboBox2.Text, comboBox3.Text,comboBox4.Text, 
+                                int.Parse(textBox3.Text), textBox2.Text, textBox4.Text, double.Parse(textBox6.Text));
+                            ///  Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
+                        //createOrder.ShowDialog();
+                        }
+
+
 
                         Close();
                     }
@@ -79,30 +112,13 @@ namespace TP
             Close();
         }
 
-        private void comboBox2_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.Text.Equals("Продовольственные товары"))
-            {
-                //            comboBox3.Items[0].;
-               // comboBox2.Items[1].Remove 
-            }
-            else 
-            {
-                comboBox2.Items.Add("bb");
-            }
-        }
-
-        private void comboBox3_Click(object sender, EventArgs e)
-        {
-            
-                
-           
-        }
+        
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (!comboBox1.Text.Equals(""))
             {
+                refreshCategory();
                 comboBox2.Enabled = true;
             }
         }
@@ -111,10 +127,19 @@ namespace TP
         {
             if (!comboBox2.Text.Equals(""))
             {
+                refreshType();
                 comboBox3.Enabled = true;
             }
         }
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox3.Text.Equals(""))
+            {
+                refreshName();
+                comboBox4.Enabled = true;
+            }
+        }
 
-        
+       
     }
 }
