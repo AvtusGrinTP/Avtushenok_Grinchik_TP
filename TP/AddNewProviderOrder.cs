@@ -8,18 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service.by.rfe.service;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace TP
 {
     public partial class AddNewProviderOrder : Form
     {
-        public AddNewProviderOrder()
+        public AddNewProviderOrder(string service)
         {
             InitializeComponent();
+            Text = service;
             refreshClass();
             comboBox2.Enabled = false;
             comboBox3.Enabled = false;
             comboBox5.Enabled = false;
+            comboBox4.Items.Clear();
+
+            foreach (Provider provider in ProviderManagerService.getInstance().ProviderList)
+            {
+                comboBox4.Items.Add(provider.Name);
+            }
             //надо фиксить еще
         }
         void refreshClass()
@@ -119,7 +127,7 @@ namespace TP
         {
             if (!comboBox2.Text.Equals(""))
             {
-                refreshCategory();
+                refreshType();
                 comboBox3.Enabled = true;
             }
 
@@ -134,9 +142,6 @@ namespace TP
             }
         }
 
-        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -40,7 +40,7 @@ namespace TP
 
         private void addNewbutton_Click(object sender, EventArgs e)
         {
-            Form addNew = new AddNewProviderOrder();
+            Form addNew = new AddNewProviderOrder(Text);
             addNew.ShowDialog();
         }
 

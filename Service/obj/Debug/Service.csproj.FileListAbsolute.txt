@@ -19,3 +19,10 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\bin\De
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.dll
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\bin\Debug\Service.dll
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\bin\Debug\Service.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\bin\Debug\ClassLibrary2.dll
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\bin\Debug\ClassLibrary2.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.dll
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.pdb

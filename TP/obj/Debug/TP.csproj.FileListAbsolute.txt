@@ -50,3 +50,29 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\T
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StartUpForm.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe.config
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.dll
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.dll
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.pdb
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProvider.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProviderOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Bookmaker.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ClientManager.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Courier.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithOne_Buttom.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.EditProvider.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.MakeProviderOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Properties.Resources.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderList.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderManager.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StartUpForm.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
+D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
