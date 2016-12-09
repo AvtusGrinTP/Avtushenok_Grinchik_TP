@@ -68,6 +68,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Количество товаров: ";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(55, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Цена: ";
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(186, 174);
@@ -174,7 +183,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 20);
             this.textBox2.TabIndex = 15;
-            
             // 
             // label7
             // 
@@ -200,13 +208,6 @@
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Номер заказа: ";
-            ///label 9
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(55, 258);
-            this.label9.Name = "label8";
-            this.label9.Size = new System.Drawing.Size(86, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Цена: ";
             // 
             // textBox5
             // 
@@ -214,13 +215,13 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 19;
-            
-            //next box 6
+            // 
+            // textBox6
+            // 
             this.textBox6.Location = new System.Drawing.Point(186, 258);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 21;
-            
             // 
             // AddNewOrder
             // 
@@ -248,7 +249,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
-
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "AddNewOrder";
             this.ShowIcon = false;

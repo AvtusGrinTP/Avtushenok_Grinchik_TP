@@ -62,6 +62,7 @@
             this.ClientSize = new System.Drawing.Size(334, 215);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.messageText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DialogWithOne_Buttom";

@@ -74,8 +74,7 @@
             this.listBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox2.ItemHeight = 19;
             this.listBox2.Items.AddRange(new object[] {
-            "№ заказа | Клиент        | Заказано | Недостача | С" +
-                "татус     "});
+            "№ заказа | Клиент        | Заказано | Недостача | Статус     "});
             this.listBox2.Location = new System.Drawing.Point(32, 54);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(640, 23);
@@ -91,6 +90,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ClientManager";
             this.ShowIcon = false;

@@ -84,6 +84,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(148, 112);
+            this.textBox3.MaxLength = 13;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(123, 20);
             this.textBox3.TabIndex = 5;
@@ -134,6 +135,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "EditProvider";
             this.ShowIcon = false;

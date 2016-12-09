@@ -60,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(784, 584);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Bookmaker";
             this.ShowIcon = false;
