@@ -56,6 +56,7 @@
             this.tabControl1.Controls.Add(this.courierList);
             this.tabControl1.Controls.Add(this.toStockList);
             this.tabControl1.Controls.Add(this.errorList);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -67,18 +68,19 @@
             this.orderList.BackColor = System.Drawing.Color.Silver;
             this.orderList.Controls.Add(this.button1);
             this.orderList.Controls.Add(this.listBox1);
-            this.orderList.Location = new System.Drawing.Point(4, 22);
+            this.orderList.Location = new System.Drawing.Point(4, 28);
             this.orderList.Name = "orderList";
             this.orderList.Padding = new System.Windows.Forms.Padding(3);
-            this.orderList.Size = new System.Drawing.Size(705, 536);
+            this.orderList.Size = new System.Drawing.Size(705, 530);
             this.orderList.TabIndex = 0;
             this.orderList.Text = "Список заказов";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(275, 474);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(285, 464);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 50);
+            this.button1.Size = new System.Drawing.Size(150, 60);
             this.button1.TabIndex = 2;
             this.button1.Text = "Добавить в список";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,14 +88,13 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "azaz",
-            "h"});
+            this.listBox1.ItemHeight = 19;
             this.listBox1.Location = new System.Drawing.Point(13, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(680, 446);
+            this.listBox1.Size = new System.Drawing.Size(680, 441);
             this.listBox1.TabIndex = 1;
             // 
             // courierList
@@ -101,18 +102,19 @@
             this.courierList.BackColor = System.Drawing.Color.Silver;
             this.courierList.Controls.Add(this.button2);
             this.courierList.Controls.Add(this.listBox2);
-            this.courierList.Location = new System.Drawing.Point(4, 22);
+            this.courierList.Location = new System.Drawing.Point(4, 28);
             this.courierList.Name = "courierList";
             this.courierList.Padding = new System.Windows.Forms.Padding(3);
-            this.courierList.Size = new System.Drawing.Size(705, 536);
+            this.courierList.Size = new System.Drawing.Size(705, 530);
             this.courierList.TabIndex = 1;
             this.courierList.Text = "Список отправки";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 474);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(285, 464);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 50);
+            this.button2.Size = new System.Drawing.Size(150, 60);
             this.button2.TabIndex = 1;
             this.button2.Text = "Отправить Курьеру";
             this.button2.UseVisualStyleBackColor = true;
@@ -121,10 +123,11 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 19;
             this.listBox2.Location = new System.Drawing.Point(13, 6);
             this.listBox2.Name = "listBox2";
             this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(680, 446);
+            this.listBox2.Size = new System.Drawing.Size(680, 441);
             this.listBox2.TabIndex = 0;
             // 
             // toStockList
@@ -132,25 +135,27 @@
             this.toStockList.BackColor = System.Drawing.Color.Silver;
             this.toStockList.Controls.Add(this.listBox3);
             this.toStockList.Controls.Add(this.button3);
-            this.toStockList.Location = new System.Drawing.Point(4, 22);
+            this.toStockList.Location = new System.Drawing.Point(4, 28);
             this.toStockList.Name = "toStockList";
-            this.toStockList.Size = new System.Drawing.Size(705, 536);
+            this.toStockList.Size = new System.Drawing.Size(705, 530);
             this.toStockList.TabIndex = 2;
             this.toStockList.Text = "Список доставок";
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 19;
             this.listBox3.Location = new System.Drawing.Point(13, 6);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(680, 446);
+            this.listBox3.Size = new System.Drawing.Size(680, 441);
             this.listBox3.TabIndex = 1;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(275, 474);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(285, 464);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 50);
+            this.button3.Size = new System.Drawing.Size(150, 60);
             this.button3.TabIndex = 0;
             this.button3.Text = "Добавить товар на склад";
             this.button3.UseVisualStyleBackColor = true;
@@ -161,17 +166,18 @@
             this.errorList.BackColor = System.Drawing.Color.Silver;
             this.errorList.Controls.Add(this.button5);
             this.errorList.Controls.Add(this.listBox4);
-            this.errorList.Location = new System.Drawing.Point(4, 22);
+            this.errorList.Location = new System.Drawing.Point(4, 28);
             this.errorList.Name = "errorList";
-            this.errorList.Size = new System.Drawing.Size(705, 536);
+            this.errorList.Size = new System.Drawing.Size(705, 530);
             this.errorList.TabIndex = 3;
             this.errorList.Text = "Список ошибок";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(275, 474);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(285, 464);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 50);
+            this.button5.Size = new System.Drawing.Size(150, 60);
             this.button5.TabIndex = 2;
             this.button5.Text = "Отправить Курьеру";
             this.button5.UseVisualStyleBackColor = true;
@@ -180,10 +186,11 @@
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 19;
             this.listBox4.Location = new System.Drawing.Point(13, 6);
             this.listBox4.Name = "listBox4";
             this.listBox4.ScrollAlwaysVisible = true;
-            this.listBox4.Size = new System.Drawing.Size(680, 446);
+            this.listBox4.Size = new System.Drawing.Size(680, 441);
             this.listBox4.TabIndex = 0;
             // 
             // timerOrder

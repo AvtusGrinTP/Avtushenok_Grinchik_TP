@@ -16,7 +16,7 @@ namespace TP
         public Bookmaker()
         {
             InitializeComponent();
-            listBox1.Items.AddRange(new object[] {
+            listBox2.Items.AddRange(new object[] {
             "123",
             "234",
             "345"});
@@ -40,15 +40,12 @@ namespace TP
 
         
 
-        private void listBox1_DoubleClick(object sender, EventArgs e)
+        private void listBox_DoubleClick(object sender, EventArgs e)
         {
-            DialogWithOne_Buttom confirmPay = new DialogWithOne_Buttom("confirm", service);
+            DialogWithOne_Buttom confirmPay = new DialogWithOne_Buttom("Подтвердить оплату", service);
             confirmPay.ShowDialog();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

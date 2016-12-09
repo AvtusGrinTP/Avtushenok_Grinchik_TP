@@ -23,7 +23,7 @@ namespace ClassLibrary.by.rfe.store.Queue
                 10, "Client2", "Minsk azaza2", true, 0, 20));
             orders.Add(new ClientOrder(3,
                 new Product("Промышленные товары", "cat3", "type3", "name3"),
-                15, "Client3", "Minsk azaza3", true, 0, 30));
+                15, "Client3", "Minsk azaza3", true, 10, 30));
             orders.Add(new ClientOrder(4,
                 new Product("Продовольственные товары", "cat4", "type4", "name4"),
                 7, "Client4", "Minsk azaza", true, 0, 12));

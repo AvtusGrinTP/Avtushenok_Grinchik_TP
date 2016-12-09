@@ -33,7 +33,7 @@ namespace ClassLibrary.by.rfe.store.Entity
         }
         public override string ToString()
         {
-            int N1 = 9, N2 = 34, N3 = 9, N4 = 11;
+            int N1 = 9, N2 = 42, N3 = 11;
             string Out;
 
             N1 -= getId().ToString().Length;
@@ -46,11 +46,11 @@ namespace ClassLibrary.by.rfe.store.Entity
 
             N3 -= getQuantity().ToString().Length;
             Out += getQuantity().ToString();
-            Out = Space(Out, N3, true);
+            Out = Space(Out, N3, false);
             //почему телефон null???
             //          N4 -= Provider.PhoneNumber.ToString().Length;
             //          Out += Provider.PhoneNumber.ToString();
-            Out = Space(Out, N4, false);
+          //  Out = Space(Out, N4, false);
 
             return Out;
         }

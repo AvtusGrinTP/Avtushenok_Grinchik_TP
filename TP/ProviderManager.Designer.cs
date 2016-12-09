@@ -71,7 +71,7 @@
             // timer
             // 
             this.timer.Interval = 10000;
-            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // listBox2
             // 
@@ -79,7 +79,7 @@
             this.listBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 19;
-            this.listBox2.Items.Add("№ заказа | Товар                             | Заказано ");
+            this.listBox2.Items.Add("№ заказа | Товар                                     | Заказано ");
             this.listBox2.Location = new System.Drawing.Point(32, 31);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(640, 23);
