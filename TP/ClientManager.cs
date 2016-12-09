@@ -96,6 +96,7 @@ namespace TP
             //    quantity = currentOrder.getQuantity();
             Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
+            refresh();
         }
 
         

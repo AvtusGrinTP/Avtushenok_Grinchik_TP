@@ -130,6 +130,26 @@ namespace Service.by.rfe.service
             }
             return false;
         }
+        public void editOrder(int id, string address)
+        {
+            ClientOrderList clientOrderlist = ClientOrderList.getInstance();
+            ClientOrder editedOrder = null;
+            foreach (ClientOrder order in clientOrderlist.Orders)
+            {
+                if (order.getId() == id)
+                    editedOrder = order; 
+            }
+            if (editedOrder != null)
+            {
+                editedOrder.setAddress(address);
+            }
+
+        }
+
+        public void deleteOrder(ClientOrder clientOrder)
+        {
+            ClientOrderList.getInstance().Orders.Remove(clientOrder);
+        }
 
 
     }
