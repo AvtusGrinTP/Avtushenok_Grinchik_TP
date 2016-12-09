@@ -43,14 +43,14 @@
             this.listBox1.ItemHeight = 19;
             this.listBox1.Location = new System.Drawing.Point(32, 52);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(640, 308);
+            this.listBox1.Size = new System.Drawing.Size(640, 346);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(102, 397);
+            this.button2.Location = new System.Drawing.Point(101, 419);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 60);
             this.button2.TabIndex = 2;
@@ -60,7 +60,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(449, 397);
+            this.button3.Location = new System.Drawing.Point(448, 419);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 60);
             this.button3.TabIndex = 3;
@@ -79,8 +79,7 @@
             this.listBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 19;
-            this.listBox2.Items.AddRange(new object[] {
-            "№ заказа | Товар                             | Заказано | Телефон      "});
+            this.listBox2.Items.Add("№ заказа | Товар                             | Заказано ");
             this.listBox2.Location = new System.Drawing.Point(32, 31);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(640, 23);
