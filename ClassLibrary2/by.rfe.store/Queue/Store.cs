@@ -34,7 +34,7 @@ namespace ClassLibrary.by.rfe.store.Queue
             }
 
         }
-               
+            
         public void addProduct(Product pr, int quantuty)
         {
             products.Add(pr, quantuty);

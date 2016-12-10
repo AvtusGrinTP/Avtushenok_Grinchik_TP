@@ -1,6 +1,6 @@
 ﻿namespace TP
 {
-    partial class DialogWithOne_Buttom
+    partial class DialogWithTwo_Buttom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.messageText = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // messageText
+            // label1
             // 
-            this.messageText.AutoSize = true;
-            this.messageText.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.messageText.Location = new System.Drawing.Point(18, 61);
-            this.messageText.MinimumSize = new System.Drawing.Size(300, 30);
-            this.messageText.Name = "messageText";
-            this.messageText.Size = new System.Drawing.Size(300, 30);
-            this.messageText.TabIndex = 1;
-            this.messageText.Text = "Message";
-            this.messageText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(53, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(125, 146);
+            this.button1.Location = new System.Drawing.Point(35, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ok";
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Подтвердить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.confirmbutton_Click);
             // 
-            // DialogWithOne_Buttom
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(201, 147);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 30);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.cancelbutton_Click);
+            // 
+            // DialogWithTwo_Buttom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(334, 215);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.messageText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "DialogWithOne_Buttom";
+            this.Name = "DialogWithTwo_Buttom";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DialogWithTwo_Buttom";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,7 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label messageText;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
