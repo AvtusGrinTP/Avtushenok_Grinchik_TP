@@ -17,6 +17,7 @@ namespace TP
         {
             InitializeComponent();
             refreshClass();
+            textBox5.Text = ClientManagerService.getInstance().getIdClienOrder();
             Text = service;
             comboBox2.Enabled = false;
             comboBox3.Enabled = false;
@@ -140,6 +141,14 @@ namespace TP
             }
         }
 
-       
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBox4.Text.Equals(""))
+            {
+               //в лейбл выводит число
+               //нужно взять через сервис
+              //  label10.Text = ClientManagerService.getInstance().getClientOrders().
+            }
+        }
     }
 }

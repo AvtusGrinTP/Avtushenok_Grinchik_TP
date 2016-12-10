@@ -118,6 +118,16 @@ namespace Service.by.rfe.service
 
             return names;
         }
+        //не знаю как взять значение по кдючу...
+        public HashSet<int> getQuantity()
+        {
+            Store store = Store.getInstance();
+            HashSet<int> quantity = new HashSet<int>();
+
+          
+
+            return quantity;
+        }
         public bool isExistId(int id)
         {
             ClientOrderList orders =ClientOrderList.getInstance();
@@ -149,6 +159,19 @@ namespace Service.by.rfe.service
         public void deleteOrder(ClientOrder clientOrder)
         {
             ClientOrderList.getInstance().Orders.Remove(clientOrder);
+        }
+
+        public string getIdClienOrder() {
+            int maxId = 0;
+            foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
+            {
+                if(order.getId()> maxId)
+                {
+                    maxId = order.getId();
+                }
+            }
+            maxId++;
+            return maxId.ToString();
         }
 
 
