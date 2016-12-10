@@ -38,8 +38,15 @@ namespace Service.by.rfe.service
             return list.Orders;
         }
 
-        public void makeOrder(int id, Provider provider)
+        public void makeOrder(int id, string name)
         {
+            Provider provider = null;
+            foreach (Provider prov in ProviderList)
+            {
+                if (prov.Name.Equals(name))
+                    provider = prov;
+            }
+
             ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
             List<ProviderOrder> orders = providerOrderList.Orders;
             foreach (ProviderOrder or in orders)
@@ -50,7 +57,6 @@ namespace Service.by.rfe.service
                 }
             }
         }
-       // public void addNewOrder();
 
         public void deleteProvider(Provider provider)
         {
@@ -61,6 +67,11 @@ namespace Service.by.rfe.service
         {
             Provider provider = new Provider(name, adress,phoneNumber);
             providerList.Add(provider);
+        }
+
+        public void MakeProviderOrder()
+        {
+
         }
     }
 }

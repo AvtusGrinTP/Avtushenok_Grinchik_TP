@@ -14,12 +14,13 @@ namespace TP
 {
     public partial class MakeProviderOrder : Form
     {
-       // string service = "Provider Manager Service";
+       private ProviderOrder currentProviderOrder;
         public MakeProviderOrder(ProviderOrder currentProviderOrder, string servise)
         {
             InitializeComponent();
+            this.currentProviderOrder = currentProviderOrder;
             textBox1.Text = currentProviderOrder.getId().ToString();
-          
+            textBox2.Text = currentProviderOrder.getQuantity().ToString();
             Text = servise;
             refresh();
 
@@ -37,7 +38,7 @@ namespace TP
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Equals("") || comboBox1.Text.Equals(""))
+            if (textBox1.Text.Equals("") || comboBox1.Text.Equals("") || textBox2.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
@@ -56,15 +57,10 @@ namespace TP
                     else
                     {
                         ProviderManagerService providerService = ProviderManagerService.getInstance();
-                        Provider provider = null;
-                        foreach(Provider prov in providerService.ProviderList)
-                        {
-                            if (prov.Name.Equals(comboBox1.Text.Trim()))
-                                provider = prov;
-                        }
-                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()), provider);
+                        
+                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()),comboBox1.Text);
 
-                        Form confirm = new DialogWithOne_Buttom("confirm", Text);
+                        Form confirm = new DialogWithOne_Buttom("Захаз оформлен", Text);
                         confirm.ShowDialog();
 
                         Close();
