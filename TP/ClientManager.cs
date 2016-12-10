@@ -98,7 +98,5 @@ namespace TP
             editOrder.ShowDialog();
             refresh();
         }
-
-        
     }
 }

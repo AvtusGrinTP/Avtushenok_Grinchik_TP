@@ -46,6 +46,11 @@ namespace TP
             confirmPay.ShowDialog();
         }
 
-        
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListViewItem item = new ListViewItem();
+         //   item.
+           // listView1.Items.Add(new ListViewItem);
+        }
     }
 }

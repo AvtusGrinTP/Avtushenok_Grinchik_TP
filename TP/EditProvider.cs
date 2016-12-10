@@ -71,6 +71,7 @@ namespace TP
             Form deleteProvider = new DialogWithOne_Buttom("Поставщик удален", Text);
             deleteProvider.ShowDialog();
             Close();
+           
         }
     }
 }
