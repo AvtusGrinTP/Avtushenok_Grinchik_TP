@@ -174,6 +174,20 @@ namespace Service.by.rfe.service
             return maxId.ToString();
         }
 
+        public string showFindOrder(string client)
+        {
+            string Out = null;
+            foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
+            {
+                if (order.getCLient() == client)
+                {
+                    Out += order.ToString() + '/';
+                }
+            }
+            if (Out != null)
+                return Out;
+            else return null;
+        }
 
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
 using ClassLibrary.by.rfe.store.Queue;
+using Service.by.rfe.service;
 
 
 namespace TP
@@ -25,6 +26,8 @@ namespace TP
 
         public void refresh()
         {
+            textBox1.Text = "Поиск";
+            textBox1.ForeColor = Color.Gray;
             listBox1.Items.Clear();
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
@@ -71,7 +74,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach(ClientOrder order in ClientOrderList.getInstance().Orders)
+                foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
                 {
                     if (orderString.Split('|')[1].Trim().Equals(order.getCLient()))
                     {
@@ -86,16 +89,40 @@ namespace TP
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            //string classofProduct = currentOrder.Product.ClassofProduct,
-            //    category = currentOrder.Product.Category,
-            //    type = currentOrder.Product.Type,
-            //    name = currentOrder.Product.Name,
-            //    client = currentOrder.getCLient(),
-            //    addres = currentOrder.getAddress();
-            //int id = currentOrder.getId(),
-            //    quantity = currentOrder.getQuantity();
             Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
+            refresh();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox1.ForeColor = Color.Black;
+
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                string outPut = ClientManagerService.getInstance().showFindOrder(textBox1.Text);
+                if (outPut != null)
+                {
+                    listBox1.Items.Clear();
+                    string[] order = outPut.Split('/');
+                    for (int i = 0; i < order.Length - 1; i++)
+                        listBox1.Items.Add(order[i]);
+                }
+                else
+                {
+                    Form err = new DialogWithOne_Buttom("Проверте запрос на поиск",Text);
+                    err.ShowDialog();
+                }
+            }
+        }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
             refresh();
         }
     }

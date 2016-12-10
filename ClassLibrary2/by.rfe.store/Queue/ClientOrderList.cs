@@ -24,9 +24,12 @@ namespace ClassLibrary.by.rfe.store.Queue
             orders.Add(new ClientOrder(3,
                 new Product("Промышленные товары", "cat3", "type3", "name3"),
                 15, "Client3", "Minsk azaza3", true, 10, 30));
-            orders.Add(new ClientOrder(4,
+            orders.Add(new ClientOrder(6,
                 new Product("Продовольственные товары", "cat4", "type4", "name4"),
                 7, "Client4", "Minsk azaza", true, 0, 12));
+            orders.Add(new ClientOrder(4,
+                new Product("Продовольственные товары", "cat5", "type4", "name4"),
+                70, "Client4", "Minsk azaza", false, 0, 12));
             orders.Add(new ClientOrder(5,
                 new Product("Промышленные товары", "cat5", "type5", "name5"),
                 3, "Client6", "Minsk azaza5", true, 0, 14));
