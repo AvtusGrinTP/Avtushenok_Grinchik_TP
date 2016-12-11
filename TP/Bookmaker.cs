@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +15,19 @@ namespace TP
     public partial class Bookmaker : Form
     {
         string service = "Bookmaker Service";
+        private ClientOrder currentOrder;
         public Bookmaker()
         {
             InitializeComponent();
-            listBox2.Items.AddRange(new object[] {
-            "123",
-            "234",
-            "345"});
+            refresh();
         }
 
-      
+        void refresh() {
+            foreach (ClientOrder order in BookmakerService.INSTANCE1.getClientOrders())
+                listBox2.Items.Add(order);
+            foreach (ProviderOrder order in BookmakerService.INSTANCE1.getProviderOrders())
+                listBox2.Items.Add(order);
+        }
         //private void confirmClientbutton_Click(object sender, EventArgs e)
         //{
         //    string confirm = "Заказ оплачен Клиентом";
@@ -44,6 +49,8 @@ namespace TP
         {
             DialogWithOne_Buttom confirmPay = new DialogWithOne_Buttom("Подтвердить оплату", service);
             confirmPay.ShowDialog();
+            //BookmakerService.INSTANCE1.pay(currentOrder); 
+            refresh();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

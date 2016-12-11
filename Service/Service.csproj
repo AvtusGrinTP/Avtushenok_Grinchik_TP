@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="by.rfe.service\BookmakerService.cs" />
     <Compile Include="by.rfe.service\ClientManagerService.cs" />
     <Compile Include="by.rfe.service\exception\ServiceException.cs" />
     <Compile Include="by.rfe.service\ProviderManagerService.cs" />

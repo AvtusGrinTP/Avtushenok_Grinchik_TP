@@ -76,7 +76,7 @@ namespace TP
             {
                 foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
                 {
-                    if (orderString.Split('|')[1].Trim().Equals(order.getCLient()))
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))//чувак, я тут переписал селект берем по id  а не по клиенту
                     {
                         currentOrder = order;
                         break;
