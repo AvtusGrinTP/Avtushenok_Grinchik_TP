@@ -16,7 +16,7 @@ namespace TP
     public partial class EditOrder : Form
     {
         private ClientOrder currentOrder;
-        public EditOrder(ClientOrder currentOrder, string service/* ,int id, string classofProduct, string category, string type, string name, int quantity, string client, string addres*/)
+        public EditOrder(ClientOrder currentOrder, string service)
         {
             InitializeComponent();
             this.currentOrder = currentOrder; 

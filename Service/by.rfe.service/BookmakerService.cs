@@ -10,15 +10,15 @@ namespace Service.by.rfe.service
 {
    public class BookmakerService
     {
-        private static BookmakerService INSTANCE = new BookmakerService();
+        private static BookmakerService instance = new BookmakerService();
 
         private BookmakerService() { }
 
-        public static BookmakerService INSTANCE1
+        public static BookmakerService getInstance
         {
             get
             {
-                return INSTANCE;
+                return instance;
             }
         }
         public List<ClientOrder> getClientOrders()

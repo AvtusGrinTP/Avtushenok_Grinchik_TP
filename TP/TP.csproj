@@ -70,6 +70,18 @@
     <Compile Include="Bookmaker.Designer.cs">
       <DependentUpon>Bookmaker.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookmakerInfClientOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmakerInfClientOrder.Designer.cs">
+      <DependentUpon>BookmakerInfClientOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookmakerInfProviderOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmakerInfProviderOrder.Designer.cs">
+      <DependentUpon>BookmakerInfProviderOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bookmaker.resx">
       <DependentUpon>Bookmaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookmakerInfClientOrder.resx">
+      <DependentUpon>BookmakerInfClientOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookmakerInfProviderOrder.resx">
+      <DependentUpon>BookmakerInfProviderOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientManager.resx">
       <DependentUpon>ClientManager.cs</DependentUpon>

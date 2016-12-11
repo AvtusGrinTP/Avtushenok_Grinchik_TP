@@ -26,10 +26,10 @@ namespace TP
             array[2] = new StoreKeeper();
             array[3] = new Courier();
             //int k = 3;
-            for (int i = 0; i < 4; i++)
+            for (int i = 3; i >= 0; i--)
             {
                 // Application.Run(array[i]);
-            //   array[i].Show();
+               array[i].Show();
             }
 
           //  var a = new ProviderManager();
@@ -39,8 +39,8 @@ namespace TP
 
              
 
-             Application.Run(new ProviderManager());
-            Application.Run(new Bookmaker());
+           //  Application.Run(new ProviderManager());
+           // Application.Run(new Bookmaker());
            // Application.Run(new StoreKeeper());
             //Application.Run(new Courier());
             //  Application.Run(new StartUpForm());

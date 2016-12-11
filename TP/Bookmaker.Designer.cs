@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -40,7 +42,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 19;
             this.listBox1.Items.AddRange(new object[] {
-            "№ заказа9| Менеджер    | Заказ |"});
+            "№ заказа | Менеджер      | Заказчик                 | Заказ                   "});
             this.listBox1.Location = new System.Drawing.Point(30, 37);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(730, 23);
@@ -65,8 +67,15 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.ScrollAlwaysVisible = true;
             this.listBox2.Size = new System.Drawing.Size(730, 517);
+            this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 7;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             this.listBox2.DoubleClick += new System.EventHandler(this.listBox_DoubleClick);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Bookmaker
             // 
@@ -82,7 +91,7 @@
             this.Name = "Bookmaker";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bookmaker Service";
+            this.Text = "Сервис Бухгалтера";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +102,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Timer timer;
     }
 }

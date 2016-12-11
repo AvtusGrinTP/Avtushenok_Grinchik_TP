@@ -78,3 +78,6 @@ D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKe
 D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
 D:\Project\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithTwo_Buttom.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithTwo_Buttom.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.DialogWithTwo_Buttom.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.BookmakerInfClientOrder.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.BookmakerInfProviderOrder.resources

@@ -66,10 +66,9 @@ namespace TP
 
         private void deletebutton_Click(object sender, EventArgs e)
         {   
-            
             Form deleteProvider = new DialogWithTwo_Buttom(currentProvider, "Вы действительно \nхотите удалить поставщика? ", Text);
             deleteProvider.ShowDialog();
-
+            Close();
         }
     }
 }

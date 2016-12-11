@@ -8,13 +8,17 @@ namespace ClassLibrary.by.rfe.store.Entity
 {
     public class ClientOrder : Order
     {
+        private string whoseOrder;
+        private bool inBookmaker;
         private string client;
         private string address;
         private bool isFull;
         private int countToEnd;
 
-        public ClientOrder(int id, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
+        public ClientOrder(int id, string whoseOrder, bool inBookmaker, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
+            this.whoseOrder = whoseOrder;
+            this.inBookmaker = inBookmaker;
             this.address = address;
             this.client = client;
             this.isFull = isFull;
@@ -52,7 +56,28 @@ namespace ClassLibrary.by.rfe.store.Entity
         {
             this.countToEnd = countToEnd;
         }
-
+        public string getWhoseOrder
+        {
+            get
+            {
+                return whoseOrder;
+            }
+            set
+            {
+                whoseOrder = value;
+            }
+        }
+        public bool isInBookmaker
+        {
+            get
+            {
+                return inBookmaker;
+            }
+            set
+            {
+                inBookmaker = value;
+            }
+        }
         public override string ToString()
         {
             int N1 = 9, N2 = 14, N3 = 9, N4 = 10;
