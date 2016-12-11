@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.by.rfe.store.Entity;
 using Service.by.rfe.service;
 
 namespace TP
@@ -145,6 +146,9 @@ namespace TP
         {
             if (!comboBox4.Text.Equals(""))
             {
+                Product produc = new Product(comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox4.Text);
+
+                label10.Text = (ClientManagerService.getInstance().getProductQuantity(produc)).ToString();
                //в лейбл выводит число
                //нужно взять через сервис
               //  label10.Text = ClientManagerService.getInstance().getClientOrders().

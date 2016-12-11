@@ -189,5 +189,12 @@ namespace Service.by.rfe.service
             else return null;
         }
 
+        public int getProductQuantity(Product product)
+        {
+            int a = 0;
+            Store.getInstance().Products.TryGetValue(product, out a);
+            return a;
+        }
+
     }
 }

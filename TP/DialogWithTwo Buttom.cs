@@ -31,12 +31,21 @@ namespace TP
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
-            ProviderManagerService provider = ProviderManagerService.getInstance();
-            provider.deleteProvider(currentProvider);
             
-            Form confirm = new DialogWithOne_Buttom( "Поставщик удален", Text);
-            confirm.ShowDialog();
-            Close();
-        }
+            ProviderManagerService provider = ProviderManagerService.getInstance();
+            if (provider.deleteProvider(currentProvider))
+            {
+                Form confirm = new DialogWithOne_Buttom("Поставщик удален", Text);
+                confirm.ShowDialog();
+                Close();
+            }
+
+            else
+            {
+                Form reject = new DialogWithOne_Buttom("Поставщик не был удален, \n т.к. еще не все его заказы отработаны", Text);
+                reject.ShowDialog();
+                Close();
+            }
+       }
     }
 }

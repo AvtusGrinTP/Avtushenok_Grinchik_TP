@@ -38,7 +38,7 @@ namespace TP
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Equals("") || comboBox1.Text.Equals("") || textBox2.Text.Equals(""))
+            if (textBox1.Text.Equals("") || comboBox1.Text.Equals("") || textBox2.Text.Equals("") || textBox3.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
@@ -57,8 +57,7 @@ namespace TP
                     else
                     {
                         ProviderManagerService providerService = ProviderManagerService.getInstance();
-                        
-                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()),comboBox1.Text);
+                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()),comboBox1.Text,int.Parse(textBox2.Text.Trim()), int.Parse(textBox3.Text.Trim()));
 
                         Form confirm = new DialogWithOne_Buttom("Захаз оформлен", Text);
                         confirm.ShowDialog();
