@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace TP
 {
@@ -17,12 +18,14 @@ namespace TP
         public StoreKeeper()
         {
             InitializeComponent();
-            timerOrder.Enabled = true;
-            timerError.Enabled = true;
+          //  timerOrder.Enabled = true;
+          //  timerError.Enabled = true;
             timerOrder.Start();
             timerError.Start();
 
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+
+            //в будем
 
           //  currentProduct = listBox1.Items;
         }
@@ -76,19 +79,50 @@ namespace TP
         {
             //каждые 10 сек будет добавляться в спісок заказов
             listBox1.Items.Add("100");
-            //orderList.BackColor = Color.Red;
-            //  tabControl1. = Color.Red;
-            //  tabControl1.TabPages[0].ForeColor = Color.Red;
-            // listBox4.Items.Add("Err");
+           
+
+        }
+        //делаем рефреш на два списка
+        //и каждому даем булевскую функцию, чтобы следить за добавлением новых элементов
+        private void refreshOrder()
+        {
+            listBox1.Items.Clear();
+            //foreach(ClientOrder order in Service)
+            {
+
+            }
+        }
+        private bool newOrder()
+        {
+            int count0 = listBox1.Items.Count;
+         //   refreshOrder();
+            if(count0 != listBox1.Items.Count)
+            {
+                return true;
+            }
+            return false;
+        }
+        private void timerError_Tick(object sender, EventArgs e)
+        {
+            listBox8.Items.Add("100000");
 
         }
 
-
+        private bool newErrorOrder()
+        {
+            int count0 = listBox8.Items.Count;
+            refreshOrder();
+            if (count0 == listBox8.Items.Count)
+            {
+                return true;
+            }
+            return false;
+        }
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
 
             Graphics g = e.Graphics;
-            TabPage tp = tabControl1.TabPages[e.Index];
+            //TabPage tp = tabControl1.TabPages[0];
 
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;  //optional
@@ -97,22 +131,33 @@ namespace TP
             RectangleF headerRect = new RectangleF(e.Bounds.X-5, e.Bounds.Y+2, e.Bounds.Width + 10, e.Bounds.Height+4);
 
             // This is the default colour to use for the non-selected tabs
-            SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
+            //           SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
 
             // This changes the colour if we're trying to draw the selected tabpage
-           // if (tabControl1.SelectedIndex == e.Index)
-             //   sb.Color = Color.Aqua;
+            // if (tabControl1.SelectedIndex == e.Index)
+            //   sb.Color = Color.Aqua;
 
             // Colour the header of the current tabpage based on what we did above
-            g.FillRectangle(sb, e.Bounds);
+            //g.FillRectangle(sb, e.Bounds);
 
             //Remember to redraw the text - I'm always using black for title text
-            g.DrawString(tp.Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+            if (newOrder()/* && tabControl1.TabPages[0].Text == orderList.Text*/)
+            {
+                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
+            }
+            else if(newErrorOrder() /*&& /*tabControl1.TabPages[3].Text == errorList.Text*/)
+            {
+                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
+
+            }
+            else
+            {
+                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+
+            }
         }
 
-        private void timerError_Tick(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

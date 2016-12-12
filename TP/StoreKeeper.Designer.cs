@@ -57,6 +57,7 @@
             // 
             // timerOrder
             // 
+            this.timerOrder.Enabled = true;
             this.timerOrder.Interval = 1000;
             this.timerOrder.Tick += new System.EventHandler(this.timerOrder_Tick);
             // 
@@ -70,6 +71,7 @@
             this.errorList.Name = "errorList";
             this.errorList.Size = new System.Drawing.Size(705, 530);
             this.errorList.TabIndex = 3;
+            this.errorList.Tag = "3";
             this.errorList.Text = "Список ошибок";
             // 
             // listBox8
@@ -117,6 +119,7 @@
             this.toStockList.Name = "toStockList";
             this.toStockList.Size = new System.Drawing.Size(705, 530);
             this.toStockList.TabIndex = 2;
+            this.toStockList.Tag = "2";
             this.toStockList.Text = "Список доставок";
             // 
             // listBox6
@@ -165,6 +168,7 @@
             this.courierList.Padding = new System.Windows.Forms.Padding(3);
             this.courierList.Size = new System.Drawing.Size(705, 530);
             this.courierList.TabIndex = 1;
+            this.courierList.Tag = "1";
             this.courierList.Text = "Список отправки";
             // 
             // listBox4
@@ -214,6 +218,7 @@
             this.orderList.Padding = new System.Windows.Forms.Padding(3);
             this.orderList.Size = new System.Drawing.Size(705, 530);
             this.orderList.TabIndex = 0;
+            this.orderList.Tag = "0";
             this.orderList.Text = "Список заказов";
             // 
             // listBox2
@@ -268,6 +273,7 @@
             // 
             // timerError
             // 
+            this.timerError.Enabled = true;
             this.timerError.Interval = 1000;
             this.timerError.Tick += new System.EventHandler(this.timerError_Tick);
             // 
