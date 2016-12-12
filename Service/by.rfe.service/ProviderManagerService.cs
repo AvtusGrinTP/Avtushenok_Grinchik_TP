@@ -56,6 +56,8 @@ namespace Service.by.rfe.service
                     or.Provider = provider;
                     or.Price = price;
                     or.setQuantity(quantity);
+                    
+                    ProviderOrderList.getInstance().Orders.Add(or);
                 }
             }
         }
@@ -77,9 +79,18 @@ namespace Service.by.rfe.service
             providerList.Add(provider);
         }
 
-        public void MakeProviderOrder()
+        public string getIdProviderOrder()
         {
-
+            int maxId = 0;
+            foreach (ProviderOrder order in ProviderOrderList.getInstance().Orders)
+            {
+                if (order.getId() > maxId)
+                {
+                    maxId = order.getId();
+                }
+            }
+            maxId++;
+            return maxId.ToString();
         }
     }
 }

@@ -10,17 +10,13 @@ namespace ClassLibrary.by.rfe.store.Entity
    public class ProviderOrder : Order
     {
         private Provider provider;
-        private string whoseOrder;
-        private bool inBookmaker;
-
-
-        public ProviderOrder(int id, string whoseOrder, bool inBookmaker, Product product, int quantity, double price) : base(id, product, quantity, price)
+    
+        public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
         {
-            this.whoseOrder = whoseOrder;
-            this.inBookmaker = inBookmaker;
-                   
+           
         }
 
+        public ProviderOrder() { }
         public Provider Provider
         {
             get
@@ -36,29 +32,9 @@ namespace ClassLibrary.by.rfe.store.Entity
            
         }
 
-        public string getWhoseOrder
-        {
-            get
-            {
-                return whoseOrder;
-            }
-            set
-            {
-                whoseOrder = value;
-            }
-        }
+    
 
-        public bool isInBookmaker
-        {
-            get
-            {
-                return inBookmaker;
-            }
-            set
-            {
-                inBookmaker = value;
-            }
-        }
+      
 
         public override string ToString()
         {

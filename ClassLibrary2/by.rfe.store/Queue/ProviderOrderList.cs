@@ -14,9 +14,9 @@ namespace ClassLibrary.by.rfe.store.Queue
 
         private ProviderOrderList()
         {
-            orders.Add(new ProviderOrder(2, "Provider", false,
+            orders.Add(new ProviderOrder(2, 
                 new Product("class2", "cat2", "type2", "Молоко"), 5, 124));
-            orders.Add(new ProviderOrder(5, "Provider", false,
+            orders.Add(new ProviderOrder(5, 
                new Product("class5", "cat4", "type4", "Вода"), 7,127));
 
         }

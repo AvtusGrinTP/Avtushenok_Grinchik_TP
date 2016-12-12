@@ -22,6 +22,7 @@ namespace ClassLibrary.by.rfe.store.Entity
             this.isPayed = false;
             this.price = price;
         }
+        public Order() { }
         public int getId()
         {
             return this.id;

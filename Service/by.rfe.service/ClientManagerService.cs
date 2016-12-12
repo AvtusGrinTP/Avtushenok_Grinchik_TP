@@ -41,7 +41,7 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, count);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id, "Client", false, product, quantity, clientName, clientAddress, true, 0, price));
+                clientorderList.addClientOrder(new ClientOrder(id,   product, quantity, clientName, clientAddress, true, 0, price));
                 return;
             }
             if (count < quantity)
@@ -50,9 +50,9 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, 0);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id, "Client", false, product, quantity, clientName, clientAddress, false, count, price));
+                clientorderList.addClientOrder(new ClientOrder(id,   product, quantity, clientName, clientAddress, false, count, price));
                 ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
-                providerOrderList.addProviderOrder(new ProviderOrder(providerOrderList.generateId(), "Provider", false, product, count, 0));
+                providerOrderList.addProviderOrder(new ProviderOrder(providerOrderList.generateId(),   product, count, 0));
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, 0);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id, "Client", false, product, quantity, clientName, clientAddress, true, 0, price));
+                clientorderList.addClientOrder(new ClientOrder(id,  product, quantity, clientName, clientAddress, true, 0, price));
                 return;
             }
         }

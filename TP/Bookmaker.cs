@@ -14,8 +14,7 @@ namespace TP
 {
     public partial class Bookmaker : Form
     {
-        private ClientOrder currentClientOrder;
-        private ProviderOrder currentProviderOrder;
+        private Order currentOrder;
         public Bookmaker()
         {
             InitializeComponent();
@@ -26,18 +25,18 @@ namespace TP
 
         void refresh()
         {
+            listBox2.Items.Clear();
             foreach (ClientOrder order in BookmakerService.getInstance.getClientOrders())
             {
-                if (!order.isInBookmaker && !order.getPayed())
-                {
+                
                     int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
                     string Out;
                     N1 -= order.getId().ToString().Length;
                     Out = order.getId().ToString();
                     Out = Space(Out, N1);
 
-                    N2 -= order.getWhoseOrder.Length;
-                    Out += order.getWhoseOrder;
+                    N2 -= "Client".Length;
+                    Out += "Client";
                     Out = Space(Out, N2);
 
                     N3 -= order.getCLient().ToString().Length;
@@ -48,23 +47,22 @@ namespace TP
                     Out += order.Product.Name;
                     Out = Space(Out, N4);
 
-                    order.isInBookmaker = true;
                     listBox2.Items.Add(Out);
-                }
+               
             }
 
             foreach (ProviderOrder order in BookmakerService.getInstance.getProviderOrders())
             {
-                if (!order.isInBookmaker)
-                {
+                
                     int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
                     string Out;
                     N1 -= order.getId().ToString().Length;
                     Out = order.getId().ToString();
                     Out = Space(Out, N1);
 
-                    N2 -= order.getWhoseOrder.Length;
-                    Out += order.getWhoseOrder;
+                    N2 -= "Provider".Length;
+                    Out += "Provider";
+
                     Out = Space(Out, N2);
 
                     N3 -= order.Provider.Name.Length;
@@ -75,9 +73,9 @@ namespace TP
                     Out += order.Product.Name;
                     Out = Space(Out, N4);
 
-                    order.isInBookmaker = true;
+                  
                     listBox2.Items.Add(Out);
-                }
+                
             }
         }
 
@@ -92,17 +90,17 @@ namespace TP
 
         private void listBox_DoubleClick(object sender, EventArgs e)
         {
-            if (currentClientOrder != null)
+            if (currentOrder.GetType().IsAssignableFrom(new ClientOrder().GetType()))
             {
-                Form confirmPay = new BookmakerInfClientOrder(currentClientOrder, Text);
+                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text);
                 confirmPay.ShowDialog();
             }
-            if(currentProviderOrder!= null)
+            if(currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
             {
-                Form confirmPay = new BookmakerInfProviderOrder(currentProviderOrder, Text);
+                Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text);
                 confirmPay.ShowDialog();
             }
-            refresh();
+          
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,11 +111,11 @@ namespace TP
             {
                 foreach (ProviderOrder order in BookmakerService.getInstance.getProviderOrders())
                 {
-                    if (orderString.Split('|')[1].Trim().Equals(order.getWhoseOrder))
+                    if (orderString.Split('|')[1].Trim().Equals("Provider"))
                     {
                         if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
                         {
-                            currentProviderOrder = order;
+                            currentOrder = order;
                             break;
                         }
 
@@ -125,11 +123,11 @@ namespace TP
                 }
                 foreach (ClientOrder order in BookmakerService.getInstance.getClientOrders())
                 {
-                    if (orderString.Split('|')[1].Trim().Equals(order.getWhoseOrder))
+                    if (orderString.Split('|')[1].Trim().Equals("Client"))
                     {
                         if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
                         {
-                            currentClientOrder = order;
+                            currentOrder = order;
                             break;
                         }
 

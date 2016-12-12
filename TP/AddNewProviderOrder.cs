@@ -97,6 +97,8 @@ namespace TP
                     }
                     else
                     {
+                        ProviderManagerService providerService = ProviderManagerService.getInstance();
+                        providerService.makeOrder(new ProviderOrder(providerService.getIdProviderOrder,new Product(comboBox1.Text,comboBox2.Text,comboBox3.Text,comboBox5.Text),textBox2.Text,textBox2.Text);
                         Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
                         createOrder.ShowDialog();
 
