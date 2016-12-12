@@ -18,7 +18,11 @@ namespace TP
         {
             InitializeComponent();
             timerOrder.Enabled = true;
+            timerError.Enabled = true;
             timerOrder.Start();
+            timerError.Start();
+
+            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
 
           //  currentProduct = listBox1.Items;
         }
@@ -68,13 +72,47 @@ namespace TP
             couirier.ShowDialog();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerOrder_Tick(object sender, EventArgs e)
         {
             //каждые 10 сек будет добавляться в спісок заказов
-           // listBox1.Items.Add("100");
-           // listBox4.Items.Add("Err");
+            listBox1.Items.Add("100");
+            //orderList.BackColor = Color.Red;
+            //  tabControl1. = Color.Red;
+            //  tabControl1.TabPages[0].ForeColor = Color.Red;
+            // listBox4.Items.Add("Err");
+
         }
 
-        
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+            Graphics g = e.Graphics;
+            TabPage tp = tabControl1.TabPages[e.Index];
+
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;  //optional
+
+            // This is the rectangle to draw "over" the tabpage title
+            RectangleF headerRect = new RectangleF(e.Bounds.X-5, e.Bounds.Y+2, e.Bounds.Width + 10, e.Bounds.Height+4);
+
+            // This is the default colour to use for the non-selected tabs
+            SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
+
+            // This changes the colour if we're trying to draw the selected tabpage
+           // if (tabControl1.SelectedIndex == e.Index)
+             //   sb.Color = Color.Aqua;
+
+            // Colour the header of the current tabpage based on what we did above
+            g.FillRectangle(sb, e.Bounds);
+
+            //Remember to redraw the text - I'm always using black for title text
+            g.DrawString(tp.Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+        }
+
+        private void timerError_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

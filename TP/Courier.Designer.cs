@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.courierList = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,6 +37,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.courierList.SuspendLayout();
             this.deliveriList.SuspendLayout();
@@ -45,21 +49,24 @@
             // 
             this.tabControl1.Controls.Add(this.courierList);
             this.tabControl1.Controls.Add(this.deliveriList);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(713, 562);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // courierList
             // 
             this.courierList.BackColor = System.Drawing.Color.Silver;
+            this.courierList.Controls.Add(this.listBox2);
             this.courierList.Controls.Add(this.button1);
             this.courierList.Controls.Add(this.listBox1);
-            this.courierList.Location = new System.Drawing.Point(4, 22);
+            this.courierList.Location = new System.Drawing.Point(4, 28);
             this.courierList.Name = "courierList";
             this.courierList.Padding = new System.Windows.Forms.Padding(3);
-            this.courierList.Size = new System.Drawing.Size(705, 536);
+            this.courierList.Size = new System.Drawing.Size(705, 530);
             this.courierList.TabIndex = 0;
             this.courierList.Text = "Список заказов";
             // 
@@ -75,23 +82,26 @@
             // 
             // listBox1
             // 
+            this.listBox1.Enabled = false;
+            this.listBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 6);
+            this.listBox1.ItemHeight = 19;
+            this.listBox1.Location = new System.Drawing.Point(12, 7);
             this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(680, 446);
+            this.listBox1.Size = new System.Drawing.Size(680, 23);
             this.listBox1.TabIndex = 0;
             // 
             // deliveriList
             // 
             this.deliveriList.BackColor = System.Drawing.Color.Silver;
+            this.deliveriList.Controls.Add(this.listBox4);
+            this.deliveriList.Controls.Add(this.listBox3);
             this.deliveriList.Controls.Add(this.button3);
             this.deliveriList.Controls.Add(this.button2);
-            this.deliveriList.Controls.Add(this.listBox2);
-            this.deliveriList.Location = new System.Drawing.Point(4, 22);
+            this.deliveriList.Location = new System.Drawing.Point(4, 28);
             this.deliveriList.Name = "deliveriList";
             this.deliveriList.Padding = new System.Windows.Forms.Padding(3);
-            this.deliveriList.Size = new System.Drawing.Size(705, 536);
+            this.deliveriList.Size = new System.Drawing.Size(705, 530);
             this.deliveriList.TabIndex = 1;
             this.deliveriList.Text = "Список доставок";
             // 
@@ -117,12 +127,41 @@
             // 
             // listBox2
             // 
+            this.listBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(13, 6);
+            this.listBox2.ItemHeight = 19;
+            this.listBox2.Location = new System.Drawing.Point(12, 30);
             this.listBox2.Name = "listBox2";
             this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(680, 446);
-            this.listBox2.TabIndex = 0;
+            this.listBox2.Size = new System.Drawing.Size(680, 422);
+            this.listBox2.TabIndex = 2;
+            // 
+            // listBox3
+            // 
+            this.listBox3.Enabled = false;
+            this.listBox3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 19;
+            this.listBox3.Location = new System.Drawing.Point(12, 7);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(680, 23);
+            this.listBox3.TabIndex = 3;
+            // 
+            // listBox4
+            // 
+            this.listBox4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 19;
+            this.listBox4.Location = new System.Drawing.Point(12, 30);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.ScrollAlwaysVisible = true;
+            this.listBox4.Size = new System.Drawing.Size(680, 422);
+            this.listBox4.TabIndex = 4;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Courier
             // 
@@ -136,7 +175,7 @@
             this.Name = "Courier";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Courier Service";
+            this.Text = "Сервис Курьера";
             this.tabControl1.ResumeLayout(false);
             this.courierList.ResumeLayout(false);
             this.deliveriList.ResumeLayout(false);
@@ -152,7 +191,10 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Timer timer;
     }
 }

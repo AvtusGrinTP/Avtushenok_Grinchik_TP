@@ -38,7 +38,7 @@ namespace Service.by.rfe.service
             return list.Orders;
         }
 
-        public void makeOrder(int id, string name, int quantity, int price)
+        public void makeOrder(int id, string name, int quantity, double price)
         {
             Provider provider = null;
             foreach (Provider prov in ProviderList)
@@ -57,7 +57,7 @@ namespace Service.by.rfe.service
                     or.Price = price;
                     or.setQuantity(quantity);
                     
-                    ProviderOrderList.getInstance().Orders.Add(or);
+                  //  ProviderOrderList.getInstance().Orders.Add(or);
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace Service.by.rfe.service
             providerList.Add(provider);
         }
 
-        public string getIdProviderOrder()
+        public int getIdProviderOrder()
         {
             int maxId = 0;
             foreach (ProviderOrder order in ProviderOrderList.getInstance().Orders)
@@ -90,7 +90,7 @@ namespace Service.by.rfe.service
                 }
             }
             maxId++;
-            return maxId.ToString();
+            return maxId;
         }
     }
 }
