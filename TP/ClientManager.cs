@@ -42,30 +42,6 @@ namespace TP
             refresh();
         }
 
-        /*
-        private void editbutton_Click(object sender, EventArgs e)
-        {
-           if (listBox1.SelectedIndex == -1)
-            {
-                Form err = new DialogWithOne_Buttom("Выберите Заказ", Text);
-               err.ShowDialog();
-            }
-           else
-            {
-                Form editOrder = new EditOrder(Text);
-                editOrder.ShowDialog();
-            }
-        }
-        */
-        /*
-        private void statusbutton_Click(object sender, EventArgs e)
-        {
-            string status = "status";
-
-            Form dialog = new DialogWithOne_Buttom(status, Text);
-            dialog.ShowDialog();
-        }
-        */
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //  listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
@@ -91,7 +67,7 @@ namespace TP
         {
             Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
-            refresh();
+           // refresh();
         }
 
         private void textBox1_Click(object sender, EventArgs e)

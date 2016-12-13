@@ -92,12 +92,12 @@ namespace TP
         {
             if (currentOrder.GetType().IsAssignableFrom(new ClientOrder().GetType()))
             {
-                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text);
+                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 1);
                 confirmPay.ShowDialog();
             }
             if(currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
             {
-                Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text);
+                Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 1);
                 confirmPay.ShowDialog();
             }
           

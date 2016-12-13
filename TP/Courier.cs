@@ -7,34 +7,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary.by.rfe.store.Entity;
 
 namespace TP
 {
     public partial class Courier : Form
     {
-        string service = "Courier Service";
+        private ClientOrder currentOrder;
+
         public Courier()
         {
             InitializeComponent();
             timer.Enabled = true;
             timer.Start();
 
-            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
-
+            //refresh();
         }
 
-        private void addToDeliverbutton_Click(object sender, EventArgs e)
+        private void refresh()
         {
-            string message = "add";
-            DialogWithOne_Buttom addToDeliverbutton = new DialogWithOne_Buttom(message, service);
-            addToDeliverbutton.ShowDialog();
-            //переносим в список доставки
+            listBox2.Items.Clear();
+            //foreach (ClientOrder order in )
+            //{
+
+            //    int N1 = 9, N2 = 14, N3 = 25;
+            //    string Out;
+            //    N1 -= order.getId().ToString().Length;
+            //    Out = order.getId().ToString();
+            //    Out = Space(Out, N1);
+
+            //    N2 -= order.getCLient().ToString().Length;
+            //    Out += order.getCLient();
+            //    Out = Space(Out, N2);
+
+            //    N3 -= order.getAddress().Length;
+            //    Out += order.getAddress().Length;
+            //    Out = Space(Out, N3);
+
+            //    N4 -= order.Product.Name.Length;
+            //    Out += order.Product.Name.Length;
+            //    Out = Space(Out, N4);
+
+            //    listBox2.Items.Add(Out);
+
+            //}
+        }
+
+        public string Space(string Out, int N)
+        {
+            for (int i = 0; i < N; i++)
+                Out += " ";
+
+            return Out + "| ";
         }
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             string message = "congirm";
-            DialogWithOne_Buttom confirm = new DialogWithOne_Buttom(message, service);
+            DialogWithOne_Buttom confirm = new DialogWithOne_Buttom(message, Text);
             confirm.ShowDialog();
             //код, чтобы удалить заказ со списка
         }
@@ -42,39 +72,65 @@ namespace TP
         private void cancelbutton_Click(object sender, EventArgs e)
         {
             string message = "cancel";
-            DialogWithOne_Buttom cancel = new DialogWithOne_Buttom(message, service);
+            DialogWithOne_Buttom cancel = new DialogWithOne_Buttom(message, Text);
             cancel.ShowDialog();
             //код для возврата товара на склад
         }
 
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            TabPage tp = tabControl1.TabPages[e.Index];
+        //private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        //{
+        //    Graphics g = e.Graphics;
+        //    TabPage tp = tabControl1.TabPages[e.Index];
 
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;  //optional
+        //    StringFormat sf = new StringFormat();
+        //    sf.Alignment = StringAlignment.Center;  //optional
 
-            // This is the rectangle to draw "over" the tabpage title
-            RectangleF headerRect = new RectangleF(e.Bounds.X - 5, e.Bounds.Y + 2, e.Bounds.Width + 10, e.Bounds.Height + 4);
+        //    // This is the rectangle to draw "over" the tabpage title
+        //    RectangleF headerRect = new RectangleF(e.Bounds.X - 5, e.Bounds.Y + 2, e.Bounds.Width + 10, e.Bounds.Height + 4);
 
-            // This is the default colour to use for the non-selected tabs
-            SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
+        //    // This is the default colour to use for the non-selected tabs
+        //    SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
 
-            // This changes the colour if we're trying to draw the selected tabpage
-            // if (tabControl1.SelectedIndex == e.Index)
-            //   sb.Color = Color.Aqua;
+        //    // This changes the colour if we're trying to draw the selected tabpage
+        //    // if (tabControl1.SelectedIndex == e.Index)
+        //    //   sb.Color = Color.Aqua;
 
-            // Colour the header of the current tabpage based on what we did above
-            g.FillRectangle(sb, e.Bounds);
+        //    // Colour the header of the current tabpage based on what we did above
+        //    g.FillRectangle(sb, e.Bounds);
 
-            //Remember to redraw the text - I'm always using black for title text
-            g.DrawString(tp.Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
-        }
+        //    //Remember to redraw the text - I'm always using black for title text
+        //    g.DrawString(tp.Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+        //}
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            refresh();
+        }
 
+        private void listBox2_DoubleClick(object sender, EventArgs e)
+        {
+            Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 3);
+            confirmPay.ShowDialog();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orderString = listBox4.GetItemText(listBox4.SelectedItem);
+
+            //if (!orderString.Equals(""))
+            //{
+            //    foreach (ClientOrder order in )
+            //    {
+
+            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+            //        {
+            //            currentOrder = order;
+            //            break;
+            //        }
+
+
+            //    }
+            //}
         }
     }
 }

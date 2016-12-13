@@ -13,151 +13,239 @@ namespace TP
 {
     public partial class StoreKeeper : Form
     {
-        string service = "StoreKeeper Service";
-        object currentProduct; //!!!!!
+        private Order currentOrder;
+
         public StoreKeeper()
         {
             InitializeComponent();
-          //  timerOrder.Enabled = true;
-          //  timerError.Enabled = true;
-            timerOrder.Start();
+
+            timerClient.Enabled = true;
+            timerProvider.Enabled = true;
+            timerError.Enabled = true;
+            timerClient.Start();
+            timerProvider.Start();
             timerError.Start();
 
-            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            refreshClient();
+            refreshProvider();
+            refreshError();
 
-            //в будем
-
-          //  currentProduct = listBox1.Items;
         }
 
-        private void addbutton_Click(object sender, EventArgs e)
+        private void refreshClient()
         {
+            listBox4.Items.Clear();
+            //  foreach (ClientOrder order in )
+            //{
 
-            if (currentProduct == null)
+            //    int N1 = 9, N2 = 21, N3 = 40;
+            //    string Out;
+            //    N1 -= order.getId().ToString().Length;
+            //    Out = order.getId().ToString();
+            //    Out = Space(Out, N1);
+
+            //    N2 -= order.getCLient().ToString().Length;
+            //    Out += order.getCLient();
+            //    Out = Space(Out, N2);
+
+            //    N3 -= order.Product.Name.Length;
+            //    Out += order.Product.Name;
+            //    Out = Space(Out, N3);
+
+            //    listBox4.Items.Add(Out);
+
+            //}
+            listBox4.Items.Add("21 | Client21| name 21");
+            listBox4.Items.Add("22 | Client22| name 22");
+
+        }
+
+        private void refreshProvider()
+        {
+            listBox6.Items.Clear();
+            //foreach (ProviderOrder order in )
+            //{
+
+            //    int N1 = 9, N2 = 21, N3 = 40;
+            //    string Out;
+            //    N1 -= order.getId().ToString().Length;
+            //    Out = order.getId().ToString();
+            //    Out = Space(Out, N1);
+
+            //    N2 -= order.Provider.Name.Length;
+            //    Out += order.Provider.Name;
+            //    Out = Space(Out, N2);
+
+            //    N3 -= order.Product.Name.Length;
+            //    Out += order.Product.Name;
+            //    Out = Space(Out, N3);
+
+
+            //    listBox6.Items.Add(Out);
+
+            //}
+        }
+
+        private void refreshError()
+        {
+            listBox8.Items.Clear();
+        }
+
+        public string Space(string Out, int N)
+        {
+            for (int i = 0; i < N; i++)
+                Out += " ";
+
+            return Out + "| ";
+        }
+
+        private void timerClient_Tick(object sender, EventArgs e)
+        {
+            int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
+            refreshClient();
+            if (count0 != listBox4.Items.Count)
             {
-                Form mesError = new DialogWithOne_Buttom("Выбирете товар", service);
-                mesError.ShowDialog();
+                string msg = "chek list! \nДобавлено " + (count0 - listBox4.Items.Count).ToString() + " новых заказов";
+                Form info = new DialogWithOne_Buttom(msg, Text);
+                info.Show();
             }
-            else
+        }
+
+        private void timerProvider_Tick(object sender, EventArgs e)
+        {
+            int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
+            //  refreshProvider();
+            if (count0 != listBox4.Items.Count)
             {
-
-                listBox2.Items.Add(currentProduct);
-                listBox1.Items.Remove(currentProduct);
-                currentProduct = null;
-                string message = "Товар добавлен в ********* список";
-  
-                Form add = new DialogWithOne_Buttom(message, service);
-                add.ShowDialog();
+                string msg = "chek list! \nДобавлено " + (count0 - listBox4.Items.Count).ToString() + " новых заказов";
+                Form info = new DialogWithOne_Buttom(msg, Text);
+                info.Show();
             }
         }
 
-        private void courierbutton2_Click(object sender, EventArgs e)
-        {
-            string message = "courier";
-
-            DialogWithOne_Buttom couirier = new DialogWithOne_Buttom(message, service);
-            couirier.ShowDialog();
-        }
-
-        private void storebutton_Click(object sender, EventArgs e)
-        {
-            string message = "store";
-
-            DialogWithOne_Buttom store = new DialogWithOne_Buttom(message, service);
-            store.ShowDialog();
-        }
-
-        private void courierbutton4_Click(object sender, EventArgs e)
-        {
-            string message = "courier";
-
-            DialogWithOne_Buttom couirier = new DialogWithOne_Buttom(message, service);
-            couirier.ShowDialog();
-        }
-
-        private void timerOrder_Tick(object sender, EventArgs e)
-        {
-            //каждые 10 сек будет добавляться в спісок заказов
-            listBox1.Items.Add("100");
-           
-
-        }
-        //делаем рефреш на два списка
-        //и каждому даем булевскую функцию, чтобы следить за добавлением новых элементов
-        private void refreshOrder()
-        {
-            listBox1.Items.Clear();
-            //foreach(ClientOrder order in Service)
-            {
-
-            }
-        }
-        private bool newOrder()
-        {
-            int count0 = listBox1.Items.Count;
-         //   refreshOrder();
-            if(count0 != listBox1.Items.Count)
-            {
-                return true;
-            }
-            return false;
-        }
         private void timerError_Tick(object sender, EventArgs e)
         {
-            listBox8.Items.Add("100000");
-
+            // refreshError();
         }
 
-        private bool newErrorOrder()
+        private void listBox4_DoubleClick(object sender, EventArgs e)
         {
-            int count0 = listBox8.Items.Count;
-            refreshOrder();
-            if (count0 == listBox8.Items.Count)
-            {
-                return true;
-            }
-            return false;
+            Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
+            confirmPay.ShowDialog();
         }
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orderString = listBox4.GetItemText(listBox4.SelectedItem);
+
+            //if (!orderString.Equals(""))
+            //{
+            //    foreach (ClientOrder order in )
+            //    {
+
+            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+            //        {
+            //            currentOrder = order;
+            //            break;
+            //        }
+
+
+            //    }
+            //}
+        }
+
+        private void listBox6_DoubleClick(object sender, EventArgs e)
         {
 
-            Graphics g = e.Graphics;
-            //TabPage tp = tabControl1.TabPages[0];
+            Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 2);
+            confirmPay.ShowDialog();
 
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;  //optional
-
-            // This is the rectangle to draw "over" the tabpage title
-            RectangleF headerRect = new RectangleF(e.Bounds.X-5, e.Bounds.Y+2, e.Bounds.Width + 10, e.Bounds.Height+4);
-
-            // This is the default colour to use for the non-selected tabs
-            //           SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
-
-            // This changes the colour if we're trying to draw the selected tabpage
-            // if (tabControl1.SelectedIndex == e.Index)
-            //   sb.Color = Color.Aqua;
-
-            // Colour the header of the current tabpage based on what we did above
-            //g.FillRectangle(sb, e.Bounds);
-
-            //Remember to redraw the text - I'm always using black for title text
-            if (newOrder()/* && tabControl1.TabPages[0].Text == orderList.Text*/)
-            {
-                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
-            }
-            else if(newErrorOrder() /*&& /*tabControl1.TabPages[3].Text == errorList.Text*/)
-            {
-                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
-
-            }
-            else
-            {
-                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
-                g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
-
-            }
         }
 
-       
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orderString = listBox6.GetItemText(listBox6.SelectedItem);
+
+            //if (!orderString.Equals(""))
+            //{
+            //    foreach (ProviderOrder order in )
+            //    {
+            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+            //        {
+            //            currentOrder = order;
+            //            break;
+            //        }
+            //    }
+            //}
+        }
+
+        private void listBox8_DoubleClick(object sender, EventArgs e)
+        {
+            Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
+            confirmPay.ShowDialog();
+        }
+
+        private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string orderString = listBox4.GetItemText(listBox4.SelectedItem);
+
+            //if (!orderString.Equals(""))
+            //{
+            //    foreach (ClientOrder order in )
+            //    {
+
+            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+            //        {
+            //            currentOrder = order;
+            //            break;
+            //        }
+
+
+            //    }
+            //}
+        }
+
+        //не удаляй, пусть висит тут
+        //private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        //{
+
+        //    Graphics g = e.Graphics;
+        //    //TabPage tp = tabControl1.TabPages[0];
+
+        //    StringFormat sf = new StringFormat();
+        //    sf.Alignment = StringAlignment.Center;  //optional
+
+        //    // This is the rectangle to draw "over" the tabpage title
+        //    RectangleF headerRect = new RectangleF(e.Bounds.X-5, e.Bounds.Y+2, e.Bounds.Width + 10, e.Bounds.Height+4);
+
+        //    // This is the default colour to use for the non-selected tabs
+        //    //           SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
+
+        //    // This changes the colour if we're trying to draw the selected tabpage
+        //    // if (tabControl1.SelectedIndex == e.Index)
+        //    //   sb.Color = Color.Aqua;
+
+        //    // Colour the header of the current tabpage based on what we did above
+        //    //g.FillRectangle(sb, e.Bounds);
+
+        //    //Remember to redraw the text - I'm always using black for title text
+        //    if (newOrder()/* && tabControl1.TabPages[0].Text == orderList.Text*/)
+        //    {
+        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
+        //    }
+        //    else if(newErrorOrder() /*&& /*tabControl1.TabPages[3].Text == errorList.Text*/)
+        //    {
+        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
+
+        //    }
+        //    else
+        //    {
+        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
+
+        //    }
+        //}
+
+
     }
 }

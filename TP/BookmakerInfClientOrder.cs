@@ -10,13 +10,19 @@ using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
 using Service.by.rfe.service;
 
+// флаг fromWho чтобы определить кто вызывает эту форму
+// 1 - bookmaker
+// 2 - storekeeper
+// 3 - courier
+
 namespace TP
 {
     public partial class BookmakerInfClientOrder : Form
     {
         private ClientOrder currentOrder;
+        private int fromWho;
 
-        public BookmakerInfClientOrder(ClientOrder currentOrder, string service)
+        public BookmakerInfClientOrder(ClientOrder currentOrder, string service, int fromWho)
         {
             InitializeComponent();
             this.currentOrder = currentOrder;
@@ -30,14 +36,39 @@ namespace TP
             textBox8.Text = currentOrder.getAddress();
             textBox9.Text = currentOrder.Price.ToString();
             Text = service;
-
+            this.fromWho = fromWho;
+            if(fromWho == 1)
+            {
+                button1.Text = "Подтвердить";
+            }
+            if (fromWho == 2)
+            {
+                button1.Text = "Отправить Курьеру";
+            }
+            if(fromWho == 3)
+            {
+                button1.Text = "Добавить в Доставки";
+            }
         }
 
         private void confirmbutton_Click(object sender, EventArgs e)
         {
-            BookmakerService.getInstance.pay(currentOrder);
-            Form confirm = new DialogWithOne_Buttom("Оплата подтверждена", Text);
-            confirm.ShowDialog();
+            if (fromWho == 1)
+            {
+                BookmakerService.getInstance.pay(currentOrder);
+                Form confirm = new DialogWithOne_Buttom("Оплата подтверждена", Text);
+                confirm.ShowDialog();
+            }
+            if(fromWho == 2)
+            {
+                Form confirm = new DialogWithOne_Buttom("Заказ передан Курьеру", Text);
+                confirm.ShowDialog();
+            }
+            if(fromWho == 3)
+            {
+                Form confirm = new DialogWithOne_Buttom("Заказ добавлен в Доставки", Text);
+                confirm.ShowDialog();
+            }
             Close();
         }
 

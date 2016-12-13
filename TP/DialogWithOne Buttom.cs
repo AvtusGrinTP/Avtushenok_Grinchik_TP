@@ -12,13 +12,13 @@ namespace TP
 {
     public partial class DialogWithOne_Buttom : Form
     {
-        public DialogWithOne_Buttom(string text, string service)
+        public DialogWithOne_Buttom(string msg, string service)
         {
             InitializeComponent();
-            messageText.Text = text;
+            messageText.Text = msg;
             Text = service;
         }
-          
+
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             Close();

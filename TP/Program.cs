@@ -29,20 +29,20 @@ namespace TP
             for (int i = 3; i >= 0; i--)
             {
                 // Application.Run(array[i]);
-           //    array[i].Show();
+             //  array[i].Show();
             }
 
           //  var a = new ProviderManager();
           //  a.Show();
 
-//             Application.Run(new ClientManager());
+          //   Application.Run(new ClientManager());
 
              
 
            //  Application.Run(new ProviderManager());
            // Application.Run(new Bookmaker());
-            Application.Run(new StoreKeeper());
-          //  Application.Run(new Courier());
+          //  Application.Run(new StoreKeeper());
+            Application.Run(new Courier());
             //  Application.Run(new StartUpForm());
 
         }
