@@ -40,13 +40,7 @@ namespace Service.by.rfe.service
 
         public void makeOrder(int id, string name, int quantity, double price)
         {
-            Provider provider = null;
-            foreach (Provider prov in ProviderList)
-            {
-                if (prov.Name.Equals(name))
-                    provider = prov;
-            }
-
+            Provider provider = findProviderByName(name);
             ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
             List<ProviderOrder> orders = providerOrderList.Orders;
             foreach (ProviderOrder or in orders)
@@ -57,7 +51,6 @@ namespace Service.by.rfe.service
                     or.Price = price;
                     or.setQuantity(quantity);
                     
-                  //  ProviderOrderList.getInstance().Orders.Add(or);
                 }
             }
         }
@@ -79,18 +72,27 @@ namespace Service.by.rfe.service
             providerList.Add(provider);
         }
 
-        public int getIdProviderOrder()
+        public void addNewOrder(Product product, int quantity, double price, string providerName)
         {
-            int maxId = 0;
-            foreach (ProviderOrder order in ProviderOrderList.getInstance().Orders)
-            {
-                if (order.getId() > maxId)
-                {
-                    maxId = order.getId();
-                }
-            }
-            maxId++;
-            return maxId;
+            Provider provider = findProviderByName(providerName);
+            ProviderOrder order = new ProviderOrder();
+            order.setId(ProviderOrderList.getInstance().generateId());
+            order.Product = product;
+            order.setQuantity(quantity);
+            order.Price = price;
+            order.Provider = provider;
+            ProviderOrderList.getInstance().addProviderOrder(order);
         }
+        private Provider findProviderByName(string name)
+        {
+            Provider provider = null;
+            foreach (Provider prov in ProviderList)
+            {
+                if (prov.Name.Equals(name))
+                    provider = prov;
+            }
+            return provider;
+        }
+
     }
 }

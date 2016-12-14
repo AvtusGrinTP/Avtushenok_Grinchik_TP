@@ -110,3 +110,5 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Gri
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.pdb
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewProvider.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.BookmakerInfClientOrder.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.BookmakerInfProviderOrder.resources

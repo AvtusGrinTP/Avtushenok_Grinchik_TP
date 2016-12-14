@@ -52,7 +52,7 @@ namespace Service.by.rfe.service
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
                 clientorderList.addClientOrder(new ClientOrder(id,   product, quantity, clientName, clientAddress, false, count, price));
                 ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
-                providerOrderList.addProviderOrder(new ProviderOrder(providerOrderList.generateId(),   product, count, 0));
+                providerOrderList.addProviderOrder(new ProviderOrder(providerOrderList.generateId(),  product, count, 0));
                 return;
             }
 

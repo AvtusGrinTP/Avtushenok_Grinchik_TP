@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -35,55 +36,55 @@ namespace TP
         private void refreshClient()
         {
             listBox4.Items.Clear();
-            //  foreach (ClientOrder order in )
-            //{
+              foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
+            {
 
-            //    int N1 = 9, N2 = 21, N3 = 40;
-            //    string Out;
-            //    N1 -= order.getId().ToString().Length;
-            //    Out = order.getId().ToString();
-            //    Out = Space(Out, N1);
+               int N1 = 9, N2 = 21, N3 = 40;
+                string Out;
+                N1 -= order.getId().ToString().Length;
+                Out = order.getId().ToString();
+                Out = Space(Out, N1);
 
-            //    N2 -= order.getCLient().ToString().Length;
-            //    Out += order.getCLient();
-            //    Out = Space(Out, N2);
+                N2 -= order.getCLient().ToString().Length;
+                Out += order.getCLient();
+                Out = Space(Out, N2);
 
-            //    N3 -= order.Product.Name.Length;
-            //    Out += order.Product.Name;
-            //    Out = Space(Out, N3);
+               N3 -= order.Product.Name.Length;
+                Out += order.Product.Name;
+                Out = Space(Out, N3);
 
-            //    listBox4.Items.Add(Out);
+                listBox4.Items.Add(Out);
 
-            //}
-            listBox4.Items.Add("21 | Client21| name 21");
-            listBox4.Items.Add("22 | Client22| name 22");
+            }
+           // listBox4.Items.Add("21 | Client21| name 21");
+            //listBox4.Items.Add("22 | Client22| name 22");
 
         }
 
         private void refreshProvider()
         {
             listBox6.Items.Clear();
-            //foreach (ProviderOrder order in )
-            //{
+            foreach (ProviderOrder order in StoreKeeperService.INSTANCE1.getProviderOrders())
+            {
 
-            //    int N1 = 9, N2 = 21, N3 = 40;
-            //    string Out;
-            //    N1 -= order.getId().ToString().Length;
-            //    Out = order.getId().ToString();
-            //    Out = Space(Out, N1);
+                int N1 = 9, N2 = 21, N3 = 40;
+                string Out;
+                N1 -= order.getId().ToString().Length;
+                Out = order.getId().ToString();
+                Out = Space(Out, N1);
 
-            //    N2 -= order.Provider.Name.Length;
-            //    Out += order.Provider.Name;
-            //    Out = Space(Out, N2);
+                N2 -= order.Provider.Name.Length;
+                Out += order.Provider.Name;
+                Out = Space(Out, N2);
 
-            //    N3 -= order.Product.Name.Length;
-            //    Out += order.Product.Name;
-            //    Out = Space(Out, N3);
+                N3 -= order.Product.Name.Length;
+                Out += order.Product.Name;
+                Out = Space(Out, N3);
 
 
-            //    listBox6.Items.Add(Out);
+                listBox6.Items.Add(Out);
 
-            //}
+            }
         }
 
         private void refreshError()
@@ -138,20 +139,20 @@ namespace TP
         {
             string orderString = listBox4.GetItemText(listBox4.SelectedItem);
 
-            //if (!orderString.Equals(""))
-            //{
-            //    foreach (ClientOrder order in )
-            //    {
+            if (!orderString.Equals(""))
+            {
+                foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
+                {
 
-            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
-            //        {
-            //            currentOrder = order;
-            //            break;
-            //        }
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
 
 
-            //    }
-            //}
+                }
+            }
         }
 
         private void listBox6_DoubleClick(object sender, EventArgs e)
@@ -166,17 +167,17 @@ namespace TP
         {
             string orderString = listBox6.GetItemText(listBox6.SelectedItem);
 
-            //if (!orderString.Equals(""))
-            //{
-            //    foreach (ProviderOrder order in )
-            //    {
-            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
-            //        {
-            //            currentOrder = order;
-            //            break;
-            //        }
-            //    }
-            //}
+            if (!orderString.Equals(""))
+            {
+                foreach (ProviderOrder order in StoreKeeperService.INSTANCE1.getProviderOrders())
+                {
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
+                }
+            }
         }
 
         private void listBox8_DoubleClick(object sender, EventArgs e)

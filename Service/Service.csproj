@@ -44,6 +44,7 @@
     <Compile Include="by.rfe.service\ClientManagerService.cs" />
     <Compile Include="by.rfe.service\exception\ServiceException.cs" />
     <Compile Include="by.rfe.service\ProviderManagerService.cs" />
+    <Compile Include="by.rfe.service\StoreKeeperService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

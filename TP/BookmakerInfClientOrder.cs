@@ -61,6 +61,7 @@ namespace TP
             }
             if(fromWho == 2)
             {
+                StoreKeeperService.INSTANCE1.collectOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ передан Курьеру", Text);
                 confirm.ShowDialog();
             }

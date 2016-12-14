@@ -8,16 +8,19 @@ namespace ClassLibrary.by.rfe.store.Entity
 {
     public class ClientOrder : Order
     {
-        private string whoseOrder;
+        
         private string client;
         private string address;
         private bool isFull;
         private int countToEnd;
+        private bool isReady;
+
+        
 
         public ClientOrder(int id,  Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
-        
-            
+
+            isReady = false;
             this.address = address;
             this.client = client;
             this.isFull = isFull;
@@ -56,8 +59,19 @@ namespace ClassLibrary.by.rfe.store.Entity
         {
             this.countToEnd = countToEnd;
         }
-       
-       
+        public bool IsReady
+        {
+            get
+            {
+                return isReady;
+            }
+
+            set
+            {
+                isReady = value;
+            }
+        }
+
         public override string ToString()
         {
             int N1 = 9, N2 = 14, N3 = 9, N4 = 10;
