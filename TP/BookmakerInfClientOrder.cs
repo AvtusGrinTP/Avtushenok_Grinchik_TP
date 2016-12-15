@@ -67,6 +67,7 @@ namespace TP
             }
             if(fromWho == 3)
             {
+                CourierService.INSTANCE1.takeOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ добавлен в Доставки", Text);
                 confirm.ShowDialog();
             }

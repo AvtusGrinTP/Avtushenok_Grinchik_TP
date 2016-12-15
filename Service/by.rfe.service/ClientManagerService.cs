@@ -50,9 +50,12 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, 0);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id,   product, quantity, clientName, clientAddress, false, count, price));
+                ClientOrder clientOrder = new ClientOrder(id, product, quantity, clientName, clientAddress, false, count, price);
+                clientorderList.addClientOrder(clientOrder);
                 ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
-                providerOrderList.addProviderOrder(new ProviderOrder(providerOrderList.generateId(),  product, count, 0));
+                ProviderOrder providerOrder = new ProviderOrder(providerOrderList.generateId(), product, count, 0);
+                providerOrder.ClientOrder = clientOrder;
+                providerOrderList.addProviderOrder(providerOrder);
                 return;
             }
 

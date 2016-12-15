@@ -117,6 +117,7 @@
             this.listBox4.ScrollAlwaysVisible = true;
             this.listBox4.Size = new System.Drawing.Size(680, 422);
             this.listBox4.TabIndex = 4;
+            this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // listBox3
             // 
@@ -151,7 +152,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 1000;
+            this.timer.Interval = 3000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Courier

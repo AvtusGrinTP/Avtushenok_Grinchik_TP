@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -21,36 +22,67 @@ namespace TP
             timer.Enabled = true;
             timer.Start();
 
-            //refresh();
+            refresh();
+            refreshCourierList();
+            
         }
 
         private void refresh()
         {
             listBox2.Items.Clear();
-            //foreach (ClientOrder order in )
-            //{
+            foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+            {
 
-            //    int N1 = 9, N2 = 14, N3 = 25;
-            //    string Out;
-            //    N1 -= order.getId().ToString().Length;
-            //    Out = order.getId().ToString();
-            //    Out = Space(Out, N1);
+                int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
+                string Out;
+                N1 -= order.getId().ToString().Length;
+                Out = order.getId().ToString();
+                Out = Space(Out, N1);
 
-            //    N2 -= order.getCLient().ToString().Length;
-            //    Out += order.getCLient();
-            //    Out = Space(Out, N2);
+                N2 -= order.getCLient().ToString().Length;
+                Out += order.getCLient();
+                Out = Space(Out, N2);
 
-            //    N3 -= order.getAddress().Length;
-            //    Out += order.getAddress().Length;
-            //    Out = Space(Out, N3);
+                N3 -= order.getAddress().Length;
+                Out += order.getAddress();
+                Out = Space(Out, N3);
 
-            //    N4 -= order.Product.Name.Length;
-            //    Out += order.Product.Name.Length;
-            //    Out = Space(Out, N4);
+                N4 -= order.Product.Name.Length;
+                Out += order.Product.Name;
+                Out = Space(Out, N4);
 
-            //    listBox2.Items.Add(Out);
+                listBox2.Items.Add(Out);
 
-            //}
+            }
+        }
+
+        private void refreshCourierList()
+        {
+            listBox4.Items.Clear();
+            foreach (ClientOrder order in CourierService.INSTANCE1.getCourierList())
+            {
+
+                int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
+                string Out;
+                N1 -= order.getId().ToString().Length;
+                Out = order.getId().ToString();
+                Out = Space(Out, N1);
+
+                N2 -= order.getCLient().ToString().Length;
+                Out += order.getCLient();
+                Out = Space(Out, N2);
+
+                N3 -= order.getAddress().Length;
+                Out += order.getAddress();
+                Out = Space(Out, N3);
+
+                N4 -= order.Product.Name.Length;
+                Out += order.Product.Name;
+                Out = Space(Out, N4);
+
+                listBox4.Items.Add(Out);
+
+            }
         }
 
         public string Space(string Out, int N)
@@ -66,7 +98,7 @@ namespace TP
             string message = "congirm";
             DialogWithOne_Buttom confirm = new DialogWithOne_Buttom(message, Text);
             confirm.ShowDialog();
-            //код, чтобы удалить заказ со списка
+            CourierService.INSTANCE1.giveOrder(currentOrder);
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)
@@ -105,6 +137,7 @@ namespace TP
         private void timer_Tick(object sender, EventArgs e)
         {
             refresh();
+            refreshCourierList();
         }
 
         private void listBox2_DoubleClick(object sender, EventArgs e)
@@ -115,22 +148,27 @@ namespace TP
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string orderString = listBox4.GetItemText(listBox4.SelectedItem);
+            string orderString = listBox2.GetItemText(listBox2.SelectedItem);
 
-            //if (!orderString.Equals(""))
-            //{
-            //    foreach (ClientOrder order in )
-            //    {
+            if (!orderString.Equals(""))
+            {
+                foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+                {
 
-            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
-            //        {
-            //            currentOrder = order;
-            //            break;
-            //        }
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
 
 
-            //    }
-            //}
+                }
+            }
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

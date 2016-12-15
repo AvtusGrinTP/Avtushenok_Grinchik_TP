@@ -10,6 +10,7 @@ namespace ClassLibrary.by.rfe.store.Entity
    public class ProviderOrder : Order
     {
         private Provider provider;
+        private ClientOrder clientOrder;
     
         public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
         {
@@ -32,9 +33,18 @@ namespace ClassLibrary.by.rfe.store.Entity
            
         }
 
-    
+        public ClientOrder ClientOrder
+        {
+            get
+            {
+                return clientOrder;
+            }
 
-      
+            set
+            {
+                clientOrder = value;
+            }
+        }
 
         public override string ToString()
         {

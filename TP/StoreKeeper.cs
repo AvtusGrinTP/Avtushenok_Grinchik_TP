@@ -56,8 +56,7 @@ namespace TP
                 listBox4.Items.Add(Out);
 
             }
-           // listBox4.Items.Add("21 | Client21| name 21");
-            //listBox4.Items.Add("22 | Client22| name 22");
+          
 
         }
 

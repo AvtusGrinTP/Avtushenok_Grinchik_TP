@@ -42,7 +42,7 @@ namespace TP
              Application.Run(new ProviderManager());
             Application.Run(new Bookmaker());
             Application.Run(new StoreKeeper());
-          //  Application.Run(new Courier());
+            Application.Run(new Courier());
             //  Application.Run(new StartUpForm());
 
         }

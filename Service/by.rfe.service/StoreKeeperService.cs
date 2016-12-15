@@ -46,6 +46,38 @@ namespace Service.by.rfe.service
         {
             order.IsReady = true;
         }
+        public void takeProviderOrder(ProviderOrder order)
+        {
+            if (order.ClientOrder == null)
+            {
+                Store.getInstance().addProduct(order.Product, order.getQuantity());
+                ProviderOrderList.getInstance().Orders.Remove(order);
+                return;
+            }
+            else
+            {
+                foreach (ClientOrder or in ClientOrderList.getInstance().Orders)
+                {
+                    if (or == order.ClientOrder)
+                    {
+                        if (or.getCountToEnd() < order.getQuantity())
+                        {
+                            Store.getInstance().addProduct(order.Product, order.getQuantity() - or.getCountToEnd());
+                            or.setCountToEnd(0);
+                            or.set(true);
+
+                        }
+                        if(or.getCountToEnd() == order.getQuantity())
+                        {
+                            or.setCountToEnd(0);
+                            or.set(true);
+                        }
+                    ProviderOrderList.getInstance().Orders.Remove(order);
+                    return;
+                    }
+                }
+            }
+        }
     }
 }
 

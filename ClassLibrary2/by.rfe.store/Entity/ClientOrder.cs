@@ -14,12 +14,14 @@ namespace ClassLibrary.by.rfe.store.Entity
         private bool isFull;
         private int countToEnd;
         private bool isReady;
-
+        private bool isOnWay;
+        private bool isDelivered;
         
 
         public ClientOrder(int id,  Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
-
+            isDelivered = false;
+            isOnWay = false;
             isReady = false;
             this.address = address;
             this.client = client;
@@ -69,6 +71,32 @@ namespace ClassLibrary.by.rfe.store.Entity
             set
             {
                 isReady = value;
+            }
+        }
+
+        public bool IsOnWay
+        {
+            get
+            {
+                return isOnWay;
+            }
+
+            set
+            {
+                isOnWay = value;
+            }
+        }
+
+        public bool IsDelivered
+        {
+            get
+            {
+                return isDelivered;
+            }
+
+            set
+            {
+                isDelivered = value;
             }
         }
 
