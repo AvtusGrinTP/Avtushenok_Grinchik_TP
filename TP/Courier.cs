@@ -62,7 +62,7 @@ namespace TP
             foreach (ClientOrder order in CourierService.INSTANCE1.getCourierList())
             {
 
-                int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
+                int N1 = 9, N2 = 22, N3 = 40;
                 string Out;
                 N1 -= order.getId().ToString().Length;
                 Out = order.getId().ToString();
@@ -76,10 +76,6 @@ namespace TP
                 Out += order.getAddress();
                 Out = Space(Out, N3);
 
-                N4 -= order.Product.Name.Length;
-                Out += order.Product.Name;
-                Out = Space(Out, N4);
-
                 listBox4.Items.Add(Out);
 
             }
@@ -91,22 +87,6 @@ namespace TP
                 Out += " ";
 
             return Out + "| ";
-        }
-
-        private void confirmbutton_Click(object sender, EventArgs e)
-        {
-            string message = "congirm";
-            DialogWithOne_Buttom confirm = new DialogWithOne_Buttom(message, Text);
-            confirm.ShowDialog();
-            CourierService.INSTANCE1.giveOrder(currentOrder);
-        }
-
-        private void cancelbutton_Click(object sender, EventArgs e)
-        {
-            string message = "cancel";
-            DialogWithOne_Buttom cancel = new DialogWithOne_Buttom(message, Text);
-            cancel.ShowDialog();
-            //код для возврата товара на склад
         }
 
         //private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -168,7 +148,28 @@ namespace TP
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string orderString = listBox2.GetItemText(listBox2.SelectedItem);
 
+            if (!orderString.Equals(""))
+            {
+                foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+                {
+
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
+
+
+                }
+            }
+        }
+
+        private void listBox4_DoubleClick(object sender, EventArgs e)
+        {
+            Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 4);
+            confirmPay.ShowDialog();
         }
     }
 }

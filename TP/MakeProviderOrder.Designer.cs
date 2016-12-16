@@ -53,7 +53,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 68);
+            this.comboBox1.Location = new System.Drawing.Point(153, 60);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(214, 21);
             this.comboBox1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 68);
+            this.label2.Location = new System.Drawing.Point(55, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 2;
@@ -98,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 99);
+            this.label3.Location = new System.Drawing.Point(55, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 6;
@@ -106,30 +106,28 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(153, 96);
+            this.textBox2.Location = new System.Drawing.Point(153, 87);
             this.textBox2.MaxLength = 5;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
-            /////
-            // lable4
-            //
+            // 
+            // label4
+            // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 134);
+            this.label4.Location = new System.Drawing.Point(55, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Цена";
-
-            ///
-            //textbox3
-            //
-            this.textBox3.Location = new System.Drawing.Point(153, 130);
+            this.label4.Text = "Цена:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(153, 113);
             this.textBox3.MaxLength = 5;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 8;
-
             // 
             // MakeProviderOrder
             // 
@@ -147,7 +145,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MakeProviderOrder";

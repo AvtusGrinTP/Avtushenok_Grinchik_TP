@@ -118,7 +118,7 @@
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 19;
             this.listBox5.Items.AddRange(new object[] {
-            "№ заказа | Поставщик              21| Заказ 50"});
+            "№ заказа | Поставщик               | Заказ "});
             this.listBox5.Location = new System.Drawing.Point(12, 7);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(680, 23);
@@ -157,7 +157,7 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 19;
             this.listBox3.Items.AddRange(new object[] {
-            "№ заказа | Клиент              21| Заказ 50"});
+            "№ заказа | Клиент               | Заказ "});
             this.listBox3.Location = new System.Drawing.Point(12, 7);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(680, 23);
@@ -177,7 +177,7 @@
             // 
             // timerClient
             // 
-            this.timerClient.Interval = 10000;
+            this.timerClient.Interval = 1000;
             this.timerClient.Tick += new System.EventHandler(this.timerClient_Tick);
             // 
             // timerProvider

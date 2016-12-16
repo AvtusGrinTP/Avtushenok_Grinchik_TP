@@ -36,8 +36,6 @@
             this.deliveriList = new System.Windows.Forms.TabPage();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.courierList.SuspendLayout();
@@ -87,7 +85,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 19;
             this.listBox1.Items.AddRange(new object[] {
-            "№ заказа | Клиент | Адрес | Заказ"});
+            "№ заказа | Клиент        | Адрес                    | Заказ"});
             this.listBox1.Location = new System.Drawing.Point(12, 7);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(680, 23);
@@ -98,8 +96,6 @@
             this.deliveriList.BackColor = System.Drawing.Color.Silver;
             this.deliveriList.Controls.Add(this.listBox4);
             this.deliveriList.Controls.Add(this.listBox3);
-            this.deliveriList.Controls.Add(this.button3);
-            this.deliveriList.Controls.Add(this.button2);
             this.deliveriList.Location = new System.Drawing.Point(4, 28);
             this.deliveriList.Name = "deliveriList";
             this.deliveriList.Padding = new System.Windows.Forms.Padding(3);
@@ -115,40 +111,23 @@
             this.listBox4.Location = new System.Drawing.Point(12, 30);
             this.listBox4.Name = "listBox4";
             this.listBox4.ScrollAlwaysVisible = true;
-            this.listBox4.Size = new System.Drawing.Size(680, 422);
+            this.listBox4.Size = new System.Drawing.Size(680, 479);
             this.listBox4.TabIndex = 4;
             this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
+            this.listBox4.DoubleClick += new System.EventHandler(this.listBox4_DoubleClick);
             // 
             // listBox3
             // 
             this.listBox3.Enabled = false;
             this.listBox3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox3.FormattingEnabled = true;
+            this.listBox3.Items.AddRange(new object[] {
+            "№ заказа | Клиент                | Адрес                    "});
             this.listBox3.ItemHeight = 19;
             this.listBox3.Location = new System.Drawing.Point(12, 7);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(680, 23);
             this.listBox3.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(430, 474);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Отмена заказа";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.cancelbutton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(120, 474);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Доставлено";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.confirmbutton_Click);
             // 
             // timer
             // 
@@ -181,8 +160,6 @@
         private System.Windows.Forms.TabPage courierList;
         private System.Windows.Forms.TabPage deliveriList;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ListBox listBox3;

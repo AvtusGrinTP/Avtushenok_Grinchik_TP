@@ -14,6 +14,7 @@ using Service.by.rfe.service;
 // 1 - bookmaker
 // 2 - storekeeper
 // 3 - courier
+// 4 - courierlist
 
 namespace TP
 {
@@ -49,6 +50,12 @@ namespace TP
             {
                 button1.Text = "Добавить в Доставки";
             }
+            if(fromWho == 4)
+            {
+                button1.Text = "Доставлено";
+                button3.Visible = true;
+                button3.Text = "Отмена заказа";
+            }
         }
 
         private void confirmbutton_Click(object sender, EventArgs e)
@@ -71,11 +78,21 @@ namespace TP
                 Form confirm = new DialogWithOne_Buttom("Заказ добавлен в Доставки", Text);
                 confirm.ShowDialog();
             }
+            if (fromWho == 4)
+            {
+                //кнопка для изменения статуса
+            }
             Close();
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void addErrorbutton_Click(object sender, EventArgs e)
+        {
+            //кнопка добавления товара в список ошибок для курьера
             Close();
         }
     }

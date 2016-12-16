@@ -102,10 +102,12 @@ namespace TP
         private void timerClient_Tick(object sender, EventArgs e)
         {
             int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
-            refreshClient();
-            if (count0 != listBox4.Items.Count)
+
+            refreshClient(); //может сделать задержку?
+            if ((count0 != listBox4.Items.Count)  && (-count0 + listBox4.Items.Count > 0))
             {
-                string msg = "chek list! \nДобавлено " + (count0 - listBox4.Items.Count).ToString() + " новых заказов";
+                string msg = "chek list! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
+                count0 = listBox4.Items.Count; 
                 Form info = new DialogWithOne_Buttom(msg, Text);
                 info.Show();
             }
@@ -117,7 +119,7 @@ namespace TP
             //  refreshProvider();
             if (count0 != listBox4.Items.Count)
             {
-                string msg = "chek list! \nДобавлено " + (count0 - listBox4.Items.Count).ToString() + " новых заказов";
+                string msg = "chek list! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
                 Form info = new DialogWithOne_Buttom(msg, Text);
                 info.Show();
             }

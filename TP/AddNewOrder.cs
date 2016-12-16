@@ -91,8 +91,8 @@ namespace TP
                             clientManagerService.addClientOrder(int.Parse(textBox5.Text), comboBox1.Text,
                                 comboBox2.Text, comboBox3.Text,comboBox4.Text, 
                                 int.Parse(textBox3.Text), textBox2.Text, textBox4.Text, double.Parse(textBox6.Text));
-                            ///  Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
-                            //createOrder.ShowDialog();
+                              Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
+                            createOrder.ShowDialog();
                             Close();
 
                         }
