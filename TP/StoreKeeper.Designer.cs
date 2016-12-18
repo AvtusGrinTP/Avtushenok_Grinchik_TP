@@ -42,6 +42,7 @@
             this.timerClient = new System.Windows.Forms.Timer(this.components);
             this.timerProvider = new System.Windows.Forms.Timer(this.components);
             this.timerError = new System.Windows.Forms.Timer(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.errorList.SuspendLayout();
             this.toStockList.SuspendLayout();
             this.courierList.SuspendLayout();
@@ -168,12 +169,14 @@
             this.tabControl1.Controls.Add(this.courierList);
             this.tabControl1.Controls.Add(this.toStockList);
             this.tabControl1.Controls.Add(this.errorList);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(713, 562);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // timerClient
             // 
@@ -187,6 +190,15 @@
             // timerError
             // 
             this.timerError.Tick += new System.EventHandler(this.timerError_Tick);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(705, 530);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // StoreKeeper
             // 
@@ -223,5 +235,6 @@
         private System.Windows.Forms.Timer timerClient;
         private System.Windows.Forms.Timer timerProvider;
         private System.Windows.Forms.Timer timerError;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

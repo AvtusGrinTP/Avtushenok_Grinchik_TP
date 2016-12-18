@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 using ClassLibrary.by.rfe.store.Queue;
 using ClassLibrary.by.rfe.store.Entity;
 
@@ -11,12 +14,37 @@ namespace Service.by.rfe.service
     public class ProviderManagerService
     {
         private static ProviderManagerService instance = new ProviderManagerService();
-        private List<Provider> providerList = new List<Provider>();
-        private ProviderManagerService()
+        private static List<Provider> providerList = new List<Provider>();
+        static ProviderManagerService()
         {
-            providerList.Add(new Provider("рога и копыта 1", "wall street 1", "+375291111111"));
-            providerList.Add(new Provider("рога и копыта 2", "wall street 2", "+375292222222"));
-            providerList.Add(new Provider("рога и копыта 3", "wall street 3", "+375293333333"));
+            foreach (var providertxt in File.ReadAllLines("ProviderList.txt", Encoding.Default))
+            {
+                string[] providerAtributes = providertxt.Split('/');
+                providerList.Add(new Provider(providerAtributes[0], providerAtributes[1], providerAtributes[2]));
+            }
+        }
+
+         public void importToTxt(string file, string[] text)
+        {
+            string Out = "";
+            for(int i =0; i < text.Length; i++)
+            {
+                if (i != text.Length - 1)
+                    Out += text[i].Trim() + '/';
+                else
+                    Out += text[i].Trim();
+            }
+
+            using (StreamWriter write = new StreamWriter(file, true, Encoding.Default))
+            {
+                write.WriteLine(Out);
+            }
+        }
+
+        public void clearTxt(string file)
+        {
+            StreamWriter write = new StreamWriter(file, false, Encoding.Default);
+            write.Close();
         }
 
         public List<Provider> ProviderList
@@ -50,7 +78,7 @@ namespace Service.by.rfe.service
                     or.Provider = provider;
                     or.Price = price;
                     or.setQuantity(quantity);
-                    
+
                 }
             }
         }
@@ -62,13 +90,13 @@ namespace Service.by.rfe.service
                 if (order.Provider == provider)
                     return false;
             }
-           ProviderList.Remove(provider);
-           return true;
+            ProviderList.Remove(provider);
+            return true;
         }
 
         public void addProvider(string name, string adress, string phoneNumber)
         {
-            Provider provider = new Provider(name, adress,phoneNumber);
+            Provider provider = new Provider(name, adress, phoneNumber);
             providerList.Add(provider);
         }
 

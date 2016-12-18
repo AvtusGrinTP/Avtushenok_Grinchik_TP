@@ -7,14 +7,14 @@ using ClassLibrary.by.rfe.store.Entity;
 
 namespace ClassLibrary.by.rfe.store.Entity
 {
-   public class ProviderOrder : Order
+    public class ProviderOrder : Order
     {
         private Provider provider;
         private ClientOrder clientOrder;
-    
+
         public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
         {
-           
+
         }
 
         public ProviderOrder() { }
@@ -30,7 +30,7 @@ namespace ClassLibrary.by.rfe.store.Entity
                 provider = value;
             }
 
-           
+
         }
 
         public ClientOrder ClientOrder
@@ -48,35 +48,31 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
-            int N1 = 9, N2 = 42, N3 = 11;
+            int N1 = 9, N2 = 27, N3 = 9;
             string Out;
 
             N1 -= getId().ToString().Length;
             Out = getId().ToString();
-            Out = Space(Out, N1, true);
+            Out = Space(Out, N1);
 
             N2 -= Product.Name.ToString().Length;
             Out += Product.Name;
-            Out = Space(Out, N2, true);
+            Out = Space(Out, N2);
 
             N3 -= getQuantity().ToString().Length;
             Out += getQuantity().ToString();
-            Out = Space(Out, N3, false);
-            //почему телефон null???
-            //          N4 -= Provider.PhoneNumber.ToString().Length;
-            //          Out += Provider.PhoneNumber.ToString();
-          //  Out = Space(Out, N4, false);
+            Out = Space(Out, N3);
+
 
             return Out;
         }
-        public string Space(string Out, int N, bool flag)
+        public string Space(string Out, int N)
         {
             for (int i = 0; i < N; i++)
                 Out += " ";
 
-            if (flag)
-                return Out + "| ";
-            else return Out;
+            return Out + "| ";
+
         }
     }
 }

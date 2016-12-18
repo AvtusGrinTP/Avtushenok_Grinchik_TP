@@ -60,7 +60,7 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
-            int N1 = 15, N2 = 18, N3 = 13;
+            int N1 = 15, N2 = 40, N3 = 13;
             string Out;
 
             N1 -= Name.Length;

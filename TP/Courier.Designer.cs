@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TabPage tabPage1;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.courierList = new System.Windows.Forms.TabPage();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -37,27 +38,42 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.courierList.SuspendLayout();
             this.deliveriList.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage1
+            // 
+            tabPage1.CausesValidation = false;
+            tabPage1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            tabPage1.Location = new System.Drawing.Point(4, 28);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new System.Drawing.Size(705, 530);
+            tabPage1.TabIndex = 2;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.courierList);
             this.tabControl1.Controls.Add(this.deliveriList);
+            this.tabControl1.Controls.Add(tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(713, 562);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // courierList
             // 
             this.courierList.BackColor = System.Drawing.Color.Silver;
             this.courierList.Controls.Add(this.listBox2);
             this.courierList.Controls.Add(this.listBox1);
+            this.courierList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.courierList.Location = new System.Drawing.Point(4, 28);
             this.courierList.Name = "courierList";
             this.courierList.Padding = new System.Windows.Forms.Padding(3);

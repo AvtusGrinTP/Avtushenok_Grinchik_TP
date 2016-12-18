@@ -21,6 +21,8 @@ namespace TP
             InitializeComponent();
             timer.Enabled = true;
             timer.Start();
+            
+            tabControl1.TabPages[2].Text = DateTime.Now.ToShortDateString();
 
             refresh();
             refreshCourierList();
@@ -170,6 +172,11 @@ namespace TP
         {
             Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 4);
             confirmPay.ShowDialog();
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            e.Cancel = e.TabPageIndex == 2;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace TP
             InitializeComponent();
             timer.Enabled = true;
             timer.Start();
+            label1.Text = DateTime.Now.ToShortDateString();
 
             refresh();
         }
@@ -77,6 +78,12 @@ namespace TP
         private void timer_Tick(object sender, EventArgs e)
         {
             refresh();
+        }
+
+        private void buttonStore_Click(object sender, EventArgs e)
+        {
+            Form store = new StoreProductList(Text);
+            store.ShowDialog();
         }
     }
 }

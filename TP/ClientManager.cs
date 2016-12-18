@@ -21,6 +21,7 @@ namespace TP
         public ClientManager()
         {
             InitializeComponent();
+            label2.Text = DateTime.Now.ToShortDateString();
             refresh();
         }
 

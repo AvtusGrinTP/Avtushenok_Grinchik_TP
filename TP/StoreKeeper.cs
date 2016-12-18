@@ -27,6 +27,9 @@ namespace TP
             timerProvider.Start();
             timerError.Start();
 
+            tabControl1.TabPages[3].Text = DateTime.Now.ToShortDateString();
+
+
             refreshClient();
             refreshProvider();
             refreshError();
@@ -205,6 +208,11 @@ namespace TP
 
             //    }
             //}
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            e.Cancel = e.TabPageIndex == 3;
         }
 
         //не удаляй, пусть висит тут

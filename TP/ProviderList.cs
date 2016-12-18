@@ -68,6 +68,16 @@ namespace TP
             refresh();
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProviderManagerService.getInstance().clearTxt("ProviderList.txt");
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                string[] provider = listBox1.Items[i].ToString().Split('|');
+                ProviderManagerService.getInstance().importToTxt("ProviderList.txt", provider);
+            }
+            Form confirm = new DialogWithOne_Buttom("Список Поставщиков Сохранен", Text);
+            confirm.ShowDialog();
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace TP
         {
             InitializeComponent();
             refreshClass();
+            textBox1.Text = DateTime.Now.ToShortDateString();
             textBox5.Text = ClientManagerService.getInstance().getIdClienOrder();
             Text = service;
             comboBox2.Enabled = false;

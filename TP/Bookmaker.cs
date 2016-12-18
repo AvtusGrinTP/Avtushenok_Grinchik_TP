@@ -20,6 +20,7 @@ namespace TP
             InitializeComponent();
             timer.Enabled = true;
             timer.Start();
+            label2.Text = DateTime.Now.ToShortDateString();
             refresh();
         }
 
@@ -141,6 +142,6 @@ namespace TP
             refresh();
         }
 
-
+        
     }
 }

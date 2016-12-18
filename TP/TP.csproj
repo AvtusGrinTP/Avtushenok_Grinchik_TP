@@ -124,6 +124,12 @@
     <Compile Include="MakeProviderOrder.Designer.cs">
       <DependentUpon>MakeProviderOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductInf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductInf.Designer.cs">
+      <DependentUpon>ProductInf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderList.cs">
@@ -149,6 +155,12 @@
     </Compile>
     <Compile Include="StoreKeeper.Designer.cs">
       <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreProductList.Designer.cs">
+      <DependentUpon>StoreProductList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddNewOrder.resx">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
@@ -189,6 +201,9 @@
     <EmbeddedResource Include="MakeProviderOrder.resx">
       <DependentUpon>MakeProviderOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductInf.resx">
+      <DependentUpon>ProductInf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -209,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StoreKeeper.resx">
       <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreProductList.resx">
+      <DependentUpon>StoreProductList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +253,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="To Do List.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
