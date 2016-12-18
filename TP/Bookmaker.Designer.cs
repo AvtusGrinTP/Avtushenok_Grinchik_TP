@@ -68,7 +68,7 @@
             this.listBox2.ScrollAlwaysVisible = true;
             this.listBox2.Size = new System.Drawing.Size(730, 517);
             this.listBox2.Sorted = true;
-            this.listBox2.TabIndex = 7;
+            this.listBox2.TabIndex = 1;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             this.listBox2.DoubleClick += new System.EventHandler(this.listBox_DoubleClick);
             // 

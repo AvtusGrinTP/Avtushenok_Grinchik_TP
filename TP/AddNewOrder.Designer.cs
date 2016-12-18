@@ -57,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(55, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Наименование товара: ";
             // 
             // label2
@@ -66,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(55, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 11;
             this.label2.Text = "Количество товаров: ";
             // 
             // label9
@@ -83,7 +83,7 @@
             this.textBox3.Location = new System.Drawing.Point(186, 174);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.TabIndex = 12;
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.label3.Location = new System.Drawing.Point(55, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Класс товара: ";
             // 
             // comboBox1
@@ -101,7 +101,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(241, 21);
             this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label4
@@ -110,7 +110,7 @@
             this.label4.Location = new System.Drawing.Point(55, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Категория: ";
             // 
             // label5
@@ -119,7 +119,7 @@
             this.label5.Location = new System.Drawing.Point(55, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 7;
             this.label5.Text = "Тип: ";
             // 
             // comboBox2
@@ -128,7 +128,7 @@
             this.comboBox2.Location = new System.Drawing.Point(186, 95);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(241, 21);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabIndex = 6;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox3
@@ -138,7 +138,7 @@
             this.comboBox3.Location = new System.Drawing.Point(186, 120);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(241, 21);
-            this.comboBox3.TabIndex = 11;
+            this.comboBox3.TabIndex = 8;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox4
@@ -147,7 +147,7 @@
             this.comboBox4.Location = new System.Drawing.Point(186, 148);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(241, 21);
-            this.comboBox4.TabIndex = 20;
+            this.comboBox4.TabIndex = 10;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // button1
@@ -155,7 +155,7 @@
             this.button1.Location = new System.Drawing.Point(90, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 20;
             this.button1.Text = "Оформить заказ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.createOrderbutton_Click);
@@ -165,7 +165,7 @@
             this.button2.Location = new System.Drawing.Point(274, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 40);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 21;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.cancelbutton_Click);
@@ -208,7 +208,7 @@
             this.label8.Location = new System.Drawing.Point(55, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 18;
+            this.label8.TabIndex = 1;
             this.label8.Text = "Номер заказа: ";
             // 
             // textBox5
@@ -217,14 +217,14 @@
             this.textBox5.Location = new System.Drawing.Point(186, 41);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 19;
+            this.textBox5.TabIndex = 2;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(186, 258);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 21;
+            this.textBox6.TabIndex = 19;
             // 
             // label10
             // 
@@ -232,7 +232,7 @@
             this.label10.Location = new System.Drawing.Point(292, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
-            this.label10.TabIndex = 22;
+            this.label10.TabIndex = 13;
             this.label10.Text = "На складе:";
             // 
             // AddNewOrder

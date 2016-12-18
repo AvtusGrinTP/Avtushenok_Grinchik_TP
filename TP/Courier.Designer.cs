@@ -89,7 +89,7 @@
             this.listBox1.Location = new System.Drawing.Point(12, 7);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(680, 23);
-            this.listBox1.TabIndex = 0;
+            this.listBox1.TabIndex = 1;
             // 
             // deliveriList
             // 
@@ -121,9 +121,9 @@
             this.listBox3.Enabled = false;
             this.listBox3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 19;
             this.listBox3.Items.AddRange(new object[] {
             "№ заказа | Клиент                | Адрес                    "});
-            this.listBox3.ItemHeight = 19;
             this.listBox3.Location = new System.Drawing.Point(12, 7);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(680, 23);

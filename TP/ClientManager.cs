@@ -35,6 +35,15 @@ namespace TP
             }
         }
 
+        private void refreshFind()
+        {
+            listBox1.Items.Clear();
+            foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
+            {
+                listBox1.Items.Add(order.ToString());
+            }
+        }
+
         private void addbutton_Click(object sender, EventArgs e)
         {
             Form addNew = new AddNewOrder(Text);
@@ -67,7 +76,7 @@ namespace TP
         {
             Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
-           // refresh();
+            // refresh();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -82,7 +91,12 @@ namespace TP
             if (e.KeyChar == '\r')
             {
                 string outPut = ClientManagerService.getInstance().showFindOrder(textBox1.Text);
-                if (outPut != null)
+
+                if (textBox1.Text.Equals(""))
+                {
+                    refreshFind();
+                }
+                else if (outPut != null)
                 {
                     listBox1.Items.Clear();
                     string[] order = outPut.Split('/');
@@ -91,7 +105,7 @@ namespace TP
                 }
                 else
                 {
-                    Form err = new DialogWithOne_Buttom("Проверте запрос на поиск",Text);
+                    Form err = new DialogWithOne_Buttom("Проверте запрос на поиск", Text);
                     err.ShowDialog();
                 }
             }

@@ -41,7 +41,7 @@
             this.button1.Location = new System.Drawing.Point(263, 419);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 60);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Добавить новый заказ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.addbutton_Click);
@@ -81,7 +81,7 @@
             this.listBox2.Location = new System.Drawing.Point(32, 54);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(640, 23);
-            this.listBox2.TabIndex = 3;
+            this.listBox2.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -89,7 +89,7 @@
             this.textBox1.Location = new System.Drawing.Point(539, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(133, 26);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Поиск";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
@@ -100,7 +100,7 @@
             this.button2.Location = new System.Drawing.Point(647, 23);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(24, 24);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 4;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.cancelbutton_Click);

@@ -139,6 +139,7 @@ namespace TP
             {
                 refreshName();
                 comboBox4.Enabled = true;
+                label10.Text = "На складе:";
             }
         }
 
@@ -149,9 +150,7 @@ namespace TP
                 Product produc = new Product(comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox4.Text);
 
                 label10.Text += (ClientManagerService.getInstance().getProductQuantity(produc)).ToString();
-               //в лейбл выводит число
-               //нужно взять через сервис
-              //  label10.Text = ClientManagerService.getInstance().getClientOrders().
+              
             }
         }
     }
