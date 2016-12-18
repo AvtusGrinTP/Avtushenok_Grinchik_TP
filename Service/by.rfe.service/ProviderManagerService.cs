@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using ClassLibrary.by.rfe.store.Queue;
 using ClassLibrary.by.rfe.store.Entity;
