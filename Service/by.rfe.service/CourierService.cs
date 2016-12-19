@@ -26,7 +26,7 @@ namespace Service.by.rfe.service
             List<ClientOrder> orders = new List<ClientOrder>();
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
-                if (order.IsReady && !order.IsOnWay)
+                if (order.IsReady && !order.IsOnWay &&!order.InErrorList)
                     orders.Add(order);
             }
             return orders;
@@ -40,7 +40,7 @@ namespace Service.by.rfe.service
             List<ClientOrder> orders = new List<ClientOrder>();
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
-                if (order.IsOnWay && !order.IsDelivered)
+                if (order.IsOnWay && !order.IsDelivered &&!order.IsDenied)
                     orders.Add(order);
             }
             return orders;
@@ -48,6 +48,17 @@ namespace Service.by.rfe.service
         public void giveOrder(ClientOrder order)
         {
             order.IsDelivered = true; 
+        }
+        public void addInErrorList(ClientOrder order)
+        {
+            order.InErrorList = true;
+        }
+        public void deniedOrder(ClientOrder order)
+        {
+            order.IsDenied = true;
+            int count = 0;
+            Store.getInstance().Products.TryGetValue(order.Product, out count);
+            Store.getInstance().addProduct(order.Product, count + order.getQuantity());
         }
 
     }

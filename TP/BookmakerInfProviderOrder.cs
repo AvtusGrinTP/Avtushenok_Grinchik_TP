@@ -43,7 +43,7 @@ namespace TP
             }
             if (fromWho == 2)
             {
-                button1.Text = "Отправить Курьеру";
+                button1.Text = "Добавить на склад";
             }
             if (fromWho == 3)
             {
@@ -61,7 +61,8 @@ namespace TP
             }
             if (fromWho == 2)
             {
-                Form confirm = new DialogWithOne_Buttom("Заказ передан Курьеру", Text);
+                StoreKeeperService.INSTANCE1.takeProviderOrder(currentOrder); 
+                Form confirm = new DialogWithOne_Buttom("Заказ выполнен", Text);
                 confirm.ShowDialog();
             }
             if (fromWho == 3)

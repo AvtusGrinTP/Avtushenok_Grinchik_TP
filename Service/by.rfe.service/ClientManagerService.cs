@@ -152,8 +152,29 @@ namespace Service.by.rfe.service
 
         public void deleteOrder(ClientOrder clientOrder)
         {
+            if (clientOrder.getStatus().Equals("доставлено") || clientOrder.getStatus().Equals("заказ отклонен"))
+            {
+                ClientOrderList.getInstance().Orders.Remove(clientOrder);
+                return;
+            }
+            if (clientOrder.getIsFull())
+            {
+                int count = 0;
+                Store.getInstance().Products.TryGetValue(clientOrder.Product, out count);
+                Store.getInstance().Products.Remove(clientOrder.Product);
+                Store.getInstance().Products.Add(clientOrder.Product, count + clientOrder.getQuantity());
+            }
+            else
+            {
+                int count = 0;
+                Store.getInstance().Products.TryGetValue(clientOrder.Product, out count);
+                Store.getInstance().Products.Remove(clientOrder.Product);
+                Store.getInstance().Products.Add(clientOrder.Product, count + clientOrder.getQuantity() - clientOrder.getCountToEnd());
+            }
             ClientOrderList.getInstance().Orders.Remove(clientOrder);
+            
         }
+        
 
         public string getIdClienOrder() {
             int maxId = 0;

@@ -16,10 +16,14 @@ namespace ClassLibrary.by.rfe.store.Entity
         private bool isReady;
         private bool isOnWay;
         private bool isDelivered;
+        private bool inErrorList;
+        private bool isDenied;
         
 
         public ClientOrder(int id,  Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
+            isDenied = false;
+            inErrorList = false;
             isDelivered = false;
             isOnWay = false;
             isReady = false;
@@ -100,9 +104,35 @@ namespace ClassLibrary.by.rfe.store.Entity
             }
         }
 
+        public bool InErrorList
+        {
+            get
+            {
+                return inErrorList;
+            }
+
+            set
+            {
+                inErrorList = value;
+            }
+        }
+
+        public bool IsDenied
+        {
+            get
+            {
+                return isDenied;
+            }
+
+            set
+            {
+                isDenied = value;
+            }
+        }
+
         public override string ToString()
         {
-            int N1 = 9, N2 = 14, N3 = 9, N4 = 10;
+            int N1 = 9, N2 = 14, N3 = 9, N4 = 10, N5 = 15;
             string Out;
 
             N1 -= getId().ToString().Length;
@@ -121,6 +151,10 @@ namespace ClassLibrary.by.rfe.store.Entity
             Out += getCountToEnd().ToString();
             Out = Space(Out, N4);
 
+            N5 -= getStatus().Length;
+            Out += getStatus();
+            Out = Space(Out, N5);
+
             return Out;
         }
 
@@ -130,6 +164,28 @@ namespace ClassLibrary.by.rfe.store.Entity
                 Out += " ";
 
             return Out + "| ";
+        }
+
+        public string getStatus()
+        {
+            if (!isFull)
+                return "не хватает на складе";
+            if (!getPayed() && isFull)
+                return "ожидает оплаты";
+            if (getPayed() && !isReady)
+                return "ожидает сборки";
+            if (isReady && !IsOnWay)
+                return "ожидает курьера";
+            if (IsOnWay && !IsDelivered && !InErrorList && !isDenied)
+                return "в пути";
+            if (IsDelivered && !InErrorList && !isDenied)
+                return "доставлено";
+            if (InErrorList && !IsDenied)
+                return "пересборка";
+            if (IsDenied)
+                return "заказ отклонен";
+            return "";
+               
         }
     }
 }

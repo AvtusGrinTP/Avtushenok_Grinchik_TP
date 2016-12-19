@@ -9,12 +9,13 @@ namespace ClassLibrary.by.rfe.store.Entity
 {
     public class ProviderOrder : Order
     {
+        private bool isDelivered;
         private Provider provider;
         private ClientOrder clientOrder;
 
         public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
         {
-
+            isDelivered = false;
         }
 
         public ProviderOrder() { }
@@ -46,9 +47,22 @@ namespace ClassLibrary.by.rfe.store.Entity
             }
         }
 
+        public bool IsDelivered
+        {
+            get
+            {
+                return isDelivered;
+            }
+
+            set
+            {
+                isDelivered = value;
+            }
+        }
+
         public override string ToString()
         {
-            int N1 = 9, N2 = 27, N3 = 9;
+            int N1 = 9, N2 = 27, N3 = 9, N4 = 15;
             string Out;
 
             N1 -= getId().ToString().Length;
@@ -63,6 +77,9 @@ namespace ClassLibrary.by.rfe.store.Entity
             Out += getQuantity().ToString();
             Out = Space(Out, N3);
 
+            N4 -= getStatus().Length;
+            Out += getStatus();
+            Out = Space(Out, N4);
 
             return Out;
         }
@@ -73,6 +90,19 @@ namespace ClassLibrary.by.rfe.store.Entity
 
             return Out + "| ";
 
+        }
+
+        public string getStatus()
+        {
+            if (provider == null)
+                return "поиск поставщика";
+            if (provider != null && !getPayed())
+                return "ждет оплаты";
+            if (getPayed() && !isDelivered)
+                return "ждет доставки";
+            if (isDelivered)
+                return "доставлен";
+            return " ";
         }
     }
 }

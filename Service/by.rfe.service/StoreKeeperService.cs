@@ -36,7 +36,7 @@ namespace Service.by.rfe.service
             List<ProviderOrder> orders = new List<ProviderOrder>();
             foreach (ProviderOrder order in ProviderOrderList.getInstance().Orders)
             {
-                if (order.getPayed() == true)
+                if (order.getPayed() == true && !order.IsDelivered)
                     orders.Add(order);
             }
             return orders;
@@ -45,13 +45,24 @@ namespace Service.by.rfe.service
         public void collectOrder(ClientOrder order)
         {
             order.IsReady = true;
+            order.InErrorList = false;
+        }
+        public List<ClientOrder> getErrorList()
+        {
+            List<ClientOrder> orders = new List<ClientOrder>();
+            foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
+            {
+                if (order.InErrorList)
+                    orders.Add(order);
+            }
+            return orders;
         }
         public void takeProviderOrder(ProviderOrder order)
         {
             if (order.ClientOrder == null)
             {
                 Store.getInstance().addProduct(order.Product, order.getQuantity());
-                ProviderOrderList.getInstance().Orders.Remove(order);
+                order.IsDelivered = true;
                 return;
             }
             else
@@ -72,8 +83,8 @@ namespace Service.by.rfe.service
                             or.setCountToEnd(0);
                             or.set(true);
                         }
-                    ProviderOrderList.getInstance().Orders.Remove(order);
-                    return;
+                        order.IsDelivered = true;
+                        return;
                     }
                 }
             }

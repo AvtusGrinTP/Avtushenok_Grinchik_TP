@@ -41,8 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="by.rfe.store\Entity\ClientOrder.cs" />
+    <Compile Include="by.rfe.store\Entity\Enum\ClientOrderStatus.cs" />
+    <Compile Include="by.rfe.store\Entity\Enum\ProviderOrderStatus.cs" />
     <Compile Include="by.rfe.store\Entity\Order.cs" />
     <Compile Include="by.rfe.store\Entity\Product.cs" />
+    <Compile Include="by.rfe.store\Entity\ProductDescription.cs" />
     <Compile Include="by.rfe.store\Entity\Provider.cs" />
     <Compile Include="by.rfe.store\Entity\ProviderOrder.cs" />
     <Compile Include="by.rfe.store\Queue\ClientOrderList.cs" />

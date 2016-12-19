@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary2.by.rfe.store.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ namespace ClassLibrary.by.rfe.store.Entity
         private string category;
         private string type;
         private string name;
-        
 
         public Product(string classofpr, string category, string type, string name)
         {
@@ -74,6 +74,8 @@ namespace ClassLibrary.by.rfe.store.Entity
                 name = value;
             }
         }
+
+      
 
         public override int GetHashCode()
         {

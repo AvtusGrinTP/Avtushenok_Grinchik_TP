@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service.by.rfe.service.exception
 {
-    class ServiceException : System.Exception
+   public class ServiceException : System.Exception
     {
         public ServiceException() : base() { }
         public ServiceException(string message) : base(message) { }

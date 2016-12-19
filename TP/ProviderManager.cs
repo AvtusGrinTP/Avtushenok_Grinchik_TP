@@ -27,16 +27,10 @@ namespace TP
         }
         public void refresh()
         {
-            ProviderManagerService service = ProviderManagerService.getInstance();
-            List<ProviderOrder> orders =service.getProviderOrders();
             listBox1.Items.Clear();
-            foreach (ProviderOrder order in orders)
-            {
-                if(order.Provider == null)
-                {
-                    listBox1.Items.Add(order);
-                }
-            }
+            ProviderManagerService service = ProviderManagerService.getInstance();
+            foreach (ProviderOrder or in service.getProviderOrders())
+                listBox1.Items.Add(or);
         }
 
         private void addNewbutton_Click(object sender, EventArgs e)

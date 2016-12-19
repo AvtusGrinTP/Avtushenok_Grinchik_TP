@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using ClassLibrary.by.rfe.store.Queue;
 using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service.exception;
 
 namespace Service.by.rfe.service
 {
@@ -75,9 +76,15 @@ namespace Service.by.rfe.service
             {
                 if (or.getId().Equals(id))
                 {
+                    
+                    if (or.getQuantity() <= quantity)
+                        or.setQuantity(quantity);
+                    else
+                    {
+                        throw new ServiceException();
+                    }
                     or.Provider = provider;
                     or.Price = price;
-                    or.setQuantity(quantity);
 
                 }
             }

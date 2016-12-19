@@ -115,3 +115,6 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\T
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.ResolveComReference.cache
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreProductList.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProductInf.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.ResolveComReference.cache
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProductInf.resources
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreProductList.resources

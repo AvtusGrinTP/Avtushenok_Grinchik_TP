@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service.by.rfe.service;
 using ClassLibrary.by.rfe.store.Entity;
+using Service.by.rfe.service.exception;
 
 namespace TP
 {
@@ -57,7 +58,7 @@ namespace TP
                     else
                     {
                         ProviderManagerService providerService = ProviderManagerService.getInstance();
-                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()),comboBox1.Text,int.Parse(textBox2.Text.Trim()), int.Parse(textBox3.Text.Trim()));
+                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()), comboBox1.Text, int.Parse(textBox2.Text.Trim()), int.Parse(textBox3.Text.Trim()));
 
                         Form confirm = new DialogWithOne_Buttom("Захаз оформлен", Text);
                         confirm.ShowDialog();
@@ -65,6 +66,11 @@ namespace TP
                         Close();
                         Refresh();
                     }
+                }
+                catch (ServiceException)
+                {
+                    Form err = new DialogWithOne_Buttom("Кол-во заказанных товаров меньше требуемого", Text);
+                    err.ShowDialog();
                 }
                 catch (Exception)
                 {

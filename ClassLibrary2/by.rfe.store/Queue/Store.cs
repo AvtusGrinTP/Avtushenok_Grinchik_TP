@@ -37,7 +37,10 @@ namespace ClassLibrary.by.rfe.store.Queue
             
         public void addProduct(Product pr, int quantuty)
         {
-            products.Add(pr, quantuty);
+            int count = 0;
+            products.TryGetValue(pr, out count);
+            products.Remove(pr);
+            products.Add(pr, quantuty + count);
         }
         public static Store getInstance()
         {

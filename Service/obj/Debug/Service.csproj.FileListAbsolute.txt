@@ -34,3 +34,4 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Gri
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.dll
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.pdb
 D:\Project\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csproj.ResolveComReference.cache
+C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csproj.ResolveComReference.cache

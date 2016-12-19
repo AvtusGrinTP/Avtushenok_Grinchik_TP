@@ -21,6 +21,8 @@ namespace TP
         public ClientManager()
         {
             InitializeComponent();
+            timer1.Enabled = true;
+            timer1.Start();
             label2.Text = DateTime.Now.ToShortDateString();
             refresh();
         }
@@ -77,7 +79,7 @@ namespace TP
         {
             Form editOrder = new EditOrder(currentOrder, Text);
             editOrder.ShowDialog();
-            // refresh();
+            refresh();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -113,6 +115,11 @@ namespace TP
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             refresh();
         }

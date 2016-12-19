@@ -49,6 +49,8 @@ namespace TP
             if(fromWho == 3)
             {
                 button1.Text = "Добавить в Доставки";
+                button3.Visible = true;
+                button3.Text = "Пересобрать";
             }
             if(fromWho == 4)
             {
@@ -80,7 +82,9 @@ namespace TP
             }
             if (fromWho == 4)
             {
-                //кнопка для изменения статуса
+                CourierService.INSTANCE1.giveOrder(currentOrder);
+                Form confirm = new DialogWithOne_Buttom("Доставлен", Text);
+                confirm.ShowDialog();
             }
             Close();
         }
@@ -92,8 +96,21 @@ namespace TP
 
         private void addErrorbutton_Click(object sender, EventArgs e)
         {
-            //кнопка добавления товара в список ошибок для курьера
-            Close();
+            if (fromWho == 4)
+            {
+                CourierService.INSTANCE1.deniedOrder(currentOrder);
+                Form confirm = new DialogWithOne_Buttom("Заказ отклонен", Text);
+                confirm.ShowDialog();
+                Close();
+            }
+            if (fromWho == 3)
+            {
+                CourierService.INSTANCE1.addInErrorList(currentOrder);
+                Form confirm = new DialogWithOne_Buttom("Добавлен в список ошибочных", Text);
+                confirm.ShowDialog();
+                Close();
+            }
         }
+        
     }
 }

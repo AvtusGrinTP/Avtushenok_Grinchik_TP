@@ -19,7 +19,7 @@ namespace TP
         public StoreKeeper()
         {
             InitializeComponent();
-
+            timerProvider.Interval = 1000;
             timerClient.Enabled = true;
             timerProvider.Enabled = true;
             timerError.Enabled = true;
@@ -42,7 +42,7 @@ namespace TP
               foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
             {
 
-               int N1 = 9, N2 = 21, N3 = 40;
+                int N1 = 9, N2 = 21, N3 = 40;
                 string Out;
                 N1 -= order.getId().ToString().Length;
                 Out = order.getId().ToString();
@@ -52,7 +52,7 @@ namespace TP
                 Out += order.getCLient();
                 Out = Space(Out, N2);
 
-               N3 -= order.Product.Name.Length;
+                N3 -= order.Product.Name.Length;
                 Out += order.Product.Name;
                 Out = Space(Out, N3);
 
@@ -92,6 +92,26 @@ namespace TP
         private void refreshError()
         {
             listBox8.Items.Clear();
+            foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getErrorList())
+            {
+
+                int N1 = 9, N2 = 21, N3 = 40;
+                string Out;
+                N1 -= order.getId().ToString().Length;
+                Out = order.getId().ToString();
+                Out = Space(Out, N1);
+
+                N2 -= order.getCLient().ToString().Length;
+                Out += order.getCLient();
+                Out = Space(Out, N2);
+
+                N3 -= order.Product.Name.Length;
+                Out += order.Product.Name;
+                Out = Space(Out, N3);
+
+                listBox8.Items.Add(Out);
+
+            }
         }
 
         public string Space(string Out, int N)
@@ -117,9 +137,10 @@ namespace TP
         }
 
         private void timerProvider_Tick(object sender, EventArgs e)
-        {
+        {   
+            
             int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
-            //  refreshProvider();
+            refreshProvider();
             if (count0 != listBox4.Items.Count)
             {
                 string msg = "chek list! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
@@ -130,7 +151,7 @@ namespace TP
 
         private void timerError_Tick(object sender, EventArgs e)
         {
-            // refreshError();
+             refreshError();
         }
 
         private void listBox4_DoubleClick(object sender, EventArgs e)
@@ -194,20 +215,20 @@ namespace TP
         {
             string orderString = listBox4.GetItemText(listBox4.SelectedItem);
 
-            //if (!orderString.Equals(""))
-            //{
-            //    foreach (ClientOrder order in )
-            //    {
+            if (!orderString.Equals(""))
+            {
+                foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getErrorList())
+                {
 
-            //        if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
-            //        {
-            //            currentOrder = order;
-            //            break;
-            //        }
+                    if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
+                    {
+                        currentOrder = order;
+                        break;
+                    }
 
 
-            //    }
-            //}
+                }
+            }
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
