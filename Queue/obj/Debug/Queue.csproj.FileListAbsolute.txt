@@ -1,0 +1,7 @@
+D:\Project\Avtushenok_Grinchik_TP\Queue\bin\Debug\Queue.dll
+D:\Project\Avtushenok_Grinchik_TP\Queue\bin\Debug\Queue.pdb
+D:\Project\Avtushenok_Grinchik_TP\Queue\bin\Debug\Entity.dll
+D:\Project\Avtushenok_Grinchik_TP\Queue\bin\Debug\Entity.pdb
+D:\Project\Avtushenok_Grinchik_TP\Queue\obj\Debug\Queue.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\Queue\obj\Debug\Queue.dll
+D:\Project\Avtushenok_Grinchik_TP\Queue\obj\Debug\Queue.pdb

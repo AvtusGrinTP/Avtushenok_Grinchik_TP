@@ -1,0 +1,5 @@
+D:\Project\Avtushenok_Grinchik_TP\Entity\bin\Debug\Entity.dll
+D:\Project\Avtushenok_Grinchik_TP\Entity\bin\Debug\Entity.pdb
+D:\Project\Avtushenok_Grinchik_TP\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Project\Avtushenok_Grinchik_TP\Entity\obj\Debug\Entity.dll
+D:\Project\Avtushenok_Grinchik_TP\Entity\obj\Debug\Entity.pdb
