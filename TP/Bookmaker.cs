@@ -91,17 +91,19 @@ namespace TP
 
         private void listBox_DoubleClick(object sender, EventArgs e)
         {
-            if (currentOrder.GetType().IsAssignableFrom(new ClientOrder().GetType()))
+            if (currentOrder != null)
             {
-                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 1);
-                confirmPay.ShowDialog();
+                if (currentOrder.GetType().IsAssignableFrom(new ClientOrder().GetType()))
+                {
+                    Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 1);
+                    confirmPay.ShowDialog();
+                }
+                if (currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
+                {
+                    Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 1);
+                    confirmPay.ShowDialog();
+                }
             }
-            if(currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
-            {
-                Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 1);
-                confirmPay.ShowDialog();
-            }
-          
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)

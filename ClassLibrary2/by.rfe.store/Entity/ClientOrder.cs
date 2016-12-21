@@ -8,7 +8,7 @@ namespace ClassLibrary.by.rfe.store.Entity
 {
     public class ClientOrder : Order
     {
-        
+
         private string client;
         private string address;
         private bool isFull;
@@ -18,9 +18,9 @@ namespace ClassLibrary.by.rfe.store.Entity
         private bool isDelivered;
         private bool inErrorList;
         private bool isDenied;
-        
 
-        public ClientOrder(int id,  Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
+
+        public ClientOrder(int id, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
         {
             isDenied = false;
             inErrorList = false;
@@ -132,60 +132,60 @@ namespace ClassLibrary.by.rfe.store.Entity
 
         public override string ToString()
         {
-            int N1 = 9, N2 = 14, N3 = 9, N4 = 10, N5 = 15;
+            int N1 = 9, N2 = 14, N3 = 9, N4 = 10, N5 = 20;
             string Out;
 
             N1 -= getId().ToString().Length;
             Out = getId().ToString();
-            Out = Space(Out, N1);
+            Out = Space(Out, N1, true);
 
             N2 -= getCLient().ToString().Length;
             Out += getCLient();
-            Out = Space(Out, N2);
+            Out = Space(Out, N2, true);
 
             N3 -= getQuantity().ToString().Length;
             Out += getQuantity().ToString();
-            Out = Space(Out, N3);
+            Out = Space(Out, N3, true);
 
             N4 -= getCountToEnd().ToString().Length;
             Out += getCountToEnd().ToString();
-            Out = Space(Out, N4);
+            Out = Space(Out, N4, true);
 
             N5 -= getStatus().Length;
             Out += getStatus();
-            Out = Space(Out, N5);
+            Out = Space(Out, N5, false);
 
             return Out;
         }
 
-        public string Space(string Out, int N)
+        public string Space(string Out, int N, bool flag)
         {
             for (int i = 0; i < N; i++)
                 Out += " ";
-
-            return Out + "| ";
+            if (flag)
+                return Out + "| ";
+            else return Out;
         }
 
         public string getStatus()
         {
             if (!isFull)
-                return "не хватает на складе";
+                return "Недостача";
             if (!getPayed() && isFull)
-                return "ожидает оплаты";
+                return "Ожидание оплаты";
             if (getPayed() && !isReady)
-                return "ожидает сборки";
+                return "Сборка";
             if (isReady && !IsOnWay)
-                return "ожидает курьера";
+                return "Ожидает курьера";
             if (IsOnWay && !IsDelivered && !InErrorList && !isDenied)
-                return "в пути";
+                return "В пути";
             if (IsDelivered && !InErrorList && !isDenied)
-                return "доставлено";
+                return "Доставлено";
             if (InErrorList && !IsDenied)
-                return "пересборка";
+                return "Пересборка";
             if (IsDenied)
-                return "заказ отклонен";
+                return "Заказ отклонен";
             return "";
-               
         }
     }
 }

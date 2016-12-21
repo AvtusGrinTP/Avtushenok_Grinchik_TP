@@ -156,8 +156,11 @@ namespace TP
 
         private void listBox4_DoubleClick(object sender, EventArgs e)
         {
-            Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
-            confirmPay.ShowDialog();
+            if (currentOrder != null)
+            {
+                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
+                confirmPay.ShowDialog();
+            }
         }
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,9 +185,11 @@ namespace TP
 
         private void listBox6_DoubleClick(object sender, EventArgs e)
         {
-
-            Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 2);
-            confirmPay.ShowDialog();
+            if (currentOrder != null)
+            {
+                Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 2);
+                confirmPay.ShowDialog();
+            }
 
         }
 
@@ -207,8 +212,11 @@ namespace TP
 
         private void listBox8_DoubleClick(object sender, EventArgs e)
         {
-            Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
-            confirmPay.ShowDialog();
+            if (currentOrder != null)
+            {
+                Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 2);
+                confirmPay.ShowDialog();
+            }
         }
 
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)

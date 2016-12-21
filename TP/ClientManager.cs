@@ -22,15 +22,22 @@ namespace TP
         {
             InitializeComponent();
             timer1.Enabled = true;
-            timer1.Start();
+           // timer1.Start();
             label2.Text = DateTime.Now.ToShortDateString();
+            viewFindTextBox();
+            
             refresh();
         }
 
-        public void refresh()
+        private void viewFindTextBox()
         {
             textBox1.Text = "Поиск";
             textBox1.ForeColor = Color.Gray;
+        }
+        public void refresh()
+        {
+            timer1.Start();
+
             listBox1.Items.Clear();
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
@@ -56,8 +63,7 @@ namespace TP
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //  listBox1.Items.Add(new DialogWithOne_Buttom("status", Text));
-            //  currentOrder = new ClientOrder();
+            viewFindTextBox();
             string orderString = listBox1.GetItemText(listBox1.SelectedItem);
 
             if (!orderString.Equals(""))
@@ -71,15 +77,16 @@ namespace TP
                     }
                 }
             }
-
-
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            Form editOrder = new EditOrder(currentOrder, Text);
-            editOrder.ShowDialog();
-            refresh();
+            if (currentOrder != null)
+            {
+                Form editOrder = new EditOrder(currentOrder, Text);
+                editOrder.ShowDialog();
+                refresh();
+            }
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -98,9 +105,11 @@ namespace TP
                 if (textBox1.Text.Equals(""))
                 {
                     refreshFind();
+                   
                 }
                 else if (outPut != null)
                 {
+                    timer1.Stop();
                     listBox1.Items.Clear();
                     string[] order = outPut.Split('/');
                     for (int i = 0; i < order.Length - 1; i++)
@@ -117,6 +126,7 @@ namespace TP
         private void cancelbutton_Click(object sender, EventArgs e)
         {
             refresh();
+            viewFindTextBox();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

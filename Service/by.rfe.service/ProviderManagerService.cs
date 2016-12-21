@@ -128,6 +128,10 @@ namespace Service.by.rfe.service
             }
             return provider;
         }
+        public void removeProviderOrder(ProviderOrder order)
+        {
+            ProviderOrderList.getInstance().Orders.Remove(order);
+        }
 
     }
 }

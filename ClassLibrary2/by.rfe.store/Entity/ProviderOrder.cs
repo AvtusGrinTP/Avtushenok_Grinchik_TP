@@ -67,41 +67,43 @@ namespace ClassLibrary.by.rfe.store.Entity
 
             N1 -= getId().ToString().Length;
             Out = getId().ToString();
-            Out = Space(Out, N1);
+            Out = Space(Out, N1, true);
 
             N2 -= Product.Name.ToString().Length;
             Out += Product.Name;
-            Out = Space(Out, N2);
+            Out = Space(Out, N2, true);
 
             N3 -= getQuantity().ToString().Length;
             Out += getQuantity().ToString();
-            Out = Space(Out, N3);
+            Out = Space(Out, N3, true);
 
             N4 -= getStatus().Length;
             Out += getStatus();
-            Out = Space(Out, N4);
+            Out = Space(Out, N4, false);
 
             return Out;
         }
-        public string Space(string Out, int N)
+        public string Space(string Out, int N, bool flag)
         {
             for (int i = 0; i < N; i++)
                 Out += " ";
 
-            return Out + "| ";
+            if (flag)
+                return Out + "| ";
+            else return Out;
 
         }
 
         public string getStatus()
         {
             if (provider == null)
-                return "поиск поставщика";
+                return "Поиск поставщика";
             if (provider != null && !getPayed())
-                return "ждет оплаты";
+                return "Ожидает оплаты";
             if (getPayed() && !isDelivered)
-                return "ждет доставки";
+                return "Ожидает доставки";
             if (isDelivered)
-                return "доставлен";
+                return "Доставлен";
             return " ";
         }
     }

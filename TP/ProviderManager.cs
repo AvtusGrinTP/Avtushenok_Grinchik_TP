@@ -64,9 +64,20 @@ namespace TP
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            Form add = new MakeProviderOrder(currentProviderOrder, Text);
-            add.ShowDialog();
-            refresh();
+            if (currentProviderOrder != null)
+            {
+                if (currentProviderOrder.Provider == null)
+                {
+                    Form add = new MakeProviderOrder(currentProviderOrder, Text);
+                    add.ShowDialog();
+                }
+                else
+                {
+                    Form edit = new BookmakerInfProviderOrder(currentProviderOrder, Text, 3);
+                    edit.ShowDialog();
+                }
+                refresh();
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)

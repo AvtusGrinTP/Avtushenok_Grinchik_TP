@@ -39,10 +39,10 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.timerClient = new System.Windows.Forms.Timer(this.components);
             this.timerProvider = new System.Windows.Forms.Timer(this.components);
             this.timerError = new System.Windows.Forms.Timer(this.components);
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.errorList.SuspendLayout();
             this.toStockList.SuspendLayout();
             this.courierList.SuspendLayout();
@@ -81,7 +81,7 @@
             this.listBox7.FormattingEnabled = true;
             this.listBox7.ItemHeight = 19;
             this.listBox7.Items.AddRange(new object[] {
-            "??????????????????????????????"});
+            "№ заказа | Клиент               | Заказ "});
             this.listBox7.Location = new System.Drawing.Point(12, 7);
             this.listBox7.Name = "listBox7";
             this.listBox7.Size = new System.Drawing.Size(680, 23);
@@ -119,7 +119,7 @@
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 19;
             this.listBox5.Items.AddRange(new object[] {
-            "№ заказа | Поставщик               | Заказ "});
+            "№ заказа | Поставщик            | Заказ "});
             this.listBox5.Location = new System.Drawing.Point(12, 7);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(680, 23);
@@ -178,19 +178,6 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
-            // timerClient
-            // 
-            this.timerClient.Interval = 1000;
-            this.timerClient.Tick += new System.EventHandler(this.timerClient_Tick);
-            // 
-            // timerProvider
-            // 
-            this.timerProvider.Tick += new System.EventHandler(this.timerProvider_Tick);
-            // 
-            // timerError
-            // 
-            this.timerError.Tick += new System.EventHandler(this.timerError_Tick);
-            // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
@@ -199,6 +186,21 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // timerClient
+            // 
+            this.timerClient.Interval = 1000;
+            this.timerClient.Tick += new System.EventHandler(this.timerClient_Tick);
+            // 
+            // timerProvider
+            // 
+            this.timerProvider.Interval = 1000;
+            this.timerProvider.Tick += new System.EventHandler(this.timerProvider_Tick);
+            // 
+            // timerError
+            // 
+            this.timerError.Interval = 1000;
+            this.timerError.Tick += new System.EventHandler(this.timerError_Tick);
             // 
             // StoreKeeper
             // 

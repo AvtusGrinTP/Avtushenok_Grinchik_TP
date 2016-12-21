@@ -55,10 +55,12 @@ namespace TP
         }
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            Form editProvider = new EditProvider(currentProvider, Text);
-            editProvider.ShowDialog();
-            refresh();
-
+            if (currentProvider != null)
+            {
+                Form editProvider = new EditProvider(currentProvider, Text);
+                editProvider.ShowDialog();
+                refresh();
+            }
         }
 
         private void addbutton_Click(object sender, EventArgs e)

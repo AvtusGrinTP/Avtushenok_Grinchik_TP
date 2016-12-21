@@ -152,7 +152,7 @@ namespace Service.by.rfe.service
 
         public void deleteOrder(ClientOrder clientOrder)
         {
-            if (clientOrder.getStatus().Equals("доставлено") || clientOrder.getStatus().Equals("заказ отклонен"))
+            if (clientOrder.getStatus().Equals("Доставлено") || clientOrder.getStatus().Equals("Заказ отклонен"))
             {
                 ClientOrderList.getInstance().Orders.Remove(clientOrder);
                 return;

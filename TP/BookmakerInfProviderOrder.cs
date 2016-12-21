@@ -12,7 +12,7 @@ using Service.by.rfe.service;
 // флаг fromWho чтобы определить кто вызывает эту форму
 // 1 - bookmaker
 // 2 - storekeeper
-// 3 - courier
+// 3 - provider
 
 
 namespace TP
@@ -47,7 +47,10 @@ namespace TP
             }
             if (fromWho == 3)
             {
-                button1.Text = "Добавить в Доставки";
+                button1.Text = "Удалить заказ";
+                if (currentOrder.IsDelivered)
+                    button1.Enabled = true;
+                else button1.Enabled = false;
             }
         }
 
@@ -61,13 +64,15 @@ namespace TP
             }
             if (fromWho == 2)
             {
-                StoreKeeperService.INSTANCE1.takeProviderOrder(currentOrder); 
+                StoreKeeperService.INSTANCE1.takeProviderOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ выполнен", Text);
                 confirm.ShowDialog();
             }
             if (fromWho == 3)
             {
-                Form confirm = new DialogWithOne_Buttom("Заказ добавлен в Доставки", Text);
+
+                ProviderManagerService.getInstance().removeProviderOrder(currentOrder);
+                Form confirm = new DialogWithOne_Buttom("Заказ удален", Text);
                 confirm.ShowDialog();
             }
             Close();

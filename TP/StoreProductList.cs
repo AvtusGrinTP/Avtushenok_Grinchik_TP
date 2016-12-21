@@ -52,8 +52,11 @@ namespace TP
 
         private void listBox2_DoubleClick(object sender, EventArgs e)
         {
-            Form edit = new ProductInf(Text, 2);
-            edit.ShowDialog();
+            if (currentProduct != null)
+            {
+                Form edit = new ProductInf(Text, 2);
+                edit.ShowDialog();
+            }
         }
     }
 }
