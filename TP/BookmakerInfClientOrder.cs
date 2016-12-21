@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibrary.by.rfe.store.Entity;
+using Entity.entity;
 using Service.by.rfe.service;
 
 // флаг fromWho чтобы определить кто вызывает эту форму

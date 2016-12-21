@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClassLibrary.by.rfe.store.Queue;
-using ClassLibrary.by.rfe.store.Entity;
 using Service.by.rfe.service.exception;
+using Entity.entity;
+using Queue.queue;
 
 namespace Service.by.rfe.service
 {

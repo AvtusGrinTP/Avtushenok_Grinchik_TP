@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service.by.rfe.service;
-using ClassLibrary.by.rfe.store.Entity;
+using Entity.entity;
 
 namespace TP
 {

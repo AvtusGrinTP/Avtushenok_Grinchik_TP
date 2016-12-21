@@ -7,8 +7,6 @@ C:\Users\Алексей\Google Диск\TP\Service\obj\Debug\Service.dll
 C:\Users\Алексей\Google Диск\TP\Service\obj\Debug\Service.pdb
 D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Service.dll
 D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Service.pdb
-D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\ClassLibrary2.dll
-D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\ClassLibrary2.pdb
 D:\Project\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\Project\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.dll
 D:\Project\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.pdb
@@ -35,3 +33,7 @@ C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Gri
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.pdb
 D:\Project\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csproj.ResolveComReference.cache
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\Service\obj\Debug\Service.csproj.ResolveComReference.cache
+D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Entity.dll
+D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Queue.dll
+D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Entity.pdb
+D:\Project\Avtushenok_Grinchik_TP\Service\bin\Debug\Queue.pdb

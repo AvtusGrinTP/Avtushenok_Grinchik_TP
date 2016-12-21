@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2ABAFDA7-8244-4FC6-8F27-94C7A08E82B8}</ProjectGuid>
+    <ProjectGuid>{F827EC3B-9464-41D2-827A-AA0372C5CAA4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary2</RootNamespace>
-    <AssemblyName>ClassLibrary2</AssemblyName>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="by.rfe.store\Entity\ClientOrder.cs" />
-    <Compile Include="by.rfe.store\Entity\Order.cs" />
-    <Compile Include="by.rfe.store\Entity\Product.cs" />
-    <Compile Include="by.rfe.store\Entity\ProductDescription.cs" />
-    <Compile Include="by.rfe.store\Entity\Provider.cs" />
-    <Compile Include="by.rfe.store\Entity\ProviderOrder.cs" />
-    <Compile Include="by.rfe.store\Queue\ClientOrderList.cs" />
-    <Compile Include="by.rfe.store\Queue\ProviderOrderList.cs" />
-    <Compile Include="by.rfe.store\Queue\Store.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="entity\ClientOrder.cs" />
+    <Compile Include="entity\Order.cs" />
+    <Compile Include="entity\Product.cs" />
+    <Compile Include="entity\ProductDescription.cs" />
+    <Compile Include="entity\Provider.cs" />
+    <Compile Include="entity\ProviderOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassLibrary.by.rfe.store.Entity;
-using ClassLibrary.by.rfe.store.Queue;
+using Entity.entity;
+using Queue.queue;
 using Service.by.rfe.service;
 
 

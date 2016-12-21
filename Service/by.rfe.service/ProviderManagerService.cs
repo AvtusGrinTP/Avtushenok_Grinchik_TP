@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 //using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
-using ClassLibrary.by.rfe.store.Queue;
-using ClassLibrary.by.rfe.store.Entity;
+using Entity.entity;
+using Queue.queue;
 using Service.by.rfe.service.exception;
 
 namespace Service.by.rfe.service

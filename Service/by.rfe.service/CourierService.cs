@@ -1,5 +1,5 @@
-﻿using ClassLibrary.by.rfe.store.Entity;
-using ClassLibrary.by.rfe.store.Queue;
+﻿using Entity.entity;
+using Queue.queue;
 using System;
 using System.Collections.Generic;
 using System.Linq;

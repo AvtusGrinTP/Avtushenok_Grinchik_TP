@@ -1,9 +1,7 @@
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe.config
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.exe
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\TP.pdb
-D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.dll
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.dll
-D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\ClassLibrary2.pdb
 D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Service.pdb
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.AddNewOrder.resources
@@ -118,3 +116,7 @@ D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProductInf.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.ResolveComReference.cache
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProductInf.resources
 C:\Users\Алексей\Google Диск\TP\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreProductList.resources
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Entity.dll
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Queue.dll
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Entity.pdb
+D:\Project\Avtushenok_Grinchik_TP\TP\bin\Debug\Queue.pdb

@@ -9,14 +9,7 @@ namespace ClassLibrary2.by.rfe.store.Entity
 {
    public class ProductDescription
     {
-        Product product;
-        string description;
-        string unit;
-        double weight;
-        int storageLife;
-        double price;
-        Provider provider;
-        DateTime dateOfDelivery;
+       
         
     }
 }
