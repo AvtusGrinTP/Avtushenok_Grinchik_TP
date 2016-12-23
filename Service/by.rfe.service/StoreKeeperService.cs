@@ -10,14 +10,14 @@ namespace Service.by.rfe.service
 {
  public  class StoreKeeperService
     {
-        private static StoreKeeperService INSTANCE = new StoreKeeperService();
+        private static StoreKeeperService instance = new StoreKeeperService();
         private StoreKeeperService() { }
 
-        public static StoreKeeperService INSTANCE1
+        public static StoreKeeperService getInstance
         {
             get
             {
-                return INSTANCE;
+                return instance;
             }
         }
 

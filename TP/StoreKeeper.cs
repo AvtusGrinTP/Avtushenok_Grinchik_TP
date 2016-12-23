@@ -40,7 +40,7 @@ namespace TP
         {
           //  currentOrder = null;
             listBox4.Items.Clear();
-            foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
+            foreach (ClientOrder order in StoreKeeperService.getInstance.getClientOrders())
             {
 
                 int N1 = 9, N2 = 21, N3 = 40;
@@ -68,7 +68,7 @@ namespace TP
         {
            // currentOrder = null;
             listBox6.Items.Clear();
-            foreach (ProviderOrder order in StoreKeeperService.INSTANCE1.getProviderOrders())
+            foreach (ProviderOrder order in StoreKeeperService.getInstance.getProviderOrders())
             {
 
                 int N1 = 9, N2 = 21, N3 = 40;
@@ -95,7 +95,7 @@ namespace TP
         {
             //currentOrder = null;
             listBox8.Items.Clear();
-            foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getErrorList())
+            foreach (ClientOrder order in StoreKeeperService.getInstance.getErrorList())
             {
 
                 int N1 = 9, N2 = 21, N3 = 40;
@@ -179,7 +179,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
+                foreach (ClientOrder order in StoreKeeperService.getInstance.getClientOrders())
                 {
 
                     if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
@@ -209,7 +209,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach (ProviderOrder order in StoreKeeperService.INSTANCE1.getProviderOrders())
+                foreach (ProviderOrder order in StoreKeeperService.getInstance.getProviderOrders())
                 {
                     if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
                     {
@@ -235,7 +235,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getErrorList())
+                foreach (ClientOrder order in StoreKeeperService.getInstance.getErrorList())
                 {
 
                     if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))

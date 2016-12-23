@@ -71,19 +71,19 @@ namespace TP
             }
             if(fromWho == 2)
             {
-                StoreKeeperService.INSTANCE1.collectOrder(currentOrder);
+                StoreKeeperService.getInstance.collectOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ передан Курьеру", Text);
                 confirm.ShowDialog();
             }
             if(fromWho == 3)
             {
-                CourierService.INSTANCE1.takeOrder(currentOrder);
+                CourierService.getInstance.takeOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ добавлен в Доставки", Text);
                 confirm.ShowDialog();
             }
             if (fromWho == 4)
             {
-                CourierService.INSTANCE1.giveOrder(currentOrder);
+                CourierService.getInstance.giveOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Доставлен", Text);
                 confirm.ShowDialog();
             }
@@ -99,14 +99,14 @@ namespace TP
         {
             if (fromWho == 4)
             {
-                CourierService.INSTANCE1.deniedOrder(currentOrder);
+                CourierService.getInstance.deniedOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ отклонен", Text);
                 confirm.ShowDialog();
                 Close();
             }
             if (fromWho == 3)
             {
-                CourierService.INSTANCE1.addInErrorList(currentOrder);
+                CourierService.getInstance.addInErrorList(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Добавлен в список ошибочных", Text);
                 confirm.ShowDialog();
                 Close();

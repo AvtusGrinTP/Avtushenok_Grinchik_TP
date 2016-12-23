@@ -33,7 +33,7 @@ namespace TP
         {
             //currentOrder = null;
             listBox2.Items.Clear();
-            foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+            foreach (ClientOrder order in CourierService.getInstance.getClientOrders())
             {
 
                 int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
@@ -62,7 +62,7 @@ namespace TP
         private void refreshCourierList()
         {
             listBox4.Items.Clear();
-            foreach (ClientOrder order in CourierService.INSTANCE1.getCourierList())
+            foreach (ClientOrder order in CourierService.getInstance.getCourierList())
             {
 
                 int N1 = 9, N2 = 22, N3 = 40;
@@ -139,7 +139,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+                foreach (ClientOrder order in CourierService.getInstance.getClientOrders())
                 {
 
                     if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
@@ -159,7 +159,7 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
+                foreach (ClientOrder order in CourierService.getInstance.getClientOrders())
                 {
 
                     if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))

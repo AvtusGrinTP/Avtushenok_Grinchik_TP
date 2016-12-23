@@ -10,14 +10,14 @@ namespace Service.by.rfe.service
 {
     public class CourierService
     {
-        private static CourierService INSTANCE = new CourierService();
+        private static CourierService instance = new CourierService();
 
         private CourierService() { }
-        public static CourierService INSTANCE1
+        public static CourierService getInstance
         {
             get
             {
-                return INSTANCE;
+                return instance;
             }
         }
 

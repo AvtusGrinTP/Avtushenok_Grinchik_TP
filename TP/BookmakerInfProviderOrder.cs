@@ -65,7 +65,7 @@ namespace TP
             }
             if (fromWho == 2)
             {
-                StoreKeeperService.INSTANCE1.takeProviderOrder(currentOrder);
+                StoreKeeperService.getInstance.takeProviderOrder(currentOrder);
                 Form confirm = new DialogWithOne_Buttom("Заказ выполнен", Text);
                 confirm.ShowDialog();
             }
