@@ -141,7 +141,7 @@
             this.MaximizeBox = false;
             this.Name = "EditProvider";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditProvider";
             this.ResumeLayout(false);
             this.PerformLayout();

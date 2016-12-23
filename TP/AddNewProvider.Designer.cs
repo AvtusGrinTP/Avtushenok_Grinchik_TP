@@ -129,7 +129,7 @@
             this.MaximizeBox = false;
             this.Name = "AddNewProvider";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddNewProvider";
             this.ResumeLayout(false);
             this.PerformLayout();

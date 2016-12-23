@@ -74,7 +74,7 @@ namespace TP
             for (int i = 0; i < listBox1.Items.Count; i++)
             {
                 string[] provider = listBox1.Items[i].ToString().Split('|');
-                ProviderManagerService.getInstance().importToTxt("ProviderList.txt", provider);
+                ProviderManagerService.getInstance().exportToTxt("ProviderList.txt", provider);
             }
             Form confirm = new DialogWithOne_Buttom("Список Поставщиков Сохранен", Text);
             confirm.ShowDialog();

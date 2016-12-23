@@ -189,17 +189,17 @@
             // 
             // timerClient
             // 
-            this.timerClient.Interval = 1000;
+            this.timerClient.Interval = 10000;
             this.timerClient.Tick += new System.EventHandler(this.timerClient_Tick);
             // 
             // timerProvider
             // 
-            this.timerProvider.Interval = 1000;
+            this.timerProvider.Interval = 10000;
             this.timerProvider.Tick += new System.EventHandler(this.timerProvider_Tick);
             // 
             // timerError
             // 
-            this.timerError.Interval = 1000;
+            this.timerError.Interval = 10000;
             this.timerError.Tick += new System.EventHandler(this.timerError_Tick);
             // 
             // StoreKeeper

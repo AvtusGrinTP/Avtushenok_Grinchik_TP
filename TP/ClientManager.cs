@@ -37,7 +37,7 @@ namespace TP
         public void refresh()
         {
             timer1.Start();
-
+            currentOrder = null;
             listBox1.Items.Clear();
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {

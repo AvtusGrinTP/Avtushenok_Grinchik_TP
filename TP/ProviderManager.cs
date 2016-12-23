@@ -27,6 +27,7 @@ namespace TP
         }
         public void refresh()
         {
+            currentProviderOrder = null;
             listBox1.Items.Clear();
             ProviderManagerService service = ProviderManagerService.getInstance();
             foreach (ProviderOrder or in service.getProviderOrders())

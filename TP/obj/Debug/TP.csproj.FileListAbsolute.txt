@@ -17,7 +17,6 @@ D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.MakeProviderOrder.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.Properties.Resources.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderList.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.ProviderManager.resources
-D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StartUpForm.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.StoreKeeper.resources
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.csproj.GenerateResource.Cache
 D:\Project\Avtushenok_Grinchik_TP\TP\obj\Debug\TP.exe

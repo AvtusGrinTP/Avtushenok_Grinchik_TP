@@ -38,8 +38,9 @@ namespace TP
 
         private void refreshClient()
         {
+          //  currentOrder = null;
             listBox4.Items.Clear();
-              foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
+            foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getClientOrders())
             {
 
                 int N1 = 9, N2 = 21, N3 = 40;
@@ -59,12 +60,13 @@ namespace TP
                 listBox4.Items.Add(Out);
 
             }
-          
+
 
         }
 
         private void refreshProvider()
         {
+           // currentOrder = null;
             listBox6.Items.Clear();
             foreach (ProviderOrder order in StoreKeeperService.INSTANCE1.getProviderOrders())
             {
@@ -91,6 +93,7 @@ namespace TP
 
         private void refreshError()
         {
+            //currentOrder = null;
             listBox8.Items.Clear();
             foreach (ClientOrder order in StoreKeeperService.INSTANCE1.getErrorList())
             {
@@ -127,23 +130,23 @@ namespace TP
             int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
 
             refreshClient(); //может сделать задержку?
-            if ((count0 != listBox4.Items.Count)  && (-count0 + listBox4.Items.Count > 0))
+            if ((count0 != listBox4.Items.Count) && (-count0 + listBox4.Items.Count > 0))
             {
-                string msg = "chek list! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
-                count0 = listBox4.Items.Count; 
+                string msg = "Проверте список Заказов! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
+                count0 = listBox4.Items.Count;
                 Form info = new DialogWithOne_Buttom(msg, Text);
                 info.Show();
             }
         }
 
         private void timerProvider_Tick(object sender, EventArgs e)
-        {   
-            
-            int count0 = listBox4.Items.Count; //чтобы тестить ставь ==
+        {
+
+            int count0 = listBox6.Items.Count; //чтобы тестить ставь ==
             refreshProvider();
-            if (count0 != listBox4.Items.Count)
+            if ((count0 != listBox6.Items.Count) && (-count0 + listBox6.Items.Count > 0))
             {
-                string msg = "chek list! \nДобавлено " + (listBox4.Items.Count - count0).ToString() + " новых заказов";
+                string msg = "Проверте список Доставок! \nДобавлено " + (listBox6.Items.Count - count0).ToString() + " новых заказов";
                 Form info = new DialogWithOne_Buttom(msg, Text);
                 info.Show();
             }
@@ -151,7 +154,14 @@ namespace TP
 
         private void timerError_Tick(object sender, EventArgs e)
         {
-             refreshError();
+            int count0 = listBox8.Items.Count; //чтобы тестить ставь ==
+            refreshError();
+            if ((count0 != listBox8.Items.Count) && (-count0 + listBox8.Items.Count > 0))
+            {
+                string msg = "Проверте список Ошибок! \nДобавлено " + (listBox8.Items.Count - count0).ToString() + " новых заказов";
+                Form info = new DialogWithOne_Buttom(msg, Text);
+                info.Show();
+            }
         }
 
         private void listBox4_DoubleClick(object sender, EventArgs e)
@@ -221,7 +231,7 @@ namespace TP
 
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string orderString = listBox4.GetItemText(listBox4.SelectedItem);
+            string orderString = listBox8.GetItemText(listBox4.SelectedItem);
 
             if (!orderString.Equals(""))
             {
@@ -243,48 +253,5 @@ namespace TP
         {
             e.Cancel = e.TabPageIndex == 3;
         }
-
-        //не удаляй, пусть висит тут
-        //private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        //{
-
-        //    Graphics g = e.Graphics;
-        //    //TabPage tp = tabControl1.TabPages[0];
-
-        //    StringFormat sf = new StringFormat();
-        //    sf.Alignment = StringAlignment.Center;  //optional
-
-        //    // This is the rectangle to draw "over" the tabpage title
-        //    RectangleF headerRect = new RectangleF(e.Bounds.X-5, e.Bounds.Y+2, e.Bounds.Width + 10, e.Bounds.Height+4);
-
-        //    // This is the default colour to use for the non-selected tabs
-        //    //           SolidBrush sb = new SolidBrush(Color.WhiteSmoke);
-
-        //    // This changes the colour if we're trying to draw the selected tabpage
-        //    // if (tabControl1.SelectedIndex == e.Index)
-        //    //   sb.Color = Color.Aqua;
-
-        //    // Colour the header of the current tabpage based on what we did above
-        //    //g.FillRectangle(sb, e.Bounds);
-
-        //    //Remember to redraw the text - I'm always using black for title text
-        //    if (newOrder()/* && tabControl1.TabPages[0].Text == orderList.Text*/)
-        //    {
-        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
-        //    }
-        //    else if(newErrorOrder() /*&& /*tabControl1.TabPages[3].Text == errorList.Text*/)
-        //    {
-        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Red), headerRect, sf);
-
-        //    }
-        //    else
-        //    {
-        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
-        //        g.DrawString(tabControl1.TabPages[e.Index].Text, tabControl1.Font, new SolidBrush(Color.Black), headerRect, sf);
-
-        //    }
-        //}
-
-
     }
 }

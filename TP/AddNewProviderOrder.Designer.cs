@@ -236,7 +236,7 @@
             this.MaximizeBox = false;
             this.Name = "AddNewProviderOrder";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddNewProviderOrder";
             this.ResumeLayout(false);
             this.PerformLayout();

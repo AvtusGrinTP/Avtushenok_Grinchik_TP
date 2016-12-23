@@ -274,7 +274,7 @@
             this.MaximizeBox = false;
             this.Name = "BookmakerInfProviderOrder";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BookmakerInfProviderOrder";
             this.ResumeLayout(false);
             this.PerformLayout();

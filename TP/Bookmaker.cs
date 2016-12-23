@@ -26,6 +26,8 @@ namespace TP
 
         void refresh()
         {
+            currentOrder = null;
+
             listBox2.Items.Clear();
             foreach (ClientOrder order in BookmakerService.getInstance.getClientOrders())
             {
@@ -96,7 +98,7 @@ namespace TP
                     Form confirmPay = new BookmakerInfClientOrder((ClientOrder)currentOrder, Text, 1);
                     confirmPay.ShowDialog();
                 }
-                if (currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
+               else if (currentOrder.GetType().IsAssignableFrom(new ProviderOrder().GetType()))
                 {
                     Form confirmPay = new BookmakerInfProviderOrder((ProviderOrder)currentOrder, Text, 1);
                     confirmPay.ShowDialog();

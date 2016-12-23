@@ -31,6 +31,7 @@ namespace TP
 
         private void refresh()
         {
+            //currentOrder = null;
             listBox2.Items.Clear();
             foreach (ClientOrder order in CourierService.INSTANCE1.getClientOrders())
             {
@@ -128,6 +129,7 @@ namespace TP
             {
                 Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 3);
                 confirmPay.ShowDialog();
+                currentOrder = null;
             }
         }
 
@@ -177,6 +179,7 @@ namespace TP
             {
                 Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 4);
                 confirmPay.ShowDialog();
+                currentOrder = null;
             }
         }
 
