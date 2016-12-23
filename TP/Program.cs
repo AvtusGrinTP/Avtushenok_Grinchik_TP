@@ -29,7 +29,7 @@ namespace TP
             for (int i = 3; i >= 0; i--)
             {
                // Application.Run(array[i]);
-              array[i].Show();
+             array[i].Show();
             }
 
           //  var a = new ProviderManager();

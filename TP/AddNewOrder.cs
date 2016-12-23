@@ -18,7 +18,7 @@ namespace TP
         {
             InitializeComponent();
             refreshClass();
-            textBox1.Text = DateTime.Now.ToShortDateString();
+            dateTimePicker1.Text = DateTime.Now.ToShortDateString();
             textBox5.Text = ClientManagerService.getInstance().getIdClienOrder();
             Text = service;
             comboBox2.Enabled = false;
@@ -32,8 +32,8 @@ namespace TP
             HashSet<string> classs = clientManagerService.getClass();
             string[] cl = classs.ToArray<string>();
             comboBox1.Items.AddRange(cl);
-           
-     }
+
+        }
         void refreshCategory()
         {
             ClientManagerService clientManagerService = ClientManagerService.getInstance();
@@ -65,21 +65,29 @@ namespace TP
         {
 
             if (comboBox1.Text.Equals("") || comboBox2.Text.Equals("") || comboBox3.Text.Equals("") || comboBox4.Text.Equals("") || textBox2.Text.Equals("")
-                || textBox3.Text.Equals("") || textBox4.Text.Equals("") || textBox5.Text.Equals("")|| textBox6.Text.Equals(""))
+                || textBox3.Text.Equals("") || textBox4.Text.Equals("") || textBox5.Text.Equals("") || textBox6.Text.Equals(""))
             {
                 Form err = new DialogWithOne_Buttom("Заполните все поля", Text);
                 err.ShowDialog();
             }
-            else 
+            else
             {
                 try
                 {
-
+                    double price = double.Parse(textBox6.Text);
                     int number = int.Parse(textBox3.Text);
-                    if (number < 1)
+                    if ((number < 1) || (price < 1))
                     {
-                        Form err = new DialogWithOne_Buttom("Количество не может быть \nотрицательным либо равным нулю", Text);
-                        err.ShowDialog();
+                        if (number < 1)
+                        {
+                            Form err = new DialogWithOne_Buttom("Количество не может быть \nотрицательным либо равным нулю", Text);
+                            err.ShowDialog();
+                        }
+                        if (price < 1)
+                        {
+                            Form err = new DialogWithOne_Buttom("Цена не может быть \nотрицательным либо равным нулю", Text);
+                            err.ShowDialog();
+                        }
                     }
                     else
                     {
@@ -88,11 +96,11 @@ namespace TP
                         if (clientManagerService.isExistId(int.Parse(textBox5.Text)))
                             new DialogWithOne_Buttom("Такой номер заказа уже существет", Text).ShowDialog();
                         else
-                        {                          
+                        {
                             clientManagerService.addClientOrder(int.Parse(textBox5.Text), comboBox1.Text,
-                                comboBox2.Text, comboBox3.Text,comboBox4.Text, 
-                                int.Parse(textBox3.Text), textBox2.Text, textBox4.Text, double.Parse(textBox6.Text));
-                              Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
+                                comboBox2.Text, comboBox3.Text, comboBox4.Text,
+                                int.Parse(textBox3.Text), textBox2.Text, textBox4.Text, double.Parse(textBox6.Text), DateTime.Parse(dateTimePicker1.Text));
+                            Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
                             createOrder.ShowDialog();
                             Close();
 
@@ -103,7 +111,7 @@ namespace TP
                 }
                 catch (Exception)
                 {
-                    Form err = new DialogWithOne_Buttom("Количество состоит только из цифр", Text);
+                    Form err = new DialogWithOne_Buttom("Количество или Цена \nсостоит только из цифр", Text);
                     err.ShowDialog();
                 }
             }
@@ -115,7 +123,7 @@ namespace TP
             Close();
         }
 
-        
+
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -151,7 +159,7 @@ namespace TP
                 Product produc = new Product(comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox4.Text);
 
                 label10.Text += (ClientManagerService.getInstance().getProductQuantity(produc)).ToString();
-              
+
             }
         }
     }

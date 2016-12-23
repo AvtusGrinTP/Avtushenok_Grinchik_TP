@@ -36,6 +36,7 @@ namespace TP
             textBox7.Text = currentOrder.getCLient();
             textBox8.Text = currentOrder.getAddress();
             textBox9.Text = currentOrder.Price.ToString();
+            dateTimePicker1.Text = currentOrder.Date.ToString();
             Text = service;
             this.fromWho = fromWho;
             if(fromWho == 1)

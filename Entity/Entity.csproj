@@ -44,7 +44,6 @@
     <Compile Include="entity\ClientOrder.cs" />
     <Compile Include="entity\Order.cs" />
     <Compile Include="entity\Product.cs" />
-    <Compile Include="entity\ProductDescription.cs" />
     <Compile Include="entity\Provider.cs" />
     <Compile Include="entity\ProviderOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

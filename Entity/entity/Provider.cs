@@ -60,7 +60,7 @@ namespace Entity.entity
 
         public override string ToString()
         {
-            int N1 = 15, N2 = 40, N3 = 13;
+            int N1 = 15, N2 = 38, N3 = 13;
             string Out;
 
             N1 -= Name.Length;

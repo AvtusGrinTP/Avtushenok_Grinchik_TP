@@ -58,7 +58,7 @@ namespace TP
                     else
                     {
                         ProviderManagerService providerService = ProviderManagerService.getInstance();
-                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()), comboBox1.Text, int.Parse(textBox2.Text.Trim()), int.Parse(textBox3.Text.Trim()));
+                        providerService.makeOrder(int.Parse(textBox1.Text.Trim()), comboBox1.Text, int.Parse(textBox2.Text.Trim()), int.Parse(textBox3.Text.Trim()),DateTime.Parse(dateTimePicker1.Value.ToString()));
 
                         Form confirm = new DialogWithOne_Buttom("Захаз оформлен", Text);
                         confirm.ShowDialog();

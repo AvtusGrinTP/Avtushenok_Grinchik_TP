@@ -25,7 +25,7 @@ namespace Service.by.rfe.service
             }
         }
 
-         public void importToTxt(string file, string[] text)
+         public void exportToTxt(string file, string[] text)
         {
             string Out = "";
             for(int i =0; i < text.Length; i++)
@@ -67,7 +67,7 @@ namespace Service.by.rfe.service
             return list.Orders;
         }
 
-        public void makeOrder(int id, string name, int quantity, double price)
+        public void makeOrder(int id, string name, int quantity, double price, DateTime data)
         {
             Provider provider = findProviderByName(name);
             ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
@@ -85,6 +85,7 @@ namespace Service.by.rfe.service
                     }
                     or.Provider = provider;
                     or.Price = price;
+                    or.Date = data;
 
                 }
             }
@@ -107,7 +108,7 @@ namespace Service.by.rfe.service
             providerList.Add(provider);
         }
 
-        public void addNewOrder(Product product, int quantity, double price, string providerName)
+        public void addNewOrder(Product product, int quantity, double price, string providerName, DateTime data)
         {
             Provider provider = findProviderByName(providerName);
             ProviderOrder order = new ProviderOrder();
@@ -116,6 +117,7 @@ namespace Service.by.rfe.service
             order.setQuantity(quantity);
             order.Price = price;
             order.Provider = provider;
+            order.Date = data;
             ProviderOrderList.getInstance().addProviderOrder(order);
         }
         private Provider findProviderByName(string name)
@@ -131,6 +133,10 @@ namespace Service.by.rfe.service
         public void removeProviderOrder(ProviderOrder order)
         {
             ProviderOrderList.getInstance().Orders.Remove(order);
+        }
+        public Dictionary<Product, int> getProducts()
+        {
+            return Store.getInstance().Products;
         }
 
     }

@@ -28,6 +28,12 @@ namespace TP
             textBox2.Text = currentOrder.getQuantity().ToString();
             textBox4.Text = currentOrder.getCLient();
             textBox5.Text = currentOrder.getAddress();
+            dateTimePicker1.Text = currentOrder.Date.ToString();
+            if (ClientManagerService.getInstance().isDeliver(currentOrder))
+            {
+                button1.Enabled = false;
+                textBox5.Enabled = false;
+            }
             Text = service;
         }
         private void editbutton_Click(object sender, EventArgs e)
@@ -53,11 +59,6 @@ namespace TP
         private void cancelbutton_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

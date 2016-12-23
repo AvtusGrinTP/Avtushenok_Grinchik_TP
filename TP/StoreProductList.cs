@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity.entity;
+using Service.by.rfe.service;
 
 namespace TP
 {
@@ -18,7 +19,21 @@ namespace TP
         public StoreProductList(string service)
         {
             InitializeComponent();
+            timer1.Enabled = true;
+            timer1.Start();
             Text = service;
+            refresh();
+        }
+        void refresh()
+        {
+            listBox2.Items.Clear();
+            Dictionary<Product, int> products = ProviderManagerService.getInstance().getProducts();
+            foreach (Product pr in products.Keys)
+            {
+                int count = 0;
+                products.TryGetValue(pr, out count);
+                listBox2.Items.Add(pr + count.ToString());
+            }
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)
@@ -28,7 +43,7 @@ namespace TP
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            Form add = new ProductInf(Text, 1);
+            Form add = new ProductInf(Text,1);
             add.ShowDialog();
         }
 
@@ -38,15 +53,15 @@ namespace TP
 
             if (!orderString.Equals(""))
             {
-                //поиск по скаду через Сервис Поставщика выбранного товара
-                //foreach (Product order in ProviderOrderList.getInstance().Orders)
-                //{
-                //    if (orderString.Split('|')[0].Trim().Equals())
-                //    {
-                //        currentProduct = ;
-                //        break;
-                //    }
-                //}
+              //  поиск по скаду через Сервис Поставщика выбранного товара
+                foreach (Product product in ProviderManagerService.getInstance().getProducts().Keys)
+                {
+                    if (orderString.Split('|')[0].Trim().Equals(product.Type))
+                    {
+                        currentProduct = product;
+                        break;
+                    }
+                }
             }
         }
 
@@ -54,9 +69,14 @@ namespace TP
         {
             if (currentProduct != null)
             {
-                Form edit = new ProductInf(Text, 2);
+                Form edit = new ProductInf(currentProduct, Text, 2);
                 edit.ShowDialog();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            refresh();
         }
     }
 }

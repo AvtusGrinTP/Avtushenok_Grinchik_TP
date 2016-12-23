@@ -30,14 +30,14 @@ namespace TP
             foreach (ClientOrder order in BookmakerService.getInstance.getClientOrders())
             {
                 
-                    int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
+                    int N1 = 9, N2 = 16, N3 = 25, N4 = 25;
                     string Out;
                     N1 -= order.getId().ToString().Length;
                     Out = order.getId().ToString();
                     Out = Space(Out, N1);
 
-                    N2 -= "Client".Length;
-                    Out += "Client";
+                    N2 -= "По клиентам".Length;
+                    Out += "По клиентам";
                     Out = Space(Out, N2);
 
                     N3 -= order.getCLient().ToString().Length;
@@ -49,20 +49,19 @@ namespace TP
                     Out = Space(Out, N4);
 
                     listBox2.Items.Add(Out);
-               
             }
 
             foreach (ProviderOrder order in BookmakerService.getInstance.getProviderOrders())
             {
                 
-                    int N1 = 9, N2 = 14, N3 = 25, N4 = 25;
+                    int N1 = 9, N2 = 16, N3 = 25, N4 = 25;
                     string Out;
                     N1 -= order.getId().ToString().Length;
                     Out = order.getId().ToString();
                     Out = Space(Out, N1);
 
-                    N2 -= "Provider".Length;
-                    Out += "Provider";
+                    N2 -= "По поставщикам".Length;
+                    Out += "По поставщикам";
 
                     Out = Space(Out, N2);
 
@@ -76,7 +75,6 @@ namespace TP
 
                   
                     listBox2.Items.Add(Out);
-                
             }
         }
 
@@ -114,7 +112,7 @@ namespace TP
             {
                 foreach (ProviderOrder order in BookmakerService.getInstance.getProviderOrders())
                 {
-                    if (orderString.Split('|')[1].Trim().Equals("Provider"))
+                    if (orderString.Split('|')[1].Trim().Equals("По поставщикам"))
                     {
                         if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
                         {
@@ -126,7 +124,7 @@ namespace TP
                 }
                 foreach (ClientOrder order in BookmakerService.getInstance.getClientOrders())
                 {
-                    if (orderString.Split('|')[1].Trim().Equals("Client"))
+                    if (orderString.Split('|')[1].Trim().Equals("По клиентам"))
                     {
                         if (orderString.Split('|')[0].Trim().Equals(order.getId().ToString()))
                         {

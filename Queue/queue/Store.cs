@@ -15,15 +15,14 @@ namespace Queue.queue
         private Store()
         {
             //делаем приватный конструктор, что бы нигде кроме этого класса нельзя было создать объект Store
-            products.Add(new Product("Промышленные", "бытовая техника", "холодильники", "samsung"), 18);
-            products.Add(new Product("Промышленные", "бытовая техника", "холодильники", "lg"), 2);
-            products.Add(new Product("Промышленные", "бытовая техника", "телевизоры", "sony"), 10);
-            products.Add(new Product("Промышленные", "бытовая техника", "телевизоры", "horizont"), 15);
-            products.Add(new Product("Промышленные", "спорт товары", "лыжи", "телеханы"), 23);
-            products.Add(new Product("Продуктовые", "молочные", "йогурты", "ёмми"), 7);
-            products.Add(new Product("Продуктовые", "кондитерские", "шоколад", "аленка"), 90);
-            products.Add(new Product("Продуктовые", "кондитерские", "конфеты", "столичные"), 8);
-            
+            products.Add(new Product("Промышленные", "Бытовая техника", "Холодильники", "Samsung"), 18);
+            products.Add(new Product("Промышленные", "Бытовая техника", "Холодильники", "LG"), 2);
+            products.Add(new Product("Промышленные", "Бытовая техника", "Телевизоры", "Sony"), 10);
+            products.Add(new Product("Промышленные", "Бытовая техника", "Телевизоры", "Horizont"), 15);
+            products.Add(new Product("Промышленные", "Спорт товары", "Лыжи", "Телеханы"), 23);
+            products.Add(new Product("Продуктовые", "Молочные", "Йогурты", "Ёмми"), 7);
+            products.Add(new Product("Продуктовые", "Кондитерские", "Шоколад", "Аленка"), 90);
+            products.Add(new Product("Продуктовые", "Кондитерские", "Конфеты", "Столичные"), 8);
         }                           
         public Dictionary<Product, int> Products
         {

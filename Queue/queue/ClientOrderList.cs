@@ -7,7 +7,7 @@ using Entity.entity;
 
 namespace Queue.queue
 {
-    public class ClientOrderList // Хранилище заказов клиентов
+    public class ClientOrderList 
     {
         private static ClientOrderList instance = new ClientOrderList();
         private List<ClientOrder> orders = new List<ClientOrder>();
@@ -16,23 +16,20 @@ namespace Queue.queue
         {
 
             orders.Add(new ClientOrder(1,  
-                new Product("Продовольственные товары", "cat1", "type1", "name1"),
-                5, "Client11", "Minsk azaza", true, 0, 18));
+                new Product("Продовольственные товары", "Категория1", "Тип1", "Имя1"),
+                5, "Клиент11", "Адрес1", true, 0, 18, DateTime.Parse("18.12.2016")));
             orders.Add(new ClientOrder(2, 
-                new Product("Продовольственные товары", "cat2", "type2", "name2"),
-                10, "Client2", "Minsk azaza2", true, 0, 20));
-            
+                new Product("Продовольственные товары", "Категория2", "Тип2", "Имя2"),
+                10, "Клиент2", "Адрес2", true, 0, 20, DateTime.Parse("19.12.2016")));
             orders.Add(new ClientOrder(6, 
-                new Product("Продовольственные товары", "cat4", "type4", "name4"),
-                7, "Client4", "Minsk azaza", true, 0, 12));
+                new Product("Продовольственные товары", "Категория4", "Тип4", "Имя4"),
+                7, "Клиент4", "Адрес4", true, 0, 12, DateTime.Parse("19.12.2016")));
             orders.Add(new ClientOrder(4,  
-                new Product("Продовольственные товары", "cat5", "type4", "name4"),
-                70, "Client4", "Minsk azaza", true, 0, 12));
+                new Product("Продовольственные товары", "Категория5", "Тип4", "Имя4"),
+                70, "Клиент4", "Адрес3", true, 0, 12, DateTime.Parse("19.12.2016")));
             orders.Add(new ClientOrder(5, 
-                new Product("Промышленные товары", "cat5", "type5", "name5"),
-                3, "Client6", "Minsk azaza5", true, 0, 14));
-
-
+                new Product("Промышленные товары", "Категория5", "Тип5", "Имя5"),
+                3, "Клиент6", "Адрес5", true, 0, 14, DateTime.Parse("19.12.2016")));
         }
 
         public List<ClientOrder> Orders
@@ -49,13 +46,9 @@ namespace Queue.queue
             orders.Add(order);
         }
 
-
-
-
         public static ClientOrderList getInstance()
         {
             return instance;
         }
-
     }
 }

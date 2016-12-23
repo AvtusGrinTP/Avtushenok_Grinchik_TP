@@ -20,7 +20,7 @@ namespace Entity.entity
         private bool isDenied;
 
 
-        public ClientOrder(int id, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price) : base(id, product, quantity, price)
+        public ClientOrder(int id, Product product, int quantity, string client, string address, bool isFull, int countToEnd, double price, DateTime date) : base(id, product, quantity, price , date)
         {
             isDenied = false;
             inErrorList = false;

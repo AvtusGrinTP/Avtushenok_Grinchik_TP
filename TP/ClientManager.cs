@@ -22,7 +22,7 @@ namespace TP
         {
             InitializeComponent();
             timer1.Enabled = true;
-           // timer1.Start();
+            timer1.Start();
             label2.Text = DateTime.Now.ToShortDateString();
             viewFindTextBox();
             

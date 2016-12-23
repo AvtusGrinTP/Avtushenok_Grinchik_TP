@@ -12,7 +12,7 @@ namespace Entity.entity
         private Provider provider;
         private ClientOrder clientOrder;
 
-        public ProviderOrder(int id, Product product, int quantity, double price) : base(id, product, quantity, price)
+        public ProviderOrder(int id, Product product, int quantity, double price, DateTime date) : base(id, product, quantity, price, date)
         {
             isDelivered = false;
         }

@@ -48,12 +48,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 44);
+            this.label1.Location = new System.Drawing.Point(55, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 0;
@@ -62,7 +64,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(187, 41);
+            this.textBox1.Location = new System.Drawing.Point(187, 34);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 71);
+            this.label2.Location = new System.Drawing.Point(55, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 2;
@@ -79,7 +81,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(187, 68);
+            this.textBox2.Location = new System.Drawing.Point(187, 61);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 20);
             this.textBox2.TabIndex = 3;
@@ -87,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 98);
+            this.label3.Location = new System.Drawing.Point(55, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 4;
@@ -96,7 +98,7 @@
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(187, 95);
+            this.textBox3.Location = new System.Drawing.Point(187, 88);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(241, 20);
             this.textBox3.TabIndex = 5;
@@ -104,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 124);
+            this.label4.Location = new System.Drawing.Point(55, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 6;
@@ -113,7 +115,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(187, 121);
+            this.textBox4.Location = new System.Drawing.Point(187, 114);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(241, 20);
             this.textBox4.TabIndex = 7;
@@ -121,7 +123,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 150);
+            this.label5.Location = new System.Drawing.Point(55, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 13);
             this.label5.TabIndex = 8;
@@ -130,7 +132,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(187, 147);
+            this.textBox5.Location = new System.Drawing.Point(187, 140);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(241, 20);
             this.textBox5.TabIndex = 9;
@@ -138,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 176);
+            this.label6.Location = new System.Drawing.Point(55, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 13);
             this.label6.TabIndex = 10;
@@ -147,7 +149,7 @@
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(187, 173);
+            this.textBox6.Location = new System.Drawing.Point(187, 166);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 11;
@@ -155,7 +157,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(55, 203);
+            this.label7.Location = new System.Drawing.Point(55, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 12;
@@ -164,7 +166,7 @@
             // textBox7
             // 
             this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(187, 200);
+            this.textBox7.Location = new System.Drawing.Point(187, 193);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(241, 20);
             this.textBox7.TabIndex = 13;
@@ -172,7 +174,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 257);
+            this.label8.Location = new System.Drawing.Point(55, 250);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 14;
@@ -201,7 +203,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(55, 230);
+            this.label9.Location = new System.Drawing.Point(55, 223);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 18;
@@ -210,7 +212,7 @@
             // textBox8
             // 
             this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(187, 227);
+            this.textBox8.Location = new System.Drawing.Point(187, 220);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(241, 20);
             this.textBox8.TabIndex = 19;
@@ -218,10 +220,27 @@
             // textBox9
             // 
             this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(187, 254);
+            this.textBox9.Location = new System.Drawing.Point(187, 247);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(55, 279);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Дата заказа:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(187, 273);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker1.TabIndex = 22;
             // 
             // BookmakerInfProviderOrder
             // 
@@ -229,6 +248,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label9);
@@ -282,5 +303,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

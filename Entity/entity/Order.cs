@@ -13,14 +13,15 @@ namespace Entity.entity
         private bool isPayed;
         private Product product;
         private double price;
-  
-        public Order(int id, Product product, int quantity, double price)
+        private DateTime date;
+        public Order(int id, Product product, int quantity, double price, DateTime date)
         {
             this.id = id;
             this.product = product;
             this.quantity = quantity;
             this.isPayed = false;
             this.price = price;
+            this.Date = date;
         }
         public Order() { }
         public int getId()
@@ -70,6 +71,19 @@ namespace Entity.entity
             set
             {
                 price = value;
+            }
+        }
+
+        public DateTime Date
+        {
+            get
+            {
+                return date;
+            }
+
+            set
+            {
+                date = value;
             }
         }
     }

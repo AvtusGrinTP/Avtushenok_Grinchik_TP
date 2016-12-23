@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity.entity
 {
-  public class Product
+    public class Product
     {
         private string classofProduct;
         private string category;
@@ -19,7 +19,7 @@ namespace Entity.entity
             this.category = category;
             this.type = type;
             this.name = name;
-           
+
         }
 
         public string ClassofProduct
@@ -74,12 +74,12 @@ namespace Entity.entity
             }
         }
 
-      
+
 
         public override int GetHashCode()
         {
             return classofProduct.GetHashCode() * category.GetHashCode() * type.GetHashCode() * name.GetHashCode() * 19;
-                
+
         }
         public override bool Equals(object obj)
         {
@@ -99,8 +99,34 @@ namespace Entity.entity
             if (name == null)
                 return (null == product.Name);
             return name.Equals(product.Name);
-            
+
         }
 
+        public override string ToString()
+        {
+            int N1 = 21, N2 = 22;
+            string Out;
+
+            N1 -= Type.Length;
+            Out = Type;
+            Out = Space(Out, N1);
+
+            N2 -= Name.Length;
+            Out += Name;
+            Out = Space(Out, N2);
+
+
+
+            return Out;
+        }
+
+        private string Space(string Out, int N)
+        {
+            for (int i = 0; i < N; i++)
+                Out += " ";
+
+            return Out + "| ";
+
+        }
     }
 }

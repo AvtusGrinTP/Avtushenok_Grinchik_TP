@@ -15,9 +15,9 @@ namespace Queue.queue
         private ProviderOrderList()
         {
             orders.Add(new ProviderOrder(2, 
-                new Product("class2", "cat2", "type2", "Молоко"), 5, 124));
+                new Product("Класс1", "Категория1", "Тип1", "Продукт1"), 5, 124, DateTime.Parse("19.12.2016")));
             orders.Add(new ProviderOrder(5, 
-               new Product("class5", "cat4", "type4", "Вода"), 7,127));
+               new Product("Класс2", "Категория4", "Тип4", "Продукт2"), 7,127, DateTime.Parse("19.12.2016")));
 
         }
         public int generateId()
@@ -54,6 +54,5 @@ namespace Queue.queue
         {
             return instance;
         }
-
     }
 }

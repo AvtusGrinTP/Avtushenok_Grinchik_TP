@@ -43,18 +43,18 @@
             this.listBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(32, 52);
+            this.listBox1.Location = new System.Drawing.Point(12, 52);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(640, 346);
+            this.listBox1.Size = new System.Drawing.Size(680, 384);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(92, 419);
+            this.button2.Location = new System.Drawing.Point(93, 442);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 60);
+            this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 2;
             this.button2.Text = "Сделать новый заказ";
             this.button2.UseVisualStyleBackColor = true;
@@ -62,9 +62,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(483, 419);
+            this.button3.Location = new System.Drawing.Point(483, 442);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 60);
+            this.button3.Size = new System.Drawing.Size(120, 40);
             this.button3.TabIndex = 3;
             this.button3.Text = "Список поставщиков";
             this.button3.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             this.listBox2.ItemHeight = 19;
             this.listBox2.Items.AddRange(new object[] {
             "№ заказа | Товар                      | Заказано | Статус "});
-            this.listBox2.Location = new System.Drawing.Point(32, 31);
+            this.listBox2.Location = new System.Drawing.Point(12, 31);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(640, 23);
+            this.listBox2.Size = new System.Drawing.Size(680, 23);
             this.listBox2.TabIndex = 4;
             // 
             // label1
@@ -100,9 +100,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(287, 419);
+            this.button1.Location = new System.Drawing.Point(285, 442);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 60);
+            this.button1.Size = new System.Drawing.Size(120, 40);
             this.button1.TabIndex = 6;
             this.button1.Text = "Склад";
             this.button1.UseVisualStyleBackColor = true;

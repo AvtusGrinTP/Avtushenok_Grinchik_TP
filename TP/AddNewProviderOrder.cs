@@ -23,12 +23,12 @@ namespace TP
             comboBox3.Enabled = false;
             comboBox5.Enabled = false;
             comboBox4.Items.Clear();
+            dateTimePicker1.Text = DateTime.Now.ToShortDateString();
 
             foreach (Provider provider in ProviderManagerService.getInstance().ProviderList)
             {
                 comboBox4.Items.Add(provider.Name);
             }
-            //надо фиксить еще
         }
         void refreshClass()
         {
@@ -99,7 +99,7 @@ namespace TP
                     {
                         ProviderManagerService providerService = ProviderManagerService.getInstance();
                         Product product = new Product(comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox5.Text);
-                        providerService.addNewOrder(product, int.Parse(textBox2.Text), double.Parse(textBox3.Text),comboBox4.Text);
+                        providerService.addNewOrder(product, int.Parse(textBox2.Text), double.Parse(textBox3.Text),comboBox4.Text,DateTime.Parse(dateTimePicker1.Value.ToString()));
                         Form createOrder = new DialogWithOne_Buttom("Заказ оформлен", Text);
                         createOrder.ShowDialog();
 

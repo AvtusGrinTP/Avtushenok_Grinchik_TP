@@ -9,15 +9,17 @@ using Queue.queue;
 
 namespace Service.by.rfe.service
 {
-   public class ClientManagerService
+    public class ClientManagerService
     {
-        private static  ClientManagerService instance = new ClientManagerService();
-        
-        private ClientManagerService() {
+        private static ClientManagerService instance = new ClientManagerService();
+
+        private ClientManagerService()
+        {
 
         }
 
-        public static ClientManagerService getInstance() {
+        public static ClientManagerService getInstance()
+        {
             return instance;
         }
 
@@ -26,7 +28,7 @@ namespace Service.by.rfe.service
             return ClientOrderList.getInstance().Orders;
         }
 
-        public void addClientOrder(int id, string classofProd, string category, string type, string name, int quantity, string clientName, string clientAddress, double price)
+        public void addClientOrder(int id, string classofProd, string category, string type, string name, int quantity, string clientName, string clientAddress, double price, DateTime date)
         {
             Product product = new Product(classofProd, category, type, name);
             Store store = Store.getInstance();
@@ -41,7 +43,7 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, count);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id,   product, quantity, clientName, clientAddress, true, 0, price));
+                clientorderList.addClientOrder(new ClientOrder(id, product, quantity, clientName, clientAddress, true, 0, price, date));
                 return;
             }
             if (count < quantity)
@@ -50,10 +52,10 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, 0);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                ClientOrder clientOrder = new ClientOrder(id, product, quantity, clientName, clientAddress, false, count, price);
+                ClientOrder clientOrder = new ClientOrder(id, product, quantity, clientName, clientAddress, false, count, price, date);
                 clientorderList.addClientOrder(clientOrder);
                 ProviderOrderList providerOrderList = ProviderOrderList.getInstance();
-                ProviderOrder providerOrder = new ProviderOrder(providerOrderList.generateId(), product, count, 0);
+                ProviderOrder providerOrder = new ProviderOrder(providerOrderList.generateId(), product, count, 0, date);
                 providerOrder.ClientOrder = clientOrder;
                 providerOrderList.addProviderOrder(providerOrder);
                 return;
@@ -65,7 +67,7 @@ namespace Service.by.rfe.service
                 store.Products.Remove(product);
                 store.Products.Add(product, 0);
                 ClientOrderList clientorderList = ClientOrderList.getInstance();
-                clientorderList.addClientOrder(new ClientOrder(id,  product, quantity, clientName, clientAddress, true, 0, price));
+                clientorderList.addClientOrder(new ClientOrder(id, product, quantity, clientName, clientAddress, true, 0, price, date));
                 return;
             }
         }
@@ -82,14 +84,15 @@ namespace Service.by.rfe.service
 
             return classs;
         }
-        public HashSet<string> getCategories(string classofprod) {
+        public HashSet<string> getCategories(string classofprod)
+        {
             Store store = Store.getInstance();
             HashSet<string> categories = new HashSet<string>();
 
             foreach (Product product in store.Products.Keys)
-            {   
-                if(product.ClassofProduct == classofprod)
-                categories.Add(product.Category.Trim());
+            {
+                if (product.ClassofProduct == classofprod)
+                    categories.Add(product.Category.Trim());
             }
 
             return categories;
@@ -101,9 +104,9 @@ namespace Service.by.rfe.service
             HashSet<string> types = new HashSet<string>();
 
             foreach (Product product in store.Products.Keys)
-            {   
-                if(product.Category == category)
-                types.Add(product.Type.Trim());
+            {
+                if (product.Category == category)
+                    types.Add(product.Type.Trim());
             }
 
             return types;
@@ -114,23 +117,23 @@ namespace Service.by.rfe.service
             HashSet<string> names = new HashSet<string>();
 
             foreach (Product product in store.Products.Keys)
-            {   
+            {
                 if (product.Type == type)
-                names.Add(product.Name.Trim());
+                    names.Add(product.Name.Trim());
             }
 
             return names;
         }
-       
+
         public bool isExistId(int id)
         {
-            ClientOrderList orders =ClientOrderList.getInstance();
+            ClientOrderList orders = ClientOrderList.getInstance();
             foreach (ClientOrder order in orders.Orders)
             {
                 if (order.getId() == id)
                 {
                     return true;
-                }                
+                }
             }
             return false;
         }
@@ -141,7 +144,7 @@ namespace Service.by.rfe.service
             foreach (ClientOrder order in clientOrderlist.Orders)
             {
                 if (order.getId() == id)
-                    editedOrder = order; 
+                    editedOrder = order;
             }
             if (editedOrder != null)
             {
@@ -172,15 +175,16 @@ namespace Service.by.rfe.service
                 Store.getInstance().Products.Add(clientOrder.Product, count + clientOrder.getQuantity() - clientOrder.getCountToEnd());
             }
             ClientOrderList.getInstance().Orders.Remove(clientOrder);
-            
-        }
-        
 
-        public string getIdClienOrder() {
+        }
+
+
+        public string getIdClienOrder()
+        {
             int maxId = 0;
             foreach (ClientOrder order in ClientOrderList.getInstance().Orders)
             {
-                if(order.getId()> maxId)
+                if (order.getId() > maxId)
                 {
                     maxId = order.getId();
                 }
@@ -209,6 +213,16 @@ namespace Service.by.rfe.service
             int a = 0;
             Store.getInstance().Products.TryGetValue(product, out a);
             return a;
+        }
+
+        public bool isDeliver(ClientOrder clientOrder)
+        {
+            if (clientOrder.getStatus().Equals("Доставлено"))
+            {
+                return true;
+            }
+            else return false;
+
         }
 
     }

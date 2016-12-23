@@ -43,7 +43,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 19;
             this.listBox1.Items.AddRange(new object[] {
-            "№ заказа | Менеджер      | Заказчик                 | Заказ                   "});
+            "№ заказа | Менеджер        | Заказчик                 | Заказ                   "});
             this.listBox1.Location = new System.Drawing.Point(30, 37);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(730, 23);

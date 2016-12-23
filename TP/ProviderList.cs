@@ -35,8 +35,6 @@ namespace TP
            Close();
         }
 
-       
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string providerString = listBox1.GetItemText(listBox1.SelectedItem);
