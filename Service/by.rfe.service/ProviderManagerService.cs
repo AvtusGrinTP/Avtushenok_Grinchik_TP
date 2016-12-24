@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-//using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 using System.IO;
 using Entity.entity;
 using Queue.queue;
@@ -23,6 +23,35 @@ namespace Service.by.rfe.service
                 string[] providerAtributes = providertxt.Split('/');
                 providerList.Add(new Provider(providerAtributes[0], providerAtributes[1], providerAtributes[2]));
             }
+        }
+
+        public void exportToExcel(string[] text)
+        {
+            Application  ExcelApp = new Application();
+            ExcelApp.Application.Workbooks.Add(Type.Missing);
+            ExcelApp.Columns.ColumnWidth = 25;
+            ExcelApp.Cells[1,1] = "Класс";
+            ExcelApp.Cells[1,2] = "Категория";
+            ExcelApp.Cells[1,3] = "Тип";
+            ExcelApp.Cells[1,4] = "Наименование";
+            ExcelApp.Cells[1,5] = "Кол-во";
+
+            foreach(Product product in Store.getInstance().Products.Keys)
+            {
+                for(int i = 0; i < text.Length - 1; i++)
+                if (text[i].Trim().Equals(product.Name))
+                {
+                    ExcelApp.Cells[i+2, 1] = product.ClassofProduct;
+                    ExcelApp.Cells[i+2, 2] = product.Category;
+                    ExcelApp.Cells[i+2, 3] = product.Type;
+                    ExcelApp.Cells[i+2, 4] = product.Name;
+                    ExcelApp.Cells[i+2, 5] = getProductCount(product);
+                }
+
+            }
+            ExcelApp.Visible = true;
+
+
         }
 
         public void exportToTxt(string file, string[] text)
@@ -159,14 +188,14 @@ namespace Service.by.rfe.service
             Store.getInstance().Products.TryGetValue(product, out count);
             return count;
         }
-        public void changeProduct(Product product, int count, string name)
+        public void changeProduct(Product product, Product change, int count, string name)
         {
-            Store.getInstance().Products.Remove(product);
-            Store.getInstance().Products.Add(product, count);
+           
             foreach (Product pr in Store.getInstance().Products.Keys)
             {
-                if (pr.Equals(product))
-                    pr.Name = name;
+                Store.getInstance().Products.Remove(product);
+                Store.getInstance().Products.Add(change, count);
+                return;
             }
         }
     }

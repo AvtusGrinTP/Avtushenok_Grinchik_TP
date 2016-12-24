@@ -78,5 +78,24 @@ namespace TP
         {
             refresh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] product = new string[listBox2.Items.Count];
+
+            for (int i = 0; i < listBox2.Items.Count; i++)
+            {
+                string[] str = listBox2.Items[i].ToString().Split('|');
+                product[i] = str[1].Trim();
+
+            }
+
+            ProviderManagerService.getInstance().exportToExcel(product);
+
+
+            Form confirm = new DialogWithOne_Buttom("Список Товаров \nконвертирован в Excel", Text);
+            confirm.ShowDialog();
+
+        }
     }
 }

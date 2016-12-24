@@ -129,7 +129,7 @@ namespace TP
             {
                 Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 3);
                 confirmPay.ShowDialog();
-                currentOrder = null;
+               // currentOrder = null;
             }
         }
 
@@ -179,7 +179,7 @@ namespace TP
             {
                 Form confirmPay = new BookmakerInfClientOrder(currentOrder, Text, 4);
                 confirmPay.ShowDialog();
-                currentOrder = null;
+               // currentOrder = null;
             }
         }
 

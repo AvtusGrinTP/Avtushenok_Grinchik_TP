@@ -157,7 +157,6 @@
             // 
             // comboBox1
             // 
-          //  this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(172, 34);
             this.comboBox1.Name = "comboBox1";
@@ -189,7 +188,7 @@
             this.comboBox4.Location = new System.Drawing.Point(172, 112);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(200, 21);
-            this.comboBox4.TabIndex = 17;
+            this.comboBox4.TabIndex = 7;
             // 
             // comboBox5
             // 

@@ -14,7 +14,7 @@ using System.Windows.Forms;
 // 1 - добавление нового
 // 2 - изменить текущий
 
-namespace TP                                                                            
+namespace TP
 {
     public partial class ProductInf : Form
     {
@@ -24,7 +24,7 @@ namespace TP
         {
             InitializeComponent();
             Text = service;
-            
+
             this.fromWho = fromWho;
 
             refreshClass();
@@ -48,7 +48,7 @@ namespace TP
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             comboBox3.Enabled = false;
-            
+
             this.product = product;
             this.fromWho = fromWho;
 
@@ -108,6 +108,7 @@ namespace TP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (fromWho == 1)
             {
                 //добавить новый товар
@@ -118,7 +119,7 @@ namespace TP
                 {
 
                     Form err = new DialogWithOne_Buttom("Введены пустые поля", Text);
-                    err.Show();
+                    err.ShowDialog();
                     return;
                 }
                 Product product = new Product(comboBox1.Text.Trim(),
@@ -131,27 +132,39 @@ namespace TP
                 catch (ServiceException ex)
                 {
                     Form err = new DialogWithOne_Buttom(ex.Message, Text);
-                    err.Show();
+                    err.ShowDialog();
                     Close();
                 }
 
             }
             if (fromWho == 2)
             {
+                int count = 0;
+                try
+                {
+                    count = int.Parse(textBox5.Text.Trim());
+                }
+                catch (Exception)
+                {
+                    Form err = new DialogWithOne_Buttom("Неправильный формат \n количества", Text);
+                    err.ShowDialog();
+                    return;
+                }
                 //переписать введенные параметры
                 if (comboBox4.Text.Trim().Equals("") || textBox5.Text.Trim().Equals(""))
                 {
                     Form err = new DialogWithOne_Buttom("Пустые поля", Text);
                     err.Show();
                 }
-                ProviderManagerService.getInstance().changeProduct(product, int.Parse(textBox5.Text.Trim()), comboBox4.Text.Trim());
+                Product changed = new Product(comboBox1.Text, comboBox2.Text, comboBox3.Text, comboBox4.Text.Trim());
+                ProviderManagerService.getInstance().changeProduct(product, changed, count, comboBox4.Text.Trim());
                 Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             ProviderManagerService.getInstance().deleteProduct(product);
             Close();
         }
