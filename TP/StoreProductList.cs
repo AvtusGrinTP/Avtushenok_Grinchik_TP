@@ -56,7 +56,7 @@ namespace TP
               //  поиск по скаду через Сервис Поставщика выбранного товара
                 foreach (Product product in ProviderManagerService.getInstance().getProducts().Keys)
                 {
-                    if (orderString.Split('|')[0].Trim().Equals(product.Type))
+                    if (orderString.Split('|')[1].Trim().Equals(product.Name))
                     {
                         currentProduct = product;
                         break;

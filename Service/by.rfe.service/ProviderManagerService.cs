@@ -25,10 +25,10 @@ namespace Service.by.rfe.service
             }
         }
 
-         public void exportToTxt(string file, string[] text)
+        public void exportToTxt(string file, string[] text)
         {
             string Out = "";
-            for(int i =0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
                 if (i != text.Length - 1)
                     Out += text[i].Trim() + '/';
@@ -76,7 +76,7 @@ namespace Service.by.rfe.service
             {
                 if (or.getId().Equals(id))
                 {
-                    
+
                     if (or.getQuantity() <= quantity)
                         or.setQuantity(quantity);
                     else
@@ -138,6 +138,36 @@ namespace Service.by.rfe.service
         {
             return Store.getInstance().Products;
         }
-
+        public void deleteProduct(Product product)
+        {
+            Store.getInstance().Products.Remove(product);
+        }
+        public void addNewProduct(Product product)
+        {
+            foreach (Product pr in Store.getInstance().Products.Keys)
+            {
+                if (pr.Equals(product))
+                {
+                    throw new ServiceException("Такой товар уже \n существует");
+                }
+            }
+            Store.getInstance().Products.Add(product, 0);
+        }
+        public int getProductCount(Product product)
+        {
+            int count = 0;
+            Store.getInstance().Products.TryGetValue(product, out count);
+            return count;
+        }
+        public void changeProduct(Product product, int count, string name)
+        {
+            Store.getInstance().Products.Remove(product);
+            Store.getInstance().Products.Add(product, count);
+            foreach (Product pr in Store.getInstance().Products.Keys)
+            {
+                if (pr.Equals(product))
+                    pr.Name = name;
+            }
+        }
     }
 }

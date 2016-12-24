@@ -1,5 +1,6 @@
 ﻿using Entity.entity;
 using Service.by.rfe.service;
+using Service.by.rfe.service.exception;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace TP
         {
             InitializeComponent();
             Text = service;
-
+            
             this.fromWho = fromWho;
 
             refreshClass();
@@ -44,24 +45,24 @@ namespace TP
         {
             InitializeComponent();
             Text = service;
-
+            comboBox1.Enabled = false;
+            comboBox2.Enabled = false;
+            comboBox3.Enabled = false;
+            
             this.product = product;
             this.fromWho = fromWho;
 
-            refreshClass();
+
             comboBox1.Text = product.ClassofProduct;
             comboBox2.Text = product.Category;
             comboBox3.Text = product.Type;
             comboBox4.Text = product.Name;
             //как взять количество товаров?
-            //  textBox5.Text = 
+            textBox5.Text = ProviderManagerService.getInstance().getProductCount(product).ToString();
 
-            foreach (Provider provider in ProviderManagerService.getInstance().ProviderList)
-            {
-                comboBox5.Items.Add(provider.Name);
-            }
+            comboBox5.Enabled = false;
+            dateTimePicker1.Enabled = false;
 
-            //если изменять, то не знаю какие поля делать досупными
             button1.Text = "Изменить";
             button2.Text = "Удалить";
         }
@@ -110,16 +111,49 @@ namespace TP
             if (fromWho == 1)
             {
                 //добавить новый товар
+                if (comboBox1.Text.Trim().Equals("") ||
+                    comboBox2.Text.Trim().Equals("") ||
+                    comboBox3.Text.Trim().Equals("") ||
+                    comboBox4.Text.Trim().Equals(""))
+                {
+
+                    Form err = new DialogWithOne_Buttom("Введены пустые поля", Text);
+                    err.Show();
+                    return;
+                }
+                Product product = new Product(comboBox1.Text.Trim(),
+                    comboBox2.Text.Trim(), comboBox3.Text.Trim(), comboBox4.Text.Trim());
+                try
+                {
+                    ProviderManagerService.getInstance().addNewProduct(product);
+                    Close();
+                }
+                catch (ServiceException ex)
+                {
+                    Form err = new DialogWithOne_Buttom(ex.Message, Text);
+                    err.Show();
+                    Close();
+                }
+
             }
             if (fromWho == 2)
             {
                 //переписать введенные параметры
+                if (comboBox4.Text.Trim().Equals("") || textBox5.Text.Trim().Equals(""))
+                {
+                    Form err = new DialogWithOne_Buttom("Пустые поля", Text);
+                    err.Show();
+                }
+                ProviderManagerService.getInstance().changeProduct(product, int.Parse(textBox5.Text.Trim()), comboBox4.Text.Trim());
+                Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //удалить со склада
+            
+            ProviderManagerService.getInstance().deleteProduct(product);
+            Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
